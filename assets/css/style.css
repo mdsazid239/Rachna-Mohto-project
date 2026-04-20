@@ -5,58 +5,35 @@
     padding:0;
     box-sizing:border-box;
 }
-
 body{
     font-family:'Poppins','Bona Nova';
      background-color:#D9D9D9;
     overflow-x:hidden;
 }
-
-/* COMMON */
 img{
     width:100%;
     display:block;
 }
-
 section{
     width:100%;
 }
-
 h1,h2,h3{
     font-weight:700;
     line-height:1.15;
 }
-
 p{
     line-height:1.7;
 }
-
-/* HERO */
 .hero{
     width:90%;
     max-width:1200px;
     margin:60px auto;
     position:relative;
 }
-
 .hero img{
     width:100%;
     display:block;
 }
-
-/* TEXT RIGHT SIDE */
-/* .hero-text{
-    position:absolute;
-    top:28%;
-    left: -30%;
-    right: -44%;
-    transform:translate(0, -50%);
-    text-align:left;
-    padding-left:30px;
-    width: 602px;
-    max-width: 951px;
-} */
-
 .about-hero-text{
     position:absolute;
     top:62%;
@@ -67,24 +44,19 @@ p{
     width:657px;
     max-width:951px;
 }
-
 .about-hero-text h1{
     font-size:42px;
     color:#245136;
     line-height:-2;
     margin-bottom:18px;
 }
-
 .about-hero-text p{
     font-size:18px;
     color:#000;
     line-height:1.6;
-    /* max-width:320px; */
 }
-/* ABOUT GRID */
 .about-grid{
     width:74%;
-    /* max-width:1300px; */
     margin:auto;
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -124,8 +96,6 @@ p{
 .about-text-bottom{
     text-align:right;
 }
-
-/* SERVICE */
 .service-row{
     width:100%;
     display:flex;
@@ -170,7 +140,6 @@ p{
     text-align:right;
 }
 
-/* CTA */
 .cta-box{
     width:100%;
     min-height:700px;
@@ -203,7 +172,6 @@ p{
     font-weight:600;
 }
 
-/* FOOTER */
 .footer-area{
     width:100%;
     min-height:100vh;
@@ -230,7 +198,7 @@ p{
 }
 
 .footer-content p{
-    color:#666;
+    color:#D9D9D9;
     margin-bottom:20px;
 }
 
@@ -241,7 +209,6 @@ p{
     flex-wrap:wrap;
     margin-bottom:18px;
 }
-
 .footer-links a{
     color:#222;
     text-decoration:none;
@@ -253,13 +220,10 @@ p{
     gap:16px;
     margin-top:10px;
 }
-
 .social-icons img{
     width:24px;
     height:24px;
 }
-
-/* TABLET */
 @media(max-width:992px){
 
 .hero-text h1{
@@ -295,8 +259,6 @@ p{
 }
 
 }
-
-/* MOBILE */
 @media(max-width:576px){
 
 .hero{
@@ -362,7 +324,7 @@ p{
   box-sizing: border-box;
 }
 body {
-  background: #F6EEE3;
+  background: #D9D9D9;
   font-family: 'Poppins';
 }
 .navbar {
@@ -433,16 +395,12 @@ body {
   background:#BC8125;
   transform:translateY(-2px);
 }
-
-/* Tablet View */
 @media (max-width:992px){
   .btn-link button{
     padding:12px 24px;
     font-size:15px;
   }
 }
-
-/* Mobile View */
 @media (max-width:768px){
   .btn-link{
     width:100%;
@@ -456,8 +414,6 @@ body {
     font-size:14px;
   }
 }
-
-/* Small Mobile */
 @media (max-width:480px){
   .btn-link button{
     max-width:100%;
@@ -465,36 +421,6 @@ body {
     padding:10px 18px;
   }
 }
-/* .image {
-  width: 90%;
-  max-width: 900px;
-  margin: 40px auto;
-  position: relative;
-}
-
-.image img {
-  width: 100%;      
-  height: auto;      
-  display: block;
-}
-.text-right {
-  position: absolute;
-  top: 50%;
-  left: 82%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-  color: #433326;
-  font-size: 18px;
-  line-height: 1.5;
-  text-align: center;
-}
-.text-right button {
-  margin-top: 15px;
-  padding: 10px 18px;
-  border: 1px solid #433326;
-  background: transparent;
-  cursor: pointer;
-} */
 .image {
   width: 90%;
   max-width: 1200px;
@@ -503,18 +429,16 @@ body {
 }
 
 .image img {
-  /* width: 100%; */
   height: 500.08px;
   object-fit: cover;
   border-radius: 4px;
   width: 916.9px;
 }
 
-/* RIGHT TEXT BOX */
 .text-right {
   position: absolute;
   top: 50%;
-  right: 60px;   /* IMPORTANT FIX */
+  right: 60px;   
   transform: translateY(-50%);
   width: 320px;
   color: #433326;
@@ -531,15 +455,6 @@ body {
   background: transparent;
   cursor: pointer;
 }
-
-
-
-/* @media (max-width: 768px) {
-  .text-right {
-    width: 80%;
-    font-size: 14px;
-  }
-} */
 @media (max-width: 768px) {
   .image img {
     height: auto;
@@ -562,33 +477,6 @@ body {
   gap: 50px;
   padding: 50px 5%;
 }
-/* .home-hero-text {
-  flex: 2;
-  font-family: 'Bona Nova SC';
-  font-weight: 700;
-  font-size: 38px;
-  line-height: 1.1;
-  letter-spacing: 0.04em;
-  color: #BC8125;
-} */
-
-/* .home-hero-text{
-    position:absolute;
-    top:28%;
-    left: -30%;
-    right: -44%;
-    transform:translate(0, -50%);
-    text-align:left;
-    padding-left:30px;
-    width: 602px;
-    max-width: 951px;
-    color: #BC8125;
-  flex: 2;
-  font-family: 'Bona Nova SC';
-  font-weight: 700;
-} */
-
-
 .home-hero-text{
     position: absolute;
     top: 28%;
@@ -605,8 +493,6 @@ body {
     flex: 2;
     font-size: 38px;
 }
-
-
 
 .study-table-image {
   flex: 1;
@@ -923,8 +809,6 @@ p {
   transform: rotate(-90deg); 
   display: block;
 } 
-
-
 .gallery {
   width: 100%;
   display: flex;
@@ -937,8 +821,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* IMPORTANT */
   width: 1402px; 
   height: 617px;   
   overflow: hidden;
@@ -1074,9 +956,6 @@ p {
     width: 220px;
   }
 } 
-
-
-/* service */
 
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova:wght@400;600&display=swap');
 *{
@@ -1267,22 +1146,6 @@ body{
   margin-bottom:25px;
   line-height:1.4;
 }
-/* .cta-btn{
-  display:inline-block;
-  padding:12px 26px;
-  border:1px solid #F6EEE3;
-  color:#F6EEE3;
-  text-decoration:none;
-  font-family:'Bona Nova';
-  font-size:15px;
-  border-radius:2px;
-  transition:0.3s;
-}
-.cta-btn:hover{
-  background:#F6EEE3;
-  color:#BC8125;
-} */
-
 .btn-link{
   text-decoration:none;
   display:inline-block;
@@ -1306,15 +1169,12 @@ body{
   transform:translateY(-2px);
 }
 
-/* Tablet View */
 @media (max-width:992px){
   .btn-link button{
     padding:12px 24px;
     font-size:15px;
   }
 }
-
-/* Mobile View */
 @media (max-width:768px){
   .btn-link{
     width:100%;
@@ -1328,8 +1188,6 @@ body{
     font-size:14px;
   }
 }
-
-/* Small Mobile */
 @media (max-width:480px){
   .btn-link button{
     max-width:100%;
@@ -1712,11 +1570,9 @@ body{
   .faq-item p{
     padding:0 18px 16px 38px;
   }
-
   .faq-image img{
     max-width:300px;
   }
-
   .faq-footer p{
     font-size:13px;
   }
