@@ -3,26 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Let's talk</title>
+    <title>Services</title>
     <link rel="icon" type="image/png" href="assets/images/logo-navbar.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
+ 
+    <style></style>
   </head>
   <body>
     <header class="rm-header">
-      <nav class="rm-navbar">
-        <div class="rm-logo">
-          <a href="#">
-            <img src="assets/images/rachna-logo.png" alt="logo" />
-          </a>
-        </div>
-        <ul class="rm-menu">
-          <li><a href="home.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About me</a></li>
-          <li><a href="form.html" class="rm-btn">Let’s talk</a></li>
-        </ul>
-      </nav>
-    </header>
+  <nav class="rm-navbar">
+
+    <!-- FIX: checkbox outside -->
+    <input type="checkbox" id="rm-toggle">
+
+    <div class="rm-nav-top">
+      <div class="rm-logo">
+        <img src="assets/images/rachna-logo.png" alt="logo">
+      </div>
+
+      <!-- hamburger -->
+      <label for="rm-toggle" class="rm-hamburger">☰</label>
+    </div>
+
+    <ul class="rm-menu">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About me</a></li>
+      <li><a href="form.html" class="rm-btn">Let’s talk</a></li>
+    </ul>
+
+  </nav>
+</header>
     <section class="rm-contact-page">
       <div class="rm-contact-box">
         <!-- Left Side -->

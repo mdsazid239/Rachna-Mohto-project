@@ -2,22 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services</title>
     <link rel="icon" type="image/png" href="assets/images/logo-navbar.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Bona+Nova:wght@700&family=Bona+Nova+SC:wght@700&display=swap"
-      rel="stylesheet"
-    />
+
+    <style></style>
   </head>
   <body>
     <header class="rm-header">
       <nav class="rm-navbar">
-        <div class="rm-logo">
-          <a href="#">
+        <!-- FIX: checkbox outside -->
+        <input type="checkbox" id="rm-toggle" />
+
+        <div class="rm-nav-top">
+          <div class="rm-logo">
             <img src="assets/images/rachna-logo.png" alt="logo" />
-          </a>
+          </div>
+
+          <!-- hamburger -->
+          <label for="rm-toggle" class="rm-hamburger">☰</label>
         </div>
+
         <ul class="rm-menu">
           <li><a href="home.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
@@ -26,6 +32,7 @@
         </ul>
       </nav>
     </header>
+
     <div class="clarity-hero">
       <div class="clarity-left">
         <div class="clarity-circle"></div>
@@ -43,13 +50,16 @@
         </a>
       </div>
     </div>
-    <section class="hero">
-      <div class="home-hero-text">
-        I HELP PEOPLE CLARITY<br />
-        FINDS THOSE WHO SEEK IT.
-      </div>
-      <div class="study-table-image">
-        <img src="assets/images/study-table.png" alt="study-table" />
+    <section class="hero-x9">
+      <div class="hero-content-x9">
+        <div class="hero-text-clarity-x9">
+          I HELP PEOPLE CLARITY<br />
+          FINDS THOSE WHO SEEK IT.
+        </div>
+
+        <div class="study-table-image-x9">
+          <img src="assets/images/study-table.png" alt="study-table" />
+        </div>
       </div>
     </section>
     <section class="zigzag-cards">
@@ -91,6 +101,7 @@
           <h2>Feeling Stuck</h2>
           <p>Moving fast but going nowhere new.</p>
         </div>
+
         <div class="item mid-left">
           <h2>Overthinking</h2>
           <p>Knowing what to do and still not doing it.</p>

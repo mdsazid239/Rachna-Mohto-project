@@ -6,47 +6,55 @@
     <title>About</title>
     <link rel="icon" type="image/png" href="assets/images/logo-navbar.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
+   
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Bona+Nova:wght@400;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+ <header class="rm-header">
+  <nav class="rm-navbar">
 
+    <!-- FIX: checkbox outside -->
+    <input type="checkbox" id="rm-toggle">
 
-<header class="rm-header">
-    
-    <nav class="rm-navbar">
-
-        <!-- Logo -->
-        <div class="rm-logo">
-            <a href="#">
-                <img src="assets/images/rachna-logo.png" alt="logo">
-            </a>
-        </div>
-
-        <!-- Menu -->
-        <ul class="rm-menu">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About me</a></li>
-            <li><a href="form.html" class="rm-btn">Let’s talk</a></li>
-        </ul>
-
-    </nav>
-
-</header>
-
-    <section class="hero">
-      <img src="assets/images/Rachna Mohta-09.jpg" alt="Hero Image" />
-      <div class="about-hero-text">
-        <h1>
-          Acceptance is where your <br />
-          transformation begins.
-        </h1>
-        <p>I help you see what you’re missing in your own thinking.</p>
+    <div class="rm-nav-top">
+      <div class="rm-logo">
+        <img src="assets/images/rachna-logo.png" alt="logo">
       </div>
-    </section>
+
+      <!-- hamburger -->
+      <label for="rm-toggle" class="rm-hamburger">☰</label>
+    </div>
+
+    <ul class="rm-menu">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About me</a></li>
+      <li><a href="form.html" class="rm-btn">Let’s talk</a></li>
+    </ul>
+
+  </nav>
+</header>
+<section class="rm-hero-wrapper">
+  <div class="rm-hero-container">
+    
+    <div class="rm-hero-image">
+      <img src="assets/images/mohta2.png" alt="Hero Image">
+    </div>
+
+    <div class="rm-hero-content">
+      <h1>
+        Acceptance is where your <br>
+        transformation begins.
+      </h1>
+      <p>
+        I help you see what you’re missing in your own thinking.
+      </p>
+    </div>
+  </div>
+</section>
     <section class="about-grid">
       <div class="about-text-top">
         <h2>My work is about clarity,<br />Not motivation.</h2>

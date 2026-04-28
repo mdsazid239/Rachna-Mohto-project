@@ -6,45 +6,68 @@
     <title>Services</title>
     <link rel="icon" type="image/png" href="assets/images/logo-navbar.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
+ 
     <style></style>
   </head>
   <body>
-    <!-- HTML -->
     <header class="rm-header">
-      <nav class="rm-navbar">
-        <!-- Logo -->
-        <div class="rm-logo">
-          <a href="#">
-            <img src="assets/images/rachna-logo.png" alt="logo" />
-          </a>
-        </div>
+  <nav class="rm-navbar">
 
-        <!-- Menu -->
-        <ul class="rm-menu">
-          <li><a href="home.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About me</a></li>
-          <li><a href="form.html" class="rm-btn">Let’s talk</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div class="hero">
-      <img src="assets/images/Rachna Mohta-09.jpg" alt="Hand image" />
-      <div class="text-right">
-        <p>Discovering what fits you well</p>
+    <!-- FIX: checkbox outside -->
+    <input type="checkbox" id="rm-toggle">
+
+    <div class="rm-nav-top">
+      <div class="rm-logo">
+        <img src="assets/images/rachna-logo.png" alt="logo">
+      </div>
+
+      <!-- hamburger -->
+      <label for="rm-toggle" class="rm-hamburger">☰</label>
+    </div>
+
+    <ul class="rm-menu">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About me</a></li>
+      <li><a href="form.html" class="rm-btn">Let’s talk</a></li>
+    </ul>
+
+  </nav>
+</header>
+    <div class="sg-hero">
+      <div class="sg-hero__content">
+        <h1 class="sg-hero__title">
+          Discovering <br />
+          what fits you well.
+        </h1>
+      </div>
+
+      <div class="sg-hero__visual">
+        <div class="sg-hero__circle"></div>
+        <img
+          src="assets/images/mohata1.png"
+          alt="Person"
+          class="sg-hero__image"
+        />
       </div>
     </div>
-    <section class="process-section">
-      <div class="process-left">
-        <div class="step-box">
+
+    <div class="sg-process">
+      <div class="sg-process__left">
+        <img src="assets/images/rachna.png" alt="Illustration" />
+      </div>
+
+      <div class="sg-process__right">
+        <div class="sg-process__item">
           <h2>Diagnose</h2>
           <p>
-            Find where it's actually breaking. I go beneath the surface
+            Find where its actually breaking. I go beneath the surface
             identifying exactly where ownership is slipping, where decisions are
             stalling.
           </p>
         </div>
-        <div class="step-box">
+
+        <div class="sg-process__item">
           <h2>Align</h2>
           <p>
             Confusion about roles, decisions, and expectations costs more than
@@ -52,7 +75,8 @@
             what they own and how to move forward.
           </p>
         </div>
-        <div class="step-box">
+
+        <div class="sg-process__item">
           <h2>Redesign</h2>
           <p>
             Build the structure that holds. I put the right systems and
@@ -60,7 +84,8 @@
             confidence.
           </p>
         </div>
-        <div class="step-box">
+
+        <div class="sg-process__item">
           <h2>Strengthen</h2>
           <p>
             Change only works if it sticks. I work closely to build the habits,
@@ -69,10 +94,7 @@
           </p>
         </div>
       </div>
-      <div class="process-right">
-        <img src="assets/images/Rachna Mohta-02.jpg" alt="Illustration" />
-      </div>
-    </section>
+    </div>
     <section class="cta-section">
       <div class="cta-top">
         <h2>A first step to understand where you are & what's next.</h2>
