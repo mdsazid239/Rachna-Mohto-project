@@ -510,11 +510,9 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-
   max-width: 1200px;
   margin: 60px auto;
   padding: 40px;
-
   background: #F6EEE3;
   border-radius: 12px;
 }
@@ -529,6 +527,8 @@ body {
   max-width: 380px;
   width: 100%;
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Content */
@@ -553,13 +553,10 @@ body {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 22px;
-
   border: 1px solid #433326;
   border-radius: 6px;
-
   text-decoration: none;
   color: #433326;
-
   transition: 0.3s;
 }
 
@@ -568,13 +565,20 @@ body {
   color: #fff;
 }
 
----
-
-/* Responsive */
+/* Tablet + Mobile */
 @media (max-width: 992px) {
   .clarity {
     flex-direction: column;
     text-align: center;
+    gap: 24px;
+  }
+
+  .clarity__image {
+    order: 1;
+  }
+
+  .clarity__content {
+    order: 2;
   }
 
   .clarity__content h1 {
@@ -582,10 +586,15 @@ body {
   }
 }
 
+/* Mobile */
 @media (max-width: 576px) {
   .clarity {
     padding: 20px;
     margin: 20px;
+  }
+
+  .clarity__image img {
+    max-width: 260px;
   }
 
   .clarity__content h1 {
@@ -775,12 +784,10 @@ body {
 
 
 .zigzag-cards {
-  position: relative;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 80px 20px 120px;
+  padding: 60px 20px;
   background: #F6EEE3;
-  overflow: hidden;
 }
 
 .zig-card {
@@ -788,35 +795,29 @@ body {
 }
 
 .zig-card img {
-  width: 791px;
-  height: 592px;
+  width: 100%;
+  height: auto;
   display: block;
-  object-fit: contain;
-  /* box-shadow: -22px 22px 28px rgba(0, 0, 0, 0.22); */
 }
 
-/* zigzag layout */
+/* Desktop zigzag */
 .card-1 {
   margin-left: 52%;
 }
 
 .card-2 {
-  margin-top: 110px;
+  margin-top: 60px;
   margin-left: 8%;
 }
 
 .card-3 {
-  margin-top: 110px;
+  margin-top: 60px;
   margin-left: 39%;
 }
 
-/* laptop */
+/* Laptop */
 @media (max-width: 1024px) {
   .zig-card {
-    width: 260px;
-  }
-
-  .zig-card img {
     width: 260px;
   }
 
@@ -825,37 +826,40 @@ body {
   }
 
   .card-2 {
-    margin-left: 6%;
+    margin-left: 8%;
   }
 
   .card-3 {
-    margin-left: 54%;
+    margin-left: 42%;
   }
 }
 
-/* tablet */
+/* Tablet + Mobile */
 @media (max-width: 768px) {
   .zigzag-cards {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 15px;
+    gap: 20px;
+    padding: 30px 16px;
   }
 
   .zig-card {
-    width: auto;
-    margin: 22px 0 !important;
-  }
-
-  .zig-card img {
-    width: 240px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 !important;
   }
 }
 
-/* mobile */
+/* Mobile */
 @media (max-width: 480px) {
-  .zig-card img {
-    width: 180px;
+  .zigzag-cards {
+    gap: 16px;
+    padding: 24px 12px;
+  }
+
+  .zig-card {
+    max-width: 220px;
   }
 }
 
@@ -1183,7 +1187,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 25px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin-bottom: 60px;
 }
 
@@ -1242,7 +1246,7 @@ body {
 
 .illustration img {
   width: 740px;
-  height: 552px;
+  /* height: 552px; */
   object-fit: contain;
 }
 
@@ -2462,15 +2466,15 @@ body {
   padding: 60px 80px;
 }
 
-/* main layout */
 .hero-content-x9 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 40px;
 }
 
-/* TEXT */
 .hero-text-clarity-x9 {
+  flex: 1;
   font-family: "Bona Nova", serif;
   font-size: 48px;
   font-weight: 700;
@@ -2478,52 +2482,74 @@ body {
   text-transform: uppercase;
   line-height: 1.4;
   letter-spacing: 2px;
-  /* max-width: 600px; */
 }
 
-.study-table-image-x9{
-  width: 791px;
-  height: 592px;
+.study-table-image-x9 {
+  flex: 1;
+  max-width: 791px;
+  width: 100%;
 }
 
-/* IMAGE */
 .study-table-image-x9 img {
-  width: 350px;
-  max-width: 100%;
-
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* 💻 Laptop */
+/* Laptop */
 @media (max-width: 1024px) {
+  .hero-x9 {
+    padding: 50px 40px;
+  }
+
   .hero-text-clarity-x9 {
     font-size: 38px;
   }
 
-  .study-table-image-x9 img {
-    width: 280px;
+  .study-table-image-x9 {
+    max-width: 500px;
   }
 }
 
-/* 📱 Tablet */
+/* Tablet + Mobile */
 @media (max-width: 768px) {
+  .hero-x9 {
+    padding: 40px 20px;
+  }
+
   .hero-content-x9 {
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    gap: 30px;
+    gap: 24px;
   }
 
   .hero-text-clarity-x9 {
     font-size: 30px;
+    line-height: 1.3;
+    width: 100%;
+    order: 1;
+  }
+
+  .study-table-image-x9 {
+    order: 2;
+    max-width: 360px;
+    width: 100%;
   }
 }
 
-/* 📱 Mobile */
+/* Mobile */
 @media (max-width: 480px) {
-  .hero-text-clarity-x9 {
-    font-size: 24px;
+  .hero-x9 {
+    padding: 30px 16px;
   }
 
-  .study-table-image-x9 img {
-    width: 220px;
+  .hero-text-clarity-x9 {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  .study-table-image-x9 {
+    max-width: 260px;
   }
 }
