@@ -2174,16 +2174,16 @@ body {
   }
 
   .rm-menu {
-    position: fixed;
+    /* position: fixed; */
     top: 80px;
     right: -100%;
     width: 75%;
-    height: calc(100vh - 80px);
+    /* height: calc(100vh - 80px); */
     background: #d8921c;
 
     flex-direction: column;
     padding: 30px;
-    gap: 25px;
+    gap: 21px;
 
     transition: 0.3s ease;
     margin-top: 0;
