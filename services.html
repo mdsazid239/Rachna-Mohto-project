@@ -6,34 +6,32 @@
     <title>Services</title>
     <link rel="icon" type="image/png" href="assets/images/logo-navbar.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
- 
+
     <style></style>
   </head>
   <body>
     <header class="rm-header">
-  <nav class="rm-navbar">
+      <nav class="rm-navbar">
+        <!-- FIX: checkbox outside -->
+        <input type="checkbox" id="rm-toggle" />
 
-    <!-- FIX: checkbox outside -->
-    <input type="checkbox" id="rm-toggle">
+        <div class="rm-nav-top">
+          <div class="rm-logo">
+            <img src="assets/images/rachna-logo.png" alt="logo" />
+          </div>
 
-    <div class="rm-nav-top">
-      <div class="rm-logo">
-        <img src="assets/images/rachna-logo.png" alt="logo">
-      </div>
+          <!-- hamburger -->
+          <label for="rm-toggle" class="rm-hamburger">☰</label>
+        </div>
 
-      <!-- hamburger -->
-      <label for="rm-toggle" class="rm-hamburger">☰</label>
-    </div>
-
-    <ul class="rm-menu">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About me</a></li>
-      <li><a href="form.html" class="rm-btn">Let’s talk</a></li>
-    </ul>
-
-  </nav>
-</header>
+        <ul class="rm-menu">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="form.html" class="rm-btn">Let’s talk</a></li>
+        </ul>
+      </nav>
+    </header>
     <div class="sg-hero">
       <div class="sg-hero__content">
         <h1 class="sg-hero__title">
@@ -51,50 +49,45 @@
         />
       </div>
     </div>
+    <section class="xme-process">
+      <div class="xme-process__grid">
+        <div class="xme-process__line"></div>
 
-    <div class="sg-process">
-      <div class="sg-process__left">
-        <img src="assets/images/rachna.png" alt="Illustration" />
-      </div>
-
-      <div class="sg-process__right">
-        <div class="sg-process__item">
-          <h2>Diagnose</h2>
+        <div class="xme-process__item">
+          <span class="xme-process__dot"></span>
+          <h3>Diagnose</h3>
           <p>
-            Find where its actually breaking. I go beneath the surface
-            identifying exactly where ownership is slipping, where decisions are
-            stalling.
+            Find where it’s breaking beneath the surface and pinpointing where
+            ownership slips & decisions stall.
           </p>
         </div>
 
-        <div class="sg-process__item">
-          <h2>Align</h2>
+        <div class="xme-process__item">
+          <span class="xme-process__dot"></span>
+          <h3>Align</h3>
           <p>
-            Confusion about roles, decisions, and expectations costs more than
-            most people realise. I bring clarity to the table, so everyone knows
-            what they own and how to move forward.
+            Role and decision confusion is costly & I bring clarity so everyone
+            knows what they own & how to move forward.
           </p>
         </div>
 
-        <div class="sg-process__item">
-          <h2>Redesign</h2>
-          <p>
-            Build the structure that holds. I put the right systems and
-            structures in place so people can operate, decide, and deliver with
-            confidence.
-          </p>
+        <div class="xme-process__item">
+          <span class="xme-process__dot"></span>
+          <h3>Redesign</h3>
+          <p>Build structures that enable confident decisions and delivery.</p>
         </div>
 
-        <div class="sg-process__item">
-          <h2>Strengthen</h2>
+        <div class="xme-process__item">
+          <span class="xme-process__dot"></span>
+          <h3>Strengthen</h3>
           <p>
-            Change only works if it sticks. I work closely to build the habits,
-            confidence, and decision-making that keep things moving long after
-            the work together is done.
+            Change only works if it sticks. I build habits & decisions that keep
+            things moving long after.
           </p>
         </div>
       </div>
-    </div>
+    </section>
+
     <section class="cta-section">
       <div class="cta-top">
         <h2>A first step to understand where you are & what's next.</h2>
@@ -102,9 +95,17 @@
           <button type="button">Book a clarity call</button>
         </a>
       </div>
+
+      <section class="xme-note">
+        <p class="xme-note__text">
+          Everything shared within a session is held in complete confidence.
+          This is a space built on trust and that trust is non-negotiable.
+        </p>
+      </section>
+
       <div class="coaching-box">
         <div class="coaching-image">
-          <img src="assets/images/Rachna Mohta-02.jpg" alt="Coaching" />
+          <img src="assets/images/meeting-chair.png" alt="Coaching" />
         </div>
         <h3>1:1 COACHING</h3>
         <p>
@@ -113,7 +114,7 @@
         </p>
       </div>
     </section>
-    <section class="services-section">
+    <!-- <section class="services-section">
       <div class="services-grid">
         <div class="service-card">
           <img
@@ -158,8 +159,8 @@
           at no cost.
         </p>
       </div>
-    </section>
-    <section class="speaking-section">
+    </section> -->
+    <!-- <section class="speaking-section">
       <div class="speaking-grid">
         <div class="talk-card">
           <img src="assets/images/Rachna Mohta-03.jpg" alt="Keynote Speaking" />
@@ -192,15 +193,104 @@
           often misses the real problem.
         </p>
       </div>
+    </section> -->
+
+    <section class="xme-services">
+      <div class="xme-services__grid">
+        <div class="xme-services__card">
+          <div class="xme-services__icon">
+            <img src="assets/images/setting.png" alt="Mentorship Program" />
+          </div>
+          <h3>Mentorship Program</h3>
+          <p>
+            A longer arc of work for those who want lasting change & not just a
+            better month. Structured sessions, accountability check-ins, and
+            direct interventions that go to the root.
+          </p>
+        </div>
+
+        <div class="xme-services__card">
+          <div class="xme-services__icon">
+            <img src="assets/images/book.png" alt="Leadership Support" />
+          </div>
+          <h3>Leadership Support</h3>
+          <p>
+            For organisations navigating growth, transitions, or repeated
+            leadership breakdowns. Practical, structured, and grounded in how
+            people actually behave & not how they’re supposed to.
+          </p>
+        </div>
+
+        <div class="xme-services__card">
+          <div class="xme-services__icon">
+            <img src="assets/images/pen.png" alt="Workshop" />
+          </div>
+          <h3>Workshop</h3>
+          <p>
+            Designed for leadership teams that need to get aligned fast. A
+            working session that leaves your team with more clarity than they
+            walked in with.
+          </p>
+        </div>
+      </div>
     </section>
+
     <section class="faq-section">
-      <div class="faq-top">
+      <!-- <div class="faq-top">
         <h2>Boundaries & Safety</h2>
         <p>
           Everything shared within a session is held in complete confidence.<br />
           This is a space built on trust and that trust is non-negotiable.
         </p>
-      </div>
+      </div> -->
+
+      <!-- SG UNIQUE LAYOUT START -->
+
+      <section class="sg-hero">
+        <img
+          src="assets/images/styling-study.png"
+          alt="illustration"
+          class="sg-hero-img"
+        />
+        <h2 class="sg-title">Free-Diagnosis</h2>
+        <p class="sg-text">
+          Start here. A focused conversation to identify where ownership,
+          decisions, or leadership are quietly breaking down in your business at
+          no cost.
+        </p>
+      </section>
+
+      <section class="sg-cards">
+        <div class="sg-card">
+          <h3 class="sg-card-title">Keynote Speaking</h3>
+          <p class="sg-card-text">
+            For conferences and leadership summits looking for a speaker who
+            brings substance over inspiration.
+          </p>
+        </div>
+
+        <div class="sg-card">
+          <h3 class="sg-card-title">90-Minute Speaking</h3>
+          <p class="sg-card-text">
+            A focused, high-impact session built for leadership teams, founders,
+            or offsites.
+          </p>
+        </div>
+      </section>
+
+      <section class="sg-panel">
+        <img
+          src="assets/images/bandar-mama.png"
+          alt="panel"
+          class="sg-panel-img"
+        />
+        <h3 class="sg-panel-title">Panel Discussions</h3>
+        <p class="sg-panel-text">
+          I bring a grounded, direct perspective to panels—particularly on
+          leadership, founder dependency, and why conversations between owners
+          often miss the real problem.
+        </p>
+      </section>
       <div class="faq-wrapper">
         <details class="faq-item" open>
           <summary>Is everything I share kept confidential?</summary>
