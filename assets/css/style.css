@@ -271,7 +271,7 @@ p {
   height: 100%;
   display: block;
   object-fit: contain;
-  background-color: #000;
+  /* background-color: #000; */
 }
 .footer-area {
   width: 100%;
@@ -537,7 +537,7 @@ body {
 }
 
 .clarity__image img {
-  max-width: 380px;
+  max-width: 891px;
   width: 100%;
   height: auto;
   display: block;
