@@ -797,26 +797,34 @@ body {
   margin: 0 auto;
   padding: 60px 20px;
   background: #f6eee3;
+  margin-top: -34px;
 }
 
 .zig-card {
   width: 320px;
 }
-
+/* 
 .zig-card img {
   width: 100%;
   height: auto;
   display: block;
+} */
+
+
+.zig-card img {
+    width: 791px;
+    height: 592px;
+    display: block;
 }
 
 /* Desktop zigzag */
 .card-1 {
-  margin-left: 52%;
+  margin-left: 32%;
 }
 
 .card-2 {
-  margin-top: 60px;
-  margin-left: 8%;
+  margin-top: 103px;
+  margin-left: -7%;
 }
 
 .card-3 {
@@ -910,6 +918,7 @@ body {
 .item p {
   font-size: 15px;
   line-height: 1.7;
+  margin-right: -211px;
 }
 
 .top-left {
@@ -975,7 +984,7 @@ body {
 
 .footer-text {
   bottom: 43px;
-  left: 22%;
+  left: 31%;
   text-align: center;
   font-size: 64px;
   font-family: "Bona Nova Sc";
@@ -1081,7 +1090,7 @@ body {
 }
 
 .center-two {
-  justify-content: center;
+  /* justify-content: center; */
   gap: 140px;
 }
 .service-item {
@@ -1129,46 +1138,24 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 100px 0;
-}
-
-.gallery-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.gallery-grid img {
-  width: 617px;
-  height: 1402px;
-  object-fit: cover;
-  transform: rotate(-90deg);
-  display: block;
-}
-.gallery {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 40px 0;
 }
 
 .gallery-grid {
+  width: 1402px;
+  height: 617px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1402px;
-  height: 617px;
   overflow: hidden;
 }
 
 .gallery-grid img {
-  width: 617px;
-  height: 1402px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-
-  transform: rotate(-90deg);
-  transform-origin: center;
+  object-position: center; /* optional: top / center / bottom */
+  display: block;
 }
 
 .testimonial-section {
@@ -2746,6 +2733,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  margin-top: -298px;
 }
 
 .hero-text-clarity-x9 {
