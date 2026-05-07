@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'bonaNovaScBold';
+    src: url('../fonts/BonaNovaSC-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'bonaNovaBold';
+    src: url('../fonts/BonaNova-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'poppinMedium';
+    src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'poppinSemiBold';
+    src: url('../fonts/Poppins-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'poppinRegular';
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'interMediumItalic';
+    src: url('../fonts/Inter_24pt-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'interMedium';
+    src: url('../fonts/Inter_24pt-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'poppinMediumItalic';
+    src: url('../fonts/Poppins-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'poppinBold';
+    src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+}
