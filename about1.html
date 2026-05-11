@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>About Us</title>
     <link rel="icon" type="image/png" href="assets/images/logo-navbar.png" />
     <link rel="stylesheet" href="assets/css/style1.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,20 +18,30 @@
         }
 
         body {
-            background: #ece7de;
+            background: #f6eee3;
+            padding-top: 100px;
         }
 
+        /* WRAPPER */
         /* WRAPPER */
         .navbar-wrapper {
             width: 100%;
             padding: 20px 12px;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 9999;
+
+            display: flex;
+            justify-content: center;
         }
 
         /* NAVBAR */
         .navbar {
             width: 100%;
             max-width: 1400px;
-            margin: auto;
 
             background: #db9221;
             border-radius: 8px;
@@ -131,6 +141,14 @@
         /* MOBILE VIEW */
         @media(max-width:768px) {
 
+           body{
+            padding-top: 90px;
+          }
+
+          .navbar-wrapper{
+              padding: 10px;
+          }
+
             .navbar {
                 padding: 14px 18px;
                 border-radius: 8px 8px 0px 0px;
@@ -217,12 +235,12 @@
     /* RIGHT CONTENT */
     .hero-content {
       flex: 1;
-      max-width: 520px;
+      max-width: 600px;
     }
 
     .hero-content h1 {
        font-family: 'bonaNovaBold';
-      font-size: 40px;
+      font-size: 50px;
       line-height: 1.1;
       color: #245136;
       margin-bottom: 18px;
@@ -342,7 +360,7 @@
 
     .large-image .lady-img{
       width:550px;
-      height: 700px;
+      height: 600px;
       border-radius:18px;
       display:block;
       object-fit:cover;
@@ -366,7 +384,7 @@
 
     .small-image img{
       width:550px;
-      height: 700px;
+      height: 600px;
       border-radius:18px;
       border:2px solid #496353;
       display:block;
@@ -769,6 +787,214 @@ font-family: 'poppinRegular';
         font-size:14px;
       }
     }
+
+/* HERO LOAD ANIMATION */
+
+.hero-image img,
+.hero-content h1,
+.hero-content p {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Delays */
+.hero-image img {
+    animation-delay: 0.2s;
+}
+
+.hero-content h1 {
+    animation-delay: 0.5s;
+}
+
+.hero-content p {
+    animation-delay: 0.8s;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ================= ABOUT ANIMATION ================= */
+
+/* Initial Hidden State */
+/* ================= ABOUT SCROLL ANIMATION ================= */
+
+/* Initial Hidden State */
+.main-heading h1,
+.main-heading p,
+.large-image .lady-img,
+.plant-img,
+.small-image img,
+.text-content p,
+.text-content h2 {
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+/* Animation Apply */
+.show-animation {
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Smooth Delays */
+.main-heading h1.show-animation {
+    animation-delay: 0.2s;
+}
+
+.main-heading p.show-animation {
+    animation-delay: 0.4s;
+}
+
+.large-image .lady-img.show-animation {
+    animation-delay: 0.6s;
+}
+
+.plant-img.show-animation {
+    animation-delay: 0.8s;
+}
+
+.small-image img.show-animation {
+    animation-delay: 0.3s;
+}
+
+.text-content p.show-animation {
+    animation-delay: 0.5s;
+}
+
+.text-content h2.show-animation {
+    animation-delay: 0.7s;
+}
+
+/* Fade Up Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ================= SMOOTH SCROLL ANIMATION ================= */
+
+/* Initial Hidden State */
+.image-box img,
+.text-box h2,
+.text-box p,
+.small-btn {
+    opacity: 0;
+    transform: translate3d(0, 60px, 0);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+/* Animation Trigger */
+.show-animation {
+    animation: smoothFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Delays */
+
+/* FIRST ROW */
+.content-row:nth-child(1) .image-box img.show-animation {
+    animation-delay: 0.2s;
+}
+
+.content-row:nth-child(1) .text-box h2.show-animation {
+    animation-delay: 0.35s;
+}
+
+.content-row:nth-child(1) .text-box p.show-animation {
+    animation-delay: 0.5s;
+}
+
+/* SECOND ROW */
+.content-row:nth-child(2) .text-box h2.show-animation {
+    animation-delay: 0.2s;
+}
+
+.content-row:nth-child(2) .text-box p.show-animation {
+    animation-delay: 0.4s;
+}
+
+.content-row:nth-child(2) .small-btn.show-animation {
+    animation-delay: 0.6s;
+}
+
+.content-row:nth-child(2) .image-box img.show-animation {
+    animation-delay: 0.8s;
+}
+
+/* Smooth Animation */
+@keyframes smoothFadeUp {
+
+    from {
+        opacity: 0;
+        transform: translate3d(0, 60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+/* Initial Hidden State */
+.footer-artwork img,
+.footer-logo img,
+.footer-text h3,
+.footer-text a,
+.footer-text p,
+.footer-social a {
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+/* Delays */
+.footer-artwork img.show-animation {
+    animation-delay: 0.2s;
+}
+
+.footer-logo img.show-animation {
+    animation-delay: 0.4s;
+}
+
+.footer-text h3.show-animation {
+    animation-delay: 0.6s;
+}
+
+.footer-text a.show-animation {
+    animation-delay: 0.8s;
+}
+
+.footer-text p.show-animation {
+    animation-delay: 1s;
+}
+
+.footer-social a:nth-child(1).show-animation {
+    animation-delay: 1.2s;
+}
+
+.footer-social a:nth-child(2).show-animation {
+    animation-delay: 1.4s;
+}
+
+.footer-social a:nth-child(3).show-animation {
+    animation-delay: 1.6s;
+}
+
+.footer-social a:nth-child(4).show-animation {
+    animation-delay: 1.8s;
+}
     </style>
 </head>
 
@@ -845,7 +1071,7 @@ font-family: 'poppinRegular';
             <div class="large-image">
 
             <!-- First Lady Image -->
-            <img src="assets/images/vender.png" alt="Lady" class="lady-img">
+            <img src="assets/images/about4.png" alt="Lady" class="lady-img">
 
             <!-- Plant Image -->
             <img src="assets/images/gulab.png" alt="Plant" class="plant-img">
@@ -860,7 +1086,7 @@ font-family: 'poppinRegular';
             <div class="small-image">
 
             <!-- Second Lady Image -->
-            <img src="assets/images/majnu.jpg" alt="Lady">
+            <img src="assets/images/about3.png" alt="Lady">
 
             </div>
 
@@ -873,7 +1099,7 @@ font-family: 'poppinRegular';
             </p>
 
             <h2>
-                Helping you to find a way through!
+                Helping you to find a <br>way through!
             </h2>
 
             </div>
@@ -887,66 +1113,66 @@ font-family: 'poppinRegular';
 
     <section class="coaching-section">
 
-    <!-- FIRST ROW -->
-    <div class="content-row">
+      <!-- FIRST ROW -->
+      <div class="content-row">
 
-        <!-- IMAGE -->
-        <div class="image-box">
-        <img src="assets/images/mohta4.png" alt="Coaching Session">
-        </div>
+          <!-- IMAGE -->
+          <div class="image-box">
+          <img src="assets/images/about1.png" alt="Coaching Session">
+          </div>
 
-        <!-- TEXT -->
-        <div class="text-box">
-        <h2>
-            Every session is<br>
-            built around you
-        </h2>
+          <!-- TEXT -->
+          <div class="text-box">
+          <h2>
+              Every session is<br>
+              built around you
+          </h2>
 
-        <p>
-            My approach integrates clinical psychology, NLP,
-            and certified coaching practice, creating a space
-            that is safe enough to be honest in and structured
-            enough to produce something real. The work is
-            always intentional, always tailored, and always
-            oriented toward one thing: clarity that moves you.
-        </p>
-        </div>
+          <p>
+              My approach integrates clinical psychology, NLP,
+              and certified coaching practice, creating a space
+              that is safe enough to be honest in and structured
+              enough to produce something real. The work is
+              always intentional, always tailored, and always
+              oriented toward one thing: clarity that moves you.
+          </p>
+          </div>
 
-    </div>
+      </div>
 
 
-    <!-- SECOND ROW -->
-    <div class="content-row reverse">
+      <!-- SECOND ROW -->
+      <div class="content-row reverse">
 
-        <!-- TEXT -->
-        <div class="text-box right-align">
+          <!-- TEXT -->
+          <div class="text-box right-align">
 
-        <h2>
-            Bringing clarity &<br>
-            depth to every stage
-        </h2>
+          <h2>
+              Bringing clarity &<br>
+              depth to every stage
+          </h2>
 
-        <p>
-            Speak from the intersection of psychology, coaching,
-            and real human experience, which means my talks are
-            never just informational. They are intentional. I want
-            every person in the room to leave with something they
-            can actually use — a shift in perspective, a clearer
-            question, a framework that works when the pressure is real.
-        </p>
+          <p>
+              Speak from the intersection of psychology, coaching,
+              and real human experience, which means my talks are
+              never just informational. They are intentional. I want
+              every person in the room to leave with something they
+              can actually use — a shift in perspective, a clearer
+              question, a framework that works when the pressure is real.
+          </p>
 
-        <a href="#" class="small-btn">
-            ted talks blah
-        </a>
+          <a href="#" class="small-btn">
+              ted talks
+          </a>
 
-        </div>
+          </div>
 
-        <!-- IMAGE -->
-        <div class="image-box">
-        <img src="assets/images/praying.png" alt="Speaker">
-        </div>
+          <!-- IMAGE -->
+          <div class="image-box">
+          <img src="assets/images/about5.png" alt="Speaker">
+          </div>
 
-    </div>
+      </div>
 
     </section>
 
@@ -1029,6 +1255,85 @@ font-family: 'poppinRegular';
             navLinks.classList.toggle('active');
         });
     </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const elements = document.querySelectorAll(
+        '.main-heading h1, .main-heading p, \
+        .large-image .lady-img, .plant-img, \
+        .small-image img, .text-content p, .text-content h2'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show-animation");
+            }
+
+        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+});
+</script>
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const elements = document.querySelectorAll(
+        '.image-box img, .text-box h2, .text-box p, .small-btn'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show-animation");
+                observer.unobserve(entry.target);
+            }
+
+        });
+
+    }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const elements = document.querySelectorAll(
+        '.footer-artwork img, .footer-logo img, .footer-text h3, .footer-text a, .footer-text p, .footer-social a'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show-animation");
+            }
+
+        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+});
+</script>
 </body>
 
 </html>

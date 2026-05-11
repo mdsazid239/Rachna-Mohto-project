@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Services</title>
     <link rel="icon" type="image/png" href="assets/images/logo-navbar.png" />
     <link rel="stylesheet" href="assets/css/style1.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         * {
             margin: 0;
@@ -18,20 +20,30 @@
         }
 
         body {
-            background: #ece7de;
+            background: #f6eee3;
+            padding-top: 100px;
         }
 
+        /* WRAPPER */
         /* WRAPPER */
         .navbar-wrapper {
             width: 100%;
             padding: 20px 12px;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 9999;
+
+            display: flex;
+            justify-content: center;
         }
 
         /* NAVBAR */
         .navbar {
             width: 100%;
             max-width: 1400px;
-            margin: auto;
 
             background: #db9221;
             border-radius: 8px;
@@ -68,7 +80,7 @@
             font-size: 18px;
         }
 
-        .logo-img{
+        .logo-img {
             height: 35px;
         }
 
@@ -106,9 +118,12 @@
             padding: 8px 14px;
             border-radius: 8px;
             box-shadow:
-                    inset 0 8px 8px -6px rgba(0,0,0,0.35),   /* top */
-                    inset 6px 0 6px -6px rgba(0,0,0,0.30),   /* left */
-                    inset -6px 0 6px -6px rgba(0,0,0,0.30); /* right */
+                inset 0 8px 8px -6px rgba(0, 0, 0, 0.35),
+                /* top */
+                inset 6px 0 6px -6px rgba(0, 0, 0, 0.30),
+                /* left */
+                inset -6px 0 6px -6px rgba(0, 0, 0, 0.30);
+            /* right */
         }
 
         /* HAMBURGER */
@@ -130,6 +145,13 @@
 
         /* MOBILE VIEW */
         @media(max-width:768px) {
+            body {
+                padding-top: 90px;
+            }
+
+            .navbar-wrapper {
+                padding: 10px;
+            }
 
             .navbar {
                 padding: 14px 18px;
@@ -182,170 +204,1174 @@
         }
 
         .discover-section {
-    padding: 80px 20px 70px;
-    overflow: hidden;
-}
+            padding: 80px 20px 70px;
+            overflow: hidden;
+        }
 
-.discover-container {
-    max-width: 1250px;
-    margin: auto;
-}
+        .discover-container {
+            max-width: 1250px;
+            margin: auto;
+        }
 
-/* ================= TOP SECTION ================= */
+        /* ================= TOP SECTION ================= */
 
-.discover-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    margin-bottom: 90px;
-}
+        .discover-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            margin-bottom: 90px;
+        }
 
-.discover-left {
-    flex: 1;
-}
+        .discover-left {
+            flex: 1;
+        }
 
-.discover-left h2 {
-    font-size: 64px;
-    line-height: 1.1;
-    color: #433326;
-    font-weight: 700;
-    margin: 0;
-    font-family: serif;
-    font-family: 'bonaNovaBold';
-}
+        .discover-left h2 {
+            font-size: 64px;
+            line-height: 1.1;
+            color: #433326;
+            font-weight: 700;
+            margin: 0;
+            font-family: serif;
+            font-family: 'bonaNovaBold';
+        }
 
-.discover-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
+        .discover-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
 
-.discover-right img {
+        .discover-right img {
+            width: 100%;
+            max-width: 520px;
+            object-fit: contain;
+        }
+
+        /* ================= STEPS SECTION ================= */
+
+        .discover-steps {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            padding-top: 40px;
+        }
+
+        .step-line {
+            position: absolute;
+            top: 52px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #6d8a75;
+        }
+
+        .step {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .dot {
+            width: 24px;
+            height: 24px;
+            background: #db9221;
+            border-radius: 50%;
+            margin: 0 auto 18px;
+        }
+
+        .step h3 {
+            font-size: 22px;
+            color: #413326;
+            margin-bottom: 14px;
+            font-weight: 700;
+            font-family: serif;
+        }
+
+        .step p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #433326;
+            max-width: 260px;
+            margin: auto;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 992px) {
+
+            .discover-top {
+                flex-direction: column;
+                text-align: center;
+                margin-bottom: 70px;
+            }
+
+            .discover-left h2 {
+                font-size: 52px;
+            }
+
+            .discover-right img {
+                max-width: 420px;
+            }
+
+            .discover-steps {
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 60px;
+            }
+
+            .step-line {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .discover-section {
+                padding: 60px 18px;
+            }
+
+            .discover-left h2 {
+                font-size: 38px;
+            }
+
+            .discover-right img {
+                max-width: 320px;
+            }
+
+            .discover-steps {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding-top: 0;
+            }
+
+            .dot {
+                margin-bottom: 15px;
+            }
+
+            .step h3 {
+                font-size: 26px;
+            }
+
+            .step p {
+                font-size: 15px;
+            }
+        }
+
+        .cta-section {
+            width: 100%;
+        }
+
+        /* ================= ORANGE BOX ================= */
+
+        .cta-box {
+            background: #db9221;
+            min-height: 600px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .cta-box h2 {
+            color: #fff;
+            font-size: 30px;
+            line-height: 1.3;
+            font-weight: 700;
+            max-width: 900px;
+            margin-bottom: 28px;
+            font-family: 'bonaNovaBold';
+        }
+
+        /* ================= BUTTON ================= */
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 30px;
+            border: 1px solid #fff;
+
+            border-radius: 40px;
+
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+
+            transition: 0.3s ease;
+            font-family: 'bonaNovaBold';
+        }
+
+        .cta-btn:hover {
+            background: #fff;
+            color: #db9221;
+        }
+
+        /* ================= BOTTOM TEXT ================= */
+
+        .cta-bottom-text {
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .cta-bottom-text p {
+            max-width: 1200px;
+            margin: auto;
+
+            color: #000000;
+            font-size: 16px;
+            line-height: 1.9;
+
+            font-family: 'poppinMediumItalic';
+            font-weight: 500;
+
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 992px) {
+
+            .cta-box {
+                min-height: 430px;
+            }
+
+            .cta-box h2 {
+                font-size: 38px;
+                max-width: 700px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .cta-box {
+                min-height: 360px;
+                padding: 40px 25px;
+            }
+
+            .cta-box h2 {
+                font-size: 30px;
+                line-height: 1.4;
+            }
+
+            .cta-btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+
+            .cta-bottom-text {
+                padding: 40px 20px;
+            }
+
+            .cta-bottom-text p {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .cta-box h2 {
+                font-size: 24px;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 240px;
+            }
+
+            .cta-bottom-text p {
+                font-size: 14px;
+            }
+        }
+
+        .services-section {
+            padding: 80px 20px;
+        }
+
+        .services-container {
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        /* ================= TOP CONTENT ================= */
+
+        .services-top {
+            text-align: center;
+            margin-bottom: 90px;
+        }
+
+        .people-image img {
+            width: 100%;
+            max-width: 420px;
+            object-fit: contain;
+        }
+
+        .services-top h2 {
+            font-size: 40px;
+            color: #433326;
+            margin-top: 10px;
+            margin-bottom: 18px;
+            font-weight: 700;
+            font-family: 'bonaNovaScBold';
+        }
+
+        .services-top p {
+            max-width: 760px;
+            margin: auto;
+
+            font-size: 18px;
+            line-height: 1.8;
+            color: #433326;
+            font-family: 'poppinMedium';
+        }
+
+        /* ================= CARDS ================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .service-card {
+            background: #245136;
+            border-radius: 40px;
+
+            padding: 45px 35px;
+
+            text-align: center;
+            color: #fff;
+
+            transition: 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .icon img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .service-card h3 {
+            font-size: 27px;
+            line-height: 1.2;
+            margin-bottom: 22px;
+            font-family: 'bonaNovaScBold';
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            font-family: 'poppinMedium';
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1100px) {
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .services-section {
+                padding: 60px 18px;
+            }
+
+            .services-top {
+                margin-bottom: 60px;
+            }
+
+            .people-image img {
+                max-width: 300px;
+            }
+
+            .services-top h2 {
+                font-size: 38px;
+            }
+
+            .services-top p {
+                font-size: 16px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .service-card {
+                border-radius: 28px;
+                padding: 35px 25px;
+            }
+
+            .service-card h3 {
+                font-size: 30px;
+            }
+
+            .service-card p {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .services-top h2 {
+                font-size: 30px;
+            }
+
+            .service-card h3 {
+                font-size: 26px;
+            }
+
+            .icon img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        .diagnosis-section {
+            background: #f4eee6;
+            padding: 80px 20px;
+        }
+
+        .diagnosis-container {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        /* ================= TOP CONTENT ================= */
+
+        .diagnosis-top {
+            text-align: center;
+            margin-bottom: 90px;
+        }
+
+        .diagnosis-image img {
+            width: 100%;
+            max-width: 500px;
+            object-fit: contain;
+        }
+
+        .diagnosis-top h2 {
+            font-size: 40px;
+            color: #433326;
+            margin-top: 10px;
+            margin-bottom: 18px;
+            font-family: 'bonaNovaScBold';
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .diagnosis-top p {
+            max-width: 760px;
+            margin: auto;
+
+            font-size: 18px;
+            line-height: 1.8;
+            color: #433326;
+            font-family: 'poppinMedium';
+        }
+
+        /* ================= CARDS ================= */
+
+        .diagnosis-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .diagnosis-card {
+            background: #245136;
+            color: #fff;
+
+            width: 100%;
+            max-width: 470px;
+
+            border-radius: 35px;
+
+            padding: 45px 35px;
+
+            text-align: center;
+
+            transition: 0.3s ease;
+        }
+
+        .diagnosis-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card-icon {
+            margin-bottom: 25px;
+        }
+
+        .card-icon img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .diagnosis-card h3 {
+            font-size: 27px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-family: 'bonaNovaScBold';
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .diagnosis-card p {
+            font-family: 'poppinMedium';
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 992px) {
+
+            .diagnosis-top {
+                margin-bottom: 70px;
+            }
+
+            .diagnosis-image img {
+                max-width: 380px;
+            }
+
+            .diagnosis-top h2 {
+                font-size: 42px;
+            }
+
+            .diagnosis-grid {
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .diagnosis-section {
+                padding: 60px 18px;
+            }
+
+            .diagnosis-image img {
+                max-width: 300px;
+            }
+
+            .diagnosis-top h2 {
+                font-size: 34px;
+            }
+
+            .diagnosis-top p {
+                font-size: 16px;
+            }
+
+            .diagnosis-card {
+                padding: 35px 25px;
+                border-radius: 28px;
+            }
+
+            .diagnosis-card h3 {
+                font-size: 28px;
+            }
+
+            .diagnosis-card p {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .diagnosis-top h2 {
+                font-size: 28px;
+            }
+
+            .diagnosis-card h3 {
+                font-size: 24px;
+            }
+
+            .card-icon img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        .faq-section {
+            background: #f4eee6;
+            padding: 80px 20px;
+        }
+
+        .faq-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* ================= TOP ================= */
+
+        .faq-top {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .faq-image img {
+            width: 100%;
+            max-width: 500px;
+            object-fit: contain;
+        }
+
+        .faq-top h2 {
+            font-size: 40px;
+            color: #433326;
+            margin-top: 15px;
+            margin-bottom: 18px;
+            font-family: 'bonaNovaScBold';
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .faq-top p {
+            max-width: 760px;
+            margin: auto;
+
+            font-size: 18px;
+            line-height: 1.8;
+            color: #433326;
+            font-family: 'poppinMedium';
+        }
+
+        /* ================= FAQ ================= */
+
+        .faq-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .faq-item {
+            background: #d8921f;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        /* QUESTION */
+
+        .faq-question {
+            width: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            padding: 18px 18px;
+
+            cursor: pointer;
+
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            font-family: 'poppinBold';
+
+            text-align: left;
+        }
+
+        .faq-question .icon {
+            font-size: 34px;
+            line-height: 1;
+            transition: 0.3s ease;
+        }
+
+        /* ANSWER */
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+
+            transition: max-height 0.45s ease,
+                padding 0.35s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 30px 28px 55px;
+            font-family: 'poppinRegular';
+            color: #000;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        /* ACTIVE */
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-item.active .icon {
+            transform: rotate(180deg);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 768px) {
+
+            .faq-section {
+                padding: 60px 18px;
+            }
+
+            .faq-top {
+                margin-bottom: 60px;
+            }
+
+            .faq-image img {
+                max-width: 320px;
+            }
+
+            .faq-top h2 {
+                font-size: 34px;
+            }
+
+            .faq-top p {
+                font-size: 16px;
+            }
+
+            .faq-question {
+                padding: 22px 22px;
+                font-size: 21px;
+                gap: 12px;
+            }
+
+            .faq-question .icon {
+                font-size: 28px;
+            }
+
+            .faq-answer p {
+                padding: 0 22px 24px 62px;
+                font-size: 15px;
+                line-height: 1.8;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .faq-top h2 {
+                font-size: 28px;
+            }
+
+            .faq-question {
+                font-size: 18px;
+                padding: 20px 18px;
+            }
+
+            .faq-answer p {
+                padding: 0 18px 22px 52px;
+                font-size: 14px;
+            }
+        }
+
+        .custom-footer {
+            padding: 40px 20px 50px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* =========================
+       TOP IMAGE
+    ========================== */
+
+        .footer-artwork {
+            margin-bottom: 40px;
+        }
+
+        .footer-artwork img {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: auto;
+            object-fit: contain;
+        }
+
+        /* =========================
+       LOGO
+    ========================== */
+
+        .footer-logo {
+            margin-bottom: 12px;
+        }
+
+        .footer-logo img {
+            width: 70px;
+            object-fit: contain;
+        }
+
+        /* =========================
+       TEXT
+    ========================== */
+
+        .footer-text {
+            margin-bottom: 18px;
+        }
+
+        .footer-text h3 {
+            font-size: 14px;
+            color: #413326;
+            margin-bottom: 12px;
+            font-weight: 500;
+            font-family: 'poppinRegular';
+        }
+
+        .footer-text a {
+            color: #db9221;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            font-family: 'poppinRegular';
+        }
+
+        .footer-text p {
+            color: #413326;
+            font-size: 14px;
+            font-family: 'poppinRegular';
+        }
+
+        /* =========================
+       SOCIAL ICONS
+    ========================== */
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            color: #413326;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-3px);
+            color: #d8921c;
+        }
+
+        /* =========================
+       TABLET
+    ========================== */
+
+        @media (max-width:991px) {
+
+            .footer-artwork img {
+                max-width: 450px;
+            }
+        }
+
+        /* =========================
+       MOBILE
+    ========================== */
+
+        @media (max-width:576px) {
+
+            .custom-footer {
+                padding: 30px 15px 40px;
+            }
+
+            .footer-artwork {
+                margin-bottom: 30px;
+            }
+
+            .footer-artwork img {
+                max-width: 100%;
+            }
+
+            .footer-logo img {
+                width: 60px;
+            }
+
+            .footer-text h3 {
+                font-size: 16px;
+            }
+
+            .footer-text a {
+                font-size: 15px;
+            }
+
+            .footer-text p {
+                font-size: 14px;
+            }
+
+            .footer-social {
+                gap: 14px;
+            }
+
+            .footer-social a {
+                font-size: 14px;
+            }
+        }
+
+
+
+        /* ================= ANIMATIONS ================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Initial State */
+        .discover-left h2,
+        .discover-right img,
+        .step h3,
+        .step p {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+
+        /* Animate when visible */
+        .show-animation {
+            animation: fadeUp 1s ease forwards;
+        }
+
+        /* Different Delays */
+        .discover-left h2.show-animation {
+            animation-delay: 0.2s;
+        }
+
+        .discover-right img.show-animation {
+            animation-delay: 0.5s;
+        }
+
+        .step:nth-child(2) h3,
+        .step:nth-child(2) p {
+            animation-delay: 0.2s;
+        }
+
+        .step:nth-child(3) h3,
+        .step:nth-child(3) p {
+            animation-delay: 0.4s;
+        }
+
+        .step:nth-child(4) h3,
+        .step:nth-child(4) p {
+            animation-delay: 0.6s;
+        }
+
+        .step:nth-child(5) h3,
+        .step:nth-child(5) p {
+            animation-delay: 0.8s;
+        }
+
+        /* ================= SERVICES ANIMATION ================= */
+
+        /* Initial Hidden State */
+        .people-image,
+        .services-top h2,
+        .services-top p,
+        .service-card {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+
+        /* Delays */
+        .people-image.show-animation {
+            animation-delay: 0.2s;
+        }
+
+        .services-top h2.show-animation {
+            animation-delay: 0.4s;
+        }
+
+        .services-top p.show-animation {
+            animation-delay: 0.6s;
+        }
+
+        .service-card:nth-child(1).show-animation {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(2).show-animation {
+            animation-delay: 0.4s;
+        }
+
+        .service-card:nth-child(3).show-animation {
+            animation-delay: 0.6s;
+        }
+
+        /* ================= DIAGNOSIS ANIMATION ================= */
+
+        /* Initial Hidden State */
+        .diagnosis-image img,
+        .diagnosis-top h2,
+        .diagnosis-top p,
+        .diagnosis-card {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+
+        /* Delays */
+        .diagnosis-image img.show-animation {
+            animation-delay: 0.2s;
+        }
+
+        .diagnosis-top h2.show-animation {
+            animation-delay: 0.4s;
+        }
+
+        .diagnosis-top p.show-animation {
+            animation-delay: 0.6s;
+        }
+
+        .diagnosis-card:nth-child(1).show-animation {
+            animation-delay: 0.2s;
+        }
+
+        .diagnosis-card:nth-child(2).show-animation {
+            animation-delay: 0.5s;
+        }
+
+        /* ================= FAQ ANIMATION ================= */
+
+        /* Initial Hidden State */
+        .faq-image img,
+        .faq-top h2,
+        .faq-top p,
+        .faq-item {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+
+        /* Delays */
+        .faq-image img.show-animation {
+            animation-delay: 0.2s;
+        }
+
+        .faq-top h2.show-animation {
+            animation-delay: 0.4s;
+        }
+
+        .faq-top p.show-animation {
+            animation-delay: 0.6s;
+        }
+
+        .faq-item:nth-child(1).show-animation {
+            animation-delay: 0.2s;
+        }
+
+        .faq-item:nth-child(2).show-animation {
+            animation-delay: 0.4s;
+        }
+
+        .faq-item:nth-child(3).show-animation {
+            animation-delay: 0.6s;
+        }
+
+        .faq-item:nth-child(4).show-animation {
+            animation-delay: 0.8s;
+        }
+
+        .faq-item:nth-child(5).show-animation {
+            animation-delay: 1s;
+        }
+
+        /* ================= FOOTER ANIMATION ================= */
+
+        /* Initial Hidden State */
+        .footer-artwork img,
+        .footer-logo img,
+        .footer-text h3,
+        .footer-text a,
+        .footer-text p,
+        .footer-social a {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+
+        /* Delays */
+        .footer-artwork img.show-animation {
+            animation-delay: 0.2s;
+        }
+
+        .footer-logo img.show-animation {
+            animation-delay: 0.4s;
+        }
+
+        .footer-text h3.show-animation {
+            animation-delay: 0.6s;
+        }
+
+        .footer-text a.show-animation {
+            animation-delay: 0.8s;
+        }
+
+        .footer-text p.show-animation {
+            animation-delay: 1s;
+        }
+
+        .footer-social a:nth-child(1).show-animation {
+            animation-delay: 1.2s;
+        }
+
+        .footer-social a:nth-child(2).show-animation {
+            animation-delay: 1.4s;
+        }
+
+        .footer-social a:nth-child(3).show-animation {
+            animation-delay: 1.6s;
+        }
+
+        .footer-social a:nth-child(4).show-animation {
+            animation-delay: 1.8s;
+        }
+
+        /* ================= SECTION ================= */
+/* ================= SECTION ================= */
+
+.cta-section {
     width: 100%;
-    max-width: 520px;
-    object-fit: contain;
+    height: 120vh;
 }
 
-/* ================= STEPS SECTION ================= */
-
-.discover-steps {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    padding-top: 40px;
-}
-
-.step-line {
-    position: absolute;
-    top: 52px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: #6d8a75;
-}
-
-.step {
-    position: relative;
-    text-align: center;
-    z-index: 2;
-}
-
-.dot {
-    width: 24px;
-    height: 24px;
-    background: #db9221;
-    border-radius: 50%;
-    margin: 0 auto 18px;
-}
-
-.step h3 {
-    font-size: 22px;
-    color: #413326;
-    margin-bottom: 14px;
-    font-weight: 700;
-    font-family: serif;
-}
-
-.step p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #433326;
-    max-width: 260px;
-    margin: auto;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 992px) {
-
-    .discover-top {
-        flex-direction: column;
-        text-align: center;
-        margin-bottom: 70px;
-    }
-
-    .discover-left h2 {
-        font-size: 52px;
-    }
-
-    .discover-right img {
-        max-width: 420px;
-    }
-
-    .discover-steps {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 60px;
-    }
-
-    .step-line {
-        display: none;
-    }
-}
-
-@media (max-width: 576px) {
-
-    .discover-section {
-        padding: 60px 18px;
-    }
-
-    .discover-left h2 {
-        font-size: 38px;
-    }
-
-    .discover-right img {
-        max-width: 320px;
-    }
-
-    .discover-steps {
-        grid-template-columns: 1fr;
-        gap: 50px;
-        padding-top: 0;
-    }
-
-    .dot {
-        margin-bottom: 15px;
-    }
-
-    .step h3 {
-        font-size: 26px;
-    }
-
-    .step p {
-        font-size: 15px;
-    }
-}
-
-    .cta-section {
-    width: 100%;
-}
-
-/* ================= ORANGE BOX ================= */
+/* ================= CTA BOX ================= */
 
 .cta-box {
-    background: #db9221;
-    min-height: 600px;
+    position: relative;
+
+    width: 100%;
+    height: 120vh;
+
+    background: #f6eee3;
+
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
@@ -353,16 +1379,50 @@
     justify-content: center;
 
     text-align: center;
+
     padding: 40px 20px;
+}
+
+/* ================= GREEN BALL ================= */
+
+.cta-bg {
+    position: absolute;
+
+    width: 350vw;
+    height: 350vw;
+
+    background: #db9221;
+
+    border-radius: 50%;
+
+    left: -220vw;
+    bottom: -220vw;
+
+    transform: scale(0);
+
+    z-index: 1;
+
+    will-change: transform;
+}
+
+/* ================= CONTENT ================= */
+
+.cta-box h2,
+.cta-btn {
+    position: relative;
+    z-index: 2;
 }
 
 .cta-box h2 {
     color: #fff;
+
     font-size: 30px;
     line-height: 1.3;
-    font-weight: 700;
+
     max-width: 900px;
+
     margin-bottom: 28px;
+
     font-family: 'bonaNovaBold';
 }
 
@@ -370,745 +1430,82 @@
 
 .cta-btn {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     padding: 14px 30px;
+
     border: 1px solid #fff;
 
     border-radius: 40px;
 
     color: #fff;
+
     text-decoration: none;
+
     font-size: 15px;
-    font-weight: 500;
+
+    font-family: 'bonaNovaBold';
 
     transition: 0.3s ease;
-    font-family: 'bonaNovaBold';
 }
 
 .cta-btn:hover {
     background: #fff;
-    color: #db9221;
+    color: #5f7c68;
 }
 
-/* ================= BOTTOM TEXT ================= */
+/* ================= TABLET ================= */
 
-.cta-bottom-text {
-    text-align: center;
-    padding: 55px 20px;
-}
+@media(max-width:991px){
 
-.cta-bottom-text p {
-    max-width: 1200px;
-    margin: auto;
-
-    color: #000000;
-    font-size: 16px;
-    line-height: 1.9;
-
-    font-family: 'poppinMediumItalic';
-    font-weight: 500;
-
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 992px) {
-
-    .cta-box {
-        min-height: 430px;
-    }
-
-    .cta-box h2 {
+    .cta-box h2{
         font-size: 38px;
-        max-width: 700px;
+    }
+
+    .cta-bg{
+        width: 420vw;
+        height: 420vw;
+
+        left: -260vw;
+        bottom: -260vw;
     }
 }
 
-@media (max-width: 768px) {
+/* ================= MOBILE ================= */
 
-    .cta-box {
-        min-height: 360px;
-        padding: 40px 25px;
+@media(max-width:768px){
+
+    .cta-section,
+    .cta-box{
+        height: 100vh;
+        min-height: 100vh;
     }
 
-    .cta-box h2 {
-        font-size: 30px;
+    .cta-box{
+        padding: 40px 24px;
+    }
+
+    .cta-box h2{
+        font-size: 24px;
         line-height: 1.4;
     }
 
-    .cta-btn {
+    .cta-btn{
         padding: 12px 24px;
         font-size: 14px;
     }
 
-    .cta-bottom-text {
-        padding: 40px 20px;
-    }
+    .cta-bg{
 
-    .cta-bottom-text p {
-        font-size: 15px;
-        line-height: 1.8;
-    }
-}
+        width: 520vw;
+        height: 520vw;
 
-@media (max-width: 480px) {
-
-    .cta-box h2 {
-        font-size: 24px;
-    }
-
-    .cta-btn {
-        width: 100%;
-        max-width: 240px;
-    }
-
-    .cta-bottom-text p {
-        font-size: 14px;
+        left: -310vw;
+        bottom: -310vw;
     }
 }
-
-.services-section {
-    padding: 80px 20px;
-}
-
-.services-container {
-    max-width: 1300px;
-    margin: auto;
-}
-
-/* ================= TOP CONTENT ================= */
-
-.services-top {
-    text-align: center;
-    margin-bottom: 90px;
-}
-
-.people-image img {
-    width: 100%;
-    max-width: 420px;
-    object-fit: contain;
-}
-
-.services-top h2 {
-    font-size: 40px;
-    color: #433326;
-    margin-top: 10px;
-    margin-bottom: 18px;
-    font-weight: 700;
-    font-family: 'bonaNovaScBold';
-}
-
-.services-top p {
-    max-width: 760px;
-    margin: auto;
-
-    font-size: 18px;
-    line-height: 1.8;
-    color: #433326;
-    font-family: 'poppinMedium';
-}
-
-/* ================= CARDS ================= */
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
-}
-
-.service-card {
-    background: #245136;
-    border-radius: 40px;
-
-    padding: 45px 35px;
-
-    text-align: center;
-    color: #fff;
-
-    transition: 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-6px);
-}
-
-.icon img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-}
-
-.service-card h3 {
-    font-size: 27px;
-    line-height: 1.2;
-    margin-bottom: 22px;
-    font-family: 'bonaNovaScBold';
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.service-card p {
-    font-family: 'poppinMedium';
-    font-size: 16px;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.92);
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 1100px) {
-
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-
-    .services-section {
-        padding: 60px 18px;
-    }
-
-    .services-top {
-        margin-bottom: 60px;
-    }
-
-    .people-image img {
-        max-width: 300px;
-    }
-
-    .services-top h2 {
-        font-size: 38px;
-    }
-
-    .services-top p {
-        font-size: 16px;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .service-card {
-        border-radius: 28px;
-        padding: 35px 25px;
-    }
-
-    .service-card h3 {
-        font-size: 30px;
-    }
-
-    .service-card p {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .services-top h2 {
-        font-size: 30px;
-    }
-
-    .service-card h3 {
-        font-size: 26px;
-    }
-
-    .icon img {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-.diagnosis-section {
-    background: #f4eee6;
-    padding: 80px 20px;
-}
-
-.diagnosis-container {
-    max-width: 1250px;
-    margin: auto;
-}
-
-/* ================= TOP CONTENT ================= */
-
-.diagnosis-top {
-    text-align: center;
-    margin-bottom: 90px;
-}
-
-.diagnosis-image img {
-    width: 100%;
-    max-width: 500px;
-    object-fit: contain;
-}
-
-.diagnosis-top h2 {
-    font-size: 40px;
-    color: #433326;
-    margin-top: 10px;
-    margin-bottom: 18px;
-     font-family: 'bonaNovaScBold';
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.diagnosis-top p {
-    max-width: 760px;
-    margin: auto;
-
-    font-size: 18px;
-    line-height: 1.8;
-    color: #433326;
-    font-family: 'poppinMedium';
-}
-
-/* ================= CARDS ================= */
-
-.diagnosis-grid {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.diagnosis-card {
-    background: #245136;
-    color: #fff;
-
-    width: 100%;
-    max-width: 470px;
-
-    border-radius: 35px;
-
-    padding: 45px 35px;
-
-    text-align: center;
-
-    transition: 0.3s ease;
-}
-
-.diagnosis-card:hover {
-    transform: translateY(-6px);
-}
-
-.card-icon {
-    margin-bottom: 25px;
-}
-
-.card-icon img {
-    width: 58px;
-    height: 58px;
-    object-fit: contain;
-}
-
-.diagnosis-card h3 {
-    font-size: 27px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    font-family: 'bonaNovaScBold';
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.diagnosis-card p {
-    font-family: 'poppinMedium';
-    font-size: 16px;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.92);
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 992px) {
-
-    .diagnosis-top {
-        margin-bottom: 70px;
-    }
-
-    .diagnosis-image img {
-        max-width: 380px;
-    }
-
-    .diagnosis-top h2 {
-        font-size: 42px;
-    }
-
-    .diagnosis-grid {
-        gap: 25px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .diagnosis-section {
-        padding: 60px 18px;
-    }
-
-    .diagnosis-image img {
-        max-width: 300px;
-    }
-
-    .diagnosis-top h2 {
-        font-size: 34px;
-    }
-
-    .diagnosis-top p {
-        font-size: 16px;
-    }
-
-    .diagnosis-card {
-        padding: 35px 25px;
-        border-radius: 28px;
-    }
-
-    .diagnosis-card h3 {
-        font-size: 28px;
-    }
-
-    .diagnosis-card p {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .diagnosis-top h2 {
-        font-size: 28px;
-    }
-
-    .diagnosis-card h3 {
-        font-size: 24px;
-    }
-
-    .card-icon img {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-.faq-section {
-    background: #f4eee6;
-    padding: 80px 20px;
-}
-
-.faq-container {
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* ================= TOP ================= */
-
-.faq-top {
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.faq-image img {
-    width: 100%;
-    max-width: 500px;
-    object-fit: contain;
-}
-
-.faq-top h2 {
-    font-size: 40px;
-    color: #433326;
-    margin-top: 15px;
-    margin-bottom: 18px;
-    font-family: 'bonaNovaScBold';
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.faq-top p {
-    max-width: 760px;
-    margin: auto;
-
-    font-size: 18px;
-    line-height: 1.8;
-    color: #433326;
-    font-family: 'poppinMedium';
-}
-
-/* ================= FAQ ================= */
-
-.faq-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-
-.faq-item {
-    background: #d8921f;
-    border-radius: 24px;
-    overflow: hidden;
-}
-
-/* QUESTION */
-
-.faq-question {
-    width: 100%;
-    border: none;
-    outline: none;
-    background: transparent;
-
-    display: flex;
-    align-items: center;
-    gap: 16px;
-
-    padding: 18px 18px;
-
-    cursor: pointer;
-
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-    font-family: 'poppinBold';
-
-    text-align: left;
-}
-
-.faq-question .icon {
-    font-size: 34px;
-    line-height: 1;
-    transition: 0.3s ease;
-}
-
-/* ANSWER */
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-
-    transition: max-height 0.45s ease,
-                padding 0.35s ease;
-}
-
-.faq-answer p {
-    padding: 0 30px 28px 55px;
-    font-family: 'poppinRegular';
-    color: #000;
-    font-size: 16px;
-    line-height: 1.9;
-}
-
-/* ACTIVE */
-
-.faq-item.active .faq-answer {
-    max-height: 300px;
-}
-
-.faq-item.active .icon {
-    transform: rotate(180deg);
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 768px) {
-
-    .faq-section {
-        padding: 60px 18px;
-    }
-
-    .faq-top {
-        margin-bottom: 60px;
-    }
-
-    .faq-image img {
-        max-width: 320px;
-    }
-
-    .faq-top h2 {
-        font-size: 34px;
-    }
-
-    .faq-top p {
-        font-size: 16px;
-    }
-
-    .faq-question {
-        padding: 22px 22px;
-        font-size: 21px;
-        gap: 12px;
-    }
-
-    .faq-question .icon {
-        font-size: 28px;
-    }
-
-    .faq-answer p {
-        padding: 0 22px 24px 62px;
-        font-size: 15px;
-        line-height: 1.8;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .faq-top h2 {
-        font-size: 28px;
-    }
-
-    .faq-question {
-        font-size: 18px;
-        padding: 20px 18px;
-    }
-
-    .faq-answer p {
-        padding: 0 18px 22px 52px;
-        font-size: 14px;
-    }
-}
-    
-    .custom-footer{
-      padding:40px 20px 50px;
-      text-align:center;
-      overflow:hidden;
-    }
-
-    .footer-container{
-      max-width:1200px;
-      margin:auto;
-    }
-
-    /* =========================
-       TOP IMAGE
-    ========================== */
-
-    .footer-artwork{
-      margin-bottom:40px;
-    }
-
-    .footer-artwork img{
-      width:100%;
-      max-width:600px;
-      display:block;
-      margin:auto;
-      object-fit:contain;
-    }
-
-    /* =========================
-       LOGO
-    ========================== */
-
-    .footer-logo{
-      margin-bottom:12px;
-    }
-
-    .footer-logo img{
-      width:70px;
-      object-fit:contain;
-    }
-
-    /* =========================
-       TEXT
-    ========================== */
-
-    .footer-text{
-      margin-bottom:18px;
-    }
-
-    .footer-text h3{
-      font-size:14px;
-      color:#413326;
-      margin-bottom:12px;
-      font-weight:500;
-      font-family: 'poppinRegular';
-    }
-
-    .footer-text a{
-      color:#db9221;
-      text-decoration:none;
-      font-size:14px;
-      font-weight:600;
-      display:inline-block;
-      font-family: 'poppinRegular';
-    }
-
-    .footer-text p{
-      color:#413326;
-      font-size:14px;
-      font-family: 'poppinRegular';
-    }
-
-    /* =========================
-       SOCIAL ICONS
-    ========================== */
-
-    .footer-social{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:18px;
-      margin-top:20px;
-    }
-
-    .footer-social a{
-      color:#413326;
-      font-size:15px;
-      transition:0.3s;
-    }
-
-    .footer-social a:hover{
-      transform:translateY(-3px);
-      color:#d8921c;
-    }
-
-    /* =========================
-       TABLET
-    ========================== */
-
-    @media (max-width:991px){
-
-      .footer-artwork img{
-        max-width:450px;
-      }
-    }
-
-    /* =========================
-       MOBILE
-    ========================== */
-
-    @media (max-width:576px){
-
-      .custom-footer{
-        padding:30px 15px 40px;
-      }
-
-      .footer-artwork{
-        margin-bottom:30px;
-      }
-
-      .footer-artwork img{
-        max-width:100%;
-      }
-
-      .footer-logo img{
-        width:60px;
-      }
-
-      .footer-text h3{
-        font-size:16px;
-      }
-
-      .footer-text a{
-        font-size:15px;
-      }
-
-      .footer-text p{
-        font-size:14px;
-      }
-
-      .footer-social{
-        gap:14px;
-      }
-
-      .footer-social a{
-        font-size:14px;
-      }
-    }
     </style>
 </head>
 
@@ -1208,24 +1605,29 @@
 
     <section class="cta-section">
 
-        <div class="cta-box">
-            <h2>
-                A first step to understand where you are & what's next.
-            </h2>
+    <div class="cta-box">
 
-            <a href="#" class="cta-btn">
-                Book a clarity call
-            </a>
-        </div>
+        <!-- GREEN BALL -->
+        <div class="cta-bg"></div>
 
-        <div class="cta-bottom-text">
-            <p>
-                Everything shared within a session is held in complete confidence.
-                This is a space built on trust and that trust is non-negotiable.
-            </p>
-        </div>
+        <h2>
+            A first step to understand where you are & what's next.
+        </h2>
 
-    </section>
+        <a href="#" class="cta-btn">
+            Book a clarity call
+        </a>
+
+    </div>
+
+</section>
+
+     <div class="cta-bottom-text">
+        <p>
+            Everything shared within a session is held in complete confidence.
+            This is a space built on trust and that trust is non-negotiable.
+        </p>
+    </div>
 
     <section class="services-section">
 
@@ -1306,7 +1708,7 @@
 
         </div>
     </section>
-   <section class="diagnosis-section">
+    <section class="diagnosis-section">
 
         <div class="diagnosis-container">
 
@@ -1394,7 +1796,7 @@
             <div class="faq-wrapper">
 
                 <!-- FAQ ITEM -->
-                <div class="faq-item active">
+                <div class="faq-item">
 
                     <button class="faq-question">
                         <span class="icon">×</span>
@@ -1495,97 +1897,105 @@
     </section>
     <footer class="custom-footer">
 
-    <div class="footer-container">
+        <div class="footer-container">
 
-        <!-- =========================
+            <!-- =========================
             CHAIR IMAGE
         ========================== -->
 
-        <div class="footer-artwork">
+            <div class="footer-artwork">
 
-        <!-- REPLACE WITH YOUR IMAGE -->
-        <img src="assets/images/seating-chear.png" alt="Chair Table">
+                <!-- REPLACE WITH YOUR IMAGE -->
+                <img src="assets/images/seating-chear.png" alt="Chair Table">
 
-        </div>
+            </div>
 
-        <!-- =========================
+            <!-- =========================
             LOGO
         ========================== -->
 
-        <div class="footer-logo">
+            <div class="footer-logo">
 
-        <!-- REPLACE WITH YOUR LOGO -->
-        <img src="assets/images/black-logo.png" alt="Logo">
+                <!-- REPLACE WITH YOUR LOGO -->
+                <img src="assets/images/black-logo.png" alt="Logo">
 
-        </div>
+            </div>
 
-        <!-- =========================
+            <!-- =========================
             TEXT
         ========================== -->
 
-        <div class="footer-text">
+            <div class="footer-text">
 
-        <h3>Clarity begins here</h3>
+                <h3>Clarity begins here</h3>
 
-        <a href="#">
-            Book a Clarity call
-        </a>
+                <a href="#">
+                    Book a Clarity call
+                </a>
 
-        <p>Lets talk!</p>
+                <p>Lets talk!</p>
 
-        </div>
+            </div>
 
-        <!-- =========================
+            <!-- =========================
             SOCIAL ICONS
         ========================== -->
 
-        <div class="footer-social">
+            <div class="footer-social">
 
-        <a href="#">
-            <i class="fa-brands fa-facebook-f"></i>
-        </a>
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
 
-        <a href="#">
-            <i class="fa-brands fa-linkedin-in"></i>
-        </a>
+                <a href="#">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
 
-        <a href="#">
-            <i class="fa-brands fa-youtube"></i>
-        </a>
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
 
-        <a href="#">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
-
     </footer>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
 <script>
 
-  var swiper = new Swiper(".myGallerySlider", {
+gsap.registerPlugin(ScrollTrigger);
 
-    loop:true,
+gsap.to(".cta-bg", {
 
-    navigation:{
-      nextEl:".swiper-button-next",
-      prevEl:".swiper-button-prev",
-    },
+    scale: 1.05,
 
-    autoplay:{
-      delay:3000,
-      disableOnInteraction:false,
+    ease: "power1.out",
+
+    scrollTrigger: {
+        trigger: ".cta-section",
+
+        start: "top 95%",
+        end: "top 10%",
+
+        scrub: 1,
+
+        markers: false
     }
-
-  });
+});
 
 </script>
 
     <script>
-        
+
 
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
@@ -1613,6 +2023,138 @@
                 }
 
             });
+
+        });
+
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const elements = document.querySelectorAll(
+                '.discover-left h2, .discover-right img, .step h3, .step p'
+            );
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show-animation");
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const elements = document.querySelectorAll(
+                '.discover-left h2, .discover-right img, .step h3, .step p, .people-image, .services-top h2, .services-top p, .service-card'
+            );
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show-animation");
+                    }
+
+                });
+
+            }, {
+                threshold: 0.2
+            });
+
+            elements.forEach(el => observer.observe(el));
+
+        });
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const elements = document.querySelectorAll(
+                '.discover-left h2, .discover-right img, .step h3, .step p, \
+        .people-image, .services-top h2, .services-top p, .service-card, \
+        .diagnosis-image img, .diagnosis-top h2, .diagnosis-top p, .diagnosis-card'
+            );
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show-animation");
+                    }
+
+                });
+
+            }, {
+                threshold: 0.2
+            });
+
+            elements.forEach(el => observer.observe(el));
+
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const elements = document.querySelectorAll(
+                '.discover-left h2, .discover-right img, .step h3, .step p, \
+        .people-image, .services-top h2, .services-top p, .service-card, \
+        .diagnosis-image img, .diagnosis-top h2, .diagnosis-top p, .diagnosis-card, \
+        .faq-image img, .faq-top h2, .faq-top p, .faq-item'
+            );
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show-animation");
+                    }
+
+                });
+
+            }, {
+                threshold: 0.2
+            });
+
+            elements.forEach(el => observer.observe(el));
+
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const elements = document.querySelectorAll(
+                '.discover-left h2, .discover-right img, .step h3, .step p, \
+        .people-image, .services-top h2, .services-top p, .service-card, \
+        .diagnosis-image img, .diagnosis-top h2, .diagnosis-top p, .diagnosis-card, \
+        .faq-image img, .faq-top h2, .faq-top p, .faq-item, \
+        .footer-artwork img, .footer-logo img, .footer-text h3, .footer-text a, .footer-text p, .footer-social a'
+            );
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show-animation");
+                    }
+
+                });
+
+            }, {
+                threshold: 0.2
+            });
+
+            elements.forEach(el => observer.observe(el));
 
         });
     </script>

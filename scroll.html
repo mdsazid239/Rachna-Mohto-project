@@ -1,3 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>GSAP Background Reveal</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
+      background:#111;
+    }
+
+    .spacer{
+      height:100vh;
+      background:#222;
+    }
+
+    .section{
+      position:relative;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background:#f5f5f5;
+    }
+
+    /* overlay color */
+    .bg-fill{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:#ff4d6d;
+
+      /* start hidden */
+      clip-path: circle(0% at top left);
+
+      z-index:1;
+    }
+
+    .content{
+      position:relative;
+      z-index:2;
+      font-size:60px;
+      font-weight:bold;
+      color:#111;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="spacer"></div>
+
+  <section class="section">
+    <div class="bg-fill"></div>
+
+    <div class="content">
+      Smooth Reveal
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".bg-fill", {
+      clipPath: "circle(150% at top left)",
+      ease: "power2.out",
+
+      scrollTrigger: {
+        trigger: ".section",
+        start: "top 70%",
+        end: "top 20%",
+        scrub: 1
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -13,10 +116,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         body {
@@ -290,8 +393,8 @@
         }
 
         .hero-btn:hover {
-        background: #4b382f;
-        color: #fff;
+            background: #4b382f;
+            color: #fff;
         }
 
         /* ========================= */
@@ -388,7 +491,8 @@
 
         margin: 0 auto;
 
-        padding: 80px 40px;
+        /* padding: 80px 40px; */
+            padding: 40px 40px;
 
         display: flex;
         align-items: center;
@@ -611,10 +715,22 @@
         min-height: 500px;
         position: relative;
         }
-       
+
+        /* CENTER CONTENT */
+        .insight-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 2;
+        width: 100%;
+        max-width: 530px;
+        padding: 0 20px;
+        }
 
         .insight-center h2 {
-        font-size: 50px;
+        font-size: 35px;
         line-height: 1.15;
         color: #2d4033;
         font-weight: 700;
@@ -623,6 +739,7 @@
         font-family: 'bonaNovaScBold';
         }
 
+        /* COMMON ITEM STYLE */
         .insight-item {
         position: absolute;
         max-width: 240px;
@@ -644,7 +761,7 @@
         font-family: 'poppinMedium';
         }
 
-      
+        /* POSITIONS */
         .direction-loss {
         top: 60px;
         left: 60px;
@@ -687,9 +804,12 @@
         }
         }
 
+        /* TABLET */
         @media (max-width:991px) {
 
         .insight-wrapper {
+            min-height: auto;
+            display: flex;
             flex-direction: column-reverse;
             gap: 40px;
         }
@@ -719,6 +839,7 @@
         }
         }
 
+        /* MOBILE */
         @media (max-width:576px) {
 
         .insight-section {
@@ -739,420 +860,177 @@
         }
         }
 
-        /* =========================
-   INSIGHT SECTION BASE
-========================= */
-
-/* .insight-section {
-  padding: 80px 20px;
-  position: relative;
-}
-
-.insight-wrapper {
-  max-width: 1200px;
-  margin: auto;
-  min-height: 500px;
-  position: relative;
-}
-
-
-.insight-center {
-  text-align: center;
-}
-
-.insight-center h2 {
-  font-size: 50px;
-  line-height: 1.15;
-  color: #2d4033;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'bonaNovaScBold';
-}
-
-
-.insight-item {
-  position: absolute;
-  max-width: 240px;
-  text-align: center;
-}
-
-.insight-item h3 {
-  font-size: 22px;
-  color: #433326;
-  margin-bottom: 10px;
-  font-weight: 700;
-  font-family: 'poppinSemiBold';
-}
-
-.insight-item p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #433326;
-  font-family: 'poppinMedium';
-}
-
-.direction-loss {
-  top: 60px;
-  left: 60px;
-}
-
-.choice-fatigue {
-  top: -40px;
-  left: 49%;
-  transform: translateX(-50%);
-}
-
-.stuck-feeling {
-  top: 60px;
-  right: 60px;
-}
-
-.overthinking-box {
-  top: 216px;
-  left: 0;
-}
-
-.internal-noise-box {
-  top: 216px;
-  right: 0;
-}
-
-.career-confusion-box {
-  bottom: 20px;
-  left: 160px;
-}
-
-.leadership-isolation-box {
-  bottom: 20px;
-  right: 120px;
-}
-
-
-@media (max-width: 991px) {
-
-  .insight-wrapper {
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .insight-center {
-    order: 1;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  .insight-center h2 {
-    font-size: 32px;
-    line-height: 1.3;
-  }
-
-  .insight-item {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    text-align: center;
-  }
-
-}
-
-
-@media (max-width: 576px) {
-
-  .insight-section {
-    padding: 50px 20px;
-  }
-
-  .insight-center h2 {
-    font-size: 22px;
-    line-height: 1.4;
-    letter-spacing: 0.5px;
-  }
-
-  .insight-item h3 {
-    font-size: 18px;
-  }
-
-  .insight-item p {
-    font-size: 13px;
-  }
-
-} */
-
-      /* =========================================
-        CONVERSATION SECTION
-        ========================================= */
-
-        .conversation-section{
-            padding: 90px 20px 100px;
-            overflow: hidden;
-            position: relative;
+        .conversation-section {
+        padding: 90px 20px 100px;
         }
 
-        .conversation-container{
-            max-width: 1200px;
-            margin: auto;
+        .conversation-container {
+        max-width: 1200px;
+        margin: auto;
         }
 
-        /* =========================================
-        HEADING
-        ========================================= */
-
-        .conversation-heading{
-            text-align: center;
-            margin-bottom: 90px;
+        /* HEADING */
+        .conversation-heading {
+        text-align: center;
+        margin-bottom: 90px;
         }
 
-        .conversation-heading h2{
-            font-size: 40px;
-            line-height: 1.15;
-            color: #4a372c;
-            text-transform: uppercase;
-            font-weight: 700;
-            font-family: 'bonaNovaBold';
+        .conversation-heading h2 {
+        font-size: 40px;
+        line-height: 1.15;
+        color: #4a372c;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family: 'bonaNovaBold';
         }
 
-        /* =========================================
-        SERVICES TITLE
-        ========================================= */
+        /* SERVICES TITLE */
+        .services-title {
+        text-align: center;
+        margin-bottom: 50px;
 
-        .services-title{
-            text-align: center;
+        }
+
+        .services-title h3 {
+        color: #db9221;
+        font-size: 30px;
+        font-family: 'bonaNovaBold';
+        text-transform: uppercase;
+        font-weight: 700;
+        }
+
+        /* ROW */
+        .timeline-row {
+        position: relative;
+        margin-bottom: 85px;
+        }
+
+        /* LINE */
+        .timeline-line {
+        position: absolute;
+        top: 39px;
+        left: 10%;
+        width: 80%;
+        height: 1px;
+        background: #8d9a8f;
+        z-index: 1;
+        }
+
+        /* GRID */
+        .timeline-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        position: relative;
+        z-index: 2;
+        }
+
+        .timeline-grid.two-items {
+        grid-template-columns: repeat(2, 1fr);
+        width: 70%;
+        margin: auto;
+        }
+
+        /* CARD */
+        .service-card {
+        text-align: center;
+        position: relative;
+        padding-top: 30px;
+        }
+
+        /* DOT */
+        .service-dot {
+        width: 20px;
+        height: 20px;
+        background: #db9221;
+        border-radius: 50%;
+        margin: 0 auto 18px;
+        position: relative;
+        z-index: 3;
+        }
+
+        .service-card h4 {
+        font-size: 22px;
+        color: #413326;
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-family: 'poppinSemiBold';
+        }
+
+        .service-card p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #433326;
+        max-width: 280px;
+        margin: auto;
+        font-family: 'poppinRegular';
+        }
+
+        /* TABLET */
+        @media (max-width:991px) {
+
+        .conversation-heading h2 {
+            font-size: 48px;
+        }
+
+        .services-title h3 {
+            font-size: 36px;
+        }
+
+        .timeline-grid {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .timeline-grid.two-items {
+            width: 100%;
+            grid-template-columns: 1fr;
+        }
+
+        .timeline-line {
+            display: none;
+        }
+
+        .timeline-row {
             margin-bottom: 50px;
-
-            opacity: 0;
-            transform: translateY(120px);
         }
 
-        .services-title h3{
-            color: #db9221;
-            font-size: 30px;
-            font-family: 'bonaNovaBold';
-            text-transform: uppercase;
-            font-weight: 700;
+        .service-card {
+            padding-top: 0;
+        }
         }
 
-        /* =========================================
-        TIMELINE SLIDER
-        ========================================= */
+        /* MOBILE */
+        @media (max-width:576px) {
 
-        .timeline-slider{
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .conversation-section {
+            padding: 70px 20px;
         }
 
-        /* =========================================
-        TIMELINE ROW
-        ========================================= */
-
-        .timeline-row{
-            position: absolute;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            /* height: 100%; */
-
-            opacity: 0;
-
-            transform: translateX(100%);
-
-            will-change: transform, opacity;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+        .conversation-heading {
+            margin-bottom: 70px;
         }
 
-        /* FIRST ROW VISIBLE */
-
-        .row-1{
-            opacity: 1;
-            transform: translateX(0%);
+        .conversation-heading h2 {
+            font-size: 25px;
+            line-height: 1.3;
         }
 
-        /* =========================================
-        LINE
-        ========================================= */
-
-        .timeline-line{
-            position: absolute;
-            top: 40px;
-            left: 10%;
-            width: 80%;
-            height: 1px;
-            background: #8d9a8f;
-            z-index: 1;
+        .services-title {
+            margin-bottom: 40px;
         }
 
-        /* =========================================
-        GRID
-        ========================================= */
-
-        .timeline-grid{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-
-            position: relative;
-            z-index: 2;
-
-            width: 100%;
-        }
-
-        .timeline-grid.two-items{
-            grid-template-columns: repeat(2, 1fr);
-            width: 70%;
-            margin: auto;
-        }
-
-        /* =========================================
-        CARD
-        ========================================= */
-
-        .service-card{
-            text-align: center;
-            position: relative;
-            padding-top: 30px;
-        }
-
-        /* =========================================
-        DOT
-        ========================================= */
-
-        .service-dot{
-            width: 20px;
-            height: 20px;
-            background: #db9221;
-            border-radius: 50%;
-            margin: 0 auto 18px;
-            position: relative;
-            z-index: 3;
-        }
-
-        .service-card h4{
+        .services-title h3 {
             font-size: 22px;
-            color: #413326;
-            margin-bottom: 15px;
-            font-weight: 700;
-            font-family: 'poppinSemiBold';
         }
 
-        .service-card p{
-            font-size: 16px;
-            line-height: 1.6;
-            color: #433326;
-            max-width: 280px;
-            margin: auto;
-            font-family: 'poppinRegular';
+        .service-card h4 {
+            font-size: 22px;
         }
 
-        /* =========================================
-        TABLET
-        ========================================= */
-
-        @media (max-width:991px){
-
-            .conversation-heading{
-                opacity: 1 !important;
-                transform: none !important;
-            }
-
-            .services-title{
-                opacity: 1 !important;
-                transform: none !important;
-            }
-
-            .conversation-heading h2{
-                font-size: 48px;
-            }
-
-            .services-title h3{
-                font-size: 36px;
-            }
-
-            .timeline-slider{
-                height: auto;
-                display: block;
-            }
-
-            .timeline-grid{
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-
-            .timeline-grid.two-items{
-                width: 100%;
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-line{
-                display: none;
-            }
-
-            .timeline-row{
-                position: relative !important;
-
-                opacity: 1 !important;
-
-                transform: none !important;
-
-                margin-bottom: 60px;
-
-                height: auto;
-
-                display: block;
-            }
-
-            .service-card{
-                padding-top: 0;
-            }
+        .service-card p {
+            font-size: 14px;
         }
-
-        /* =========================================
-        MOBILE
-        ========================================= */
-
-        @media (max-width:576px){
-
-            .conversation-section{
-                padding: 70px 20px;
-            }
-
-            .conversation-heading{
-                margin-bottom: 70px;
-            }
-
-            .conversation-heading h2{
-                font-size: 25px;
-                line-height: 1.3;
-            }
-
-            .services-title{
-                margin-bottom: 40px;
-            }
-
-            .services-title h3{
-                font-size: 22px;
-            }
-
-            .service-card h4{
-                font-size: 22px;
-            }
-
-            .service-card p{
-                font-size: 14px;
-            }
         }
 
         .gallery-section {
@@ -1265,6 +1143,43 @@
         line-height: 1.6;
         font-family: 'interMedium';
         }
+
+        /* =========================
+   MARQUEE
+========================= */
+
+.review-marquee {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.review-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+}
+
+.review-box {
+    background: #db9221;
+    border-radius: 8px;
+    padding: 20px;
+
+    width: 320px;
+    min-height: 130px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+}
+
+.review-box p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'interMedium';
+}
 
         /* =========================
         TABLET
@@ -1485,268 +1400,75 @@
         }
         }
 
-        /* =========================
-        INITIAL STATES
-        ========================= */
 
-        .hero-image,
+        /* animation */
         .hero-content h1,
         .hero-content p,
-        .hero-content .hero-btn {
+        .hero-content .hero-btn{
             opacity: 0;
-            transform: translateY(80px);
+            transform: translateY(20px);
+            will-change: transform, opacity;
         }
-
-        /* =========================
-        IMAGE ANIMATION
-        ========================= */
-
-        .hero-image {
-            animation: fadeUp 1.4s ease forwards;
-        }
-
-        /* =========================
-        TEXT ANIMATIONS
-        ========================= */
-
-        .hero-content h1 {
-            animation: fadeUp 1.4s ease forwards;
-            animation-delay: 0.3s;
-        }
-
-        .hero-content p {
-            animation: fadeUp 1.4s ease forwards;
-            animation-delay: 0.6s;
-        }
-
-        .hero-content .hero-btn {
-            animation: fadeUp 1.4s ease forwards;
-            animation-delay: 0.9s;
-        }
-
-        /* =========================
-        KEYFRAMES
-        ========================= */
-
-        @keyframes fadeUp {
-
-            from {
-                opacity: 0;
-                transform: translateY(80px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        /* =========================
-        INITIAL STATE
-        ========================= */
 
         .clarity-content,
         .clarity-image {
             opacity: 0;
-            transform: translateY(100px);
-
-            transition:
-                opacity 1.4s ease,
-                transform 1.4s ease;
-
             will-change: transform, opacity;
         }
 
-        /* =========================
-        ACTIVE STATE
-        ========================= */
-
-        .clarity-content.show,
-        .clarity-image.show {
-            opacity: 1;
-            transform: translateY(0);
+        /* SLIDER AREA */
+        .timeline-slider {
+            position: relative;
+            height: 520px;
+            overflow: hidden;
         }
 
-        /* =========================
-        INITIAL STATE
-        ========================= */
+        /* ALL ROWS STACKED */
+        .timeline-row {
+            position: absolute;
+            inset: 0;
 
-        .sticky-note {
+            width: 100%;
+
             opacity: 0;
 
-            transform: translateY(100px);
-
-            transition:
-                opacity 1.5s ease,
-                transform 1.5s ease;
+            transform: translateX(100%);
 
             will-change: transform, opacity;
         }
 
-        /* =========================
-        SHOW STATE
-        ========================= */
-
-        .sticky-note.show {
+        /* FIRST ROW VISIBLE INITIALLY */
+        .timeline-row.active {
             opacity: 1;
-
-            transform: translateY(0);
+            transform: translateX(0);
         }
 
-        /* =========================
-        INSIGHT SECTION
-        ========================= */
+        /* MOBILE */
+        @media(max-width:991px){
 
-        .insight-section {
-            min-height: 100vh;
+            .timeline-slider{
+                height: auto;
+            }
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 100px 20px;
-        }
-
-        /* =========================
-        TEXT
-        ========================= */
-
-        .insight-center h2 {
-
-            font-size: 70px;
-
-            text-align: center;
-
-            color: #3e2c24;
-
-            opacity: 0.3;
-
-            filter: blur(12px);
-
-            transform: scale(0.95);
-
-            transition:
-                filter 0.4s linear,
-                opacity 0.4s linear,
-                transform 0.4s linear;
-
-            will-change: filter, opacity, transform;
-                position: relative;
-                width: 100%;
-                top: 185px;
-        }
-
-        /* =========================
-        ACTIVE / CLEAR
-        ========================= */
-
-        .insight-center h2.active {
-
-            opacity: 1;
-
-            filter: blur(0px);
-
-            transform: scale(1);
-        }
-
-        /* =========================
-        MOBILE
-        ========================= */
-
-        @media(max-width:768px){
-
-            .insight-center h2{
-                font-size: 34px;
-                line-height: 1.3;
+            .timeline-row{
+                position: relative !important;
+                opacity: 1 !important;
+                transform: none !important;
+                margin-bottom: 60px;
             }
 
         }
-
-        .review-marquee {
-  overflow: hidden;
-  width: 100%;
-  margin-top: 40px;
-}
-
-.review-track {
-  display: flex;
-  gap: 30px;
-  width: max-content;
-  will-change: transform;
-}
-
-.review-box {
-  background: #db9221;
-  border-radius: 8px;
-  padding: 20px;
-  min-width: 280px;
-  min-height: 130px;
-  display: flex;
-  align-items: center;
-}
-
-.review-box p {
-  color: #fff;
-  font-size: 16px;
-  line-height: 1.6;
-  font-family: 'interMedium';
-}
-
-.footer-artwork img,
-.footer-logo img,
-.footer-text h3,
-.footer-text a,
-.footer-text p,
-.footer-social a {
-    opacity: 0;
-    transform: translateY(60px);
-    transition: all 0.8s ease;
-}
-
-.footer-artwork img.show-animation,
-.footer-logo img.show-animation,
-.footer-text h3.show-animation,
-.footer-text a.show-animation,
-.footer-text p.show-animation,
-.footer-social a.show-animation {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* Delays */
-.footer-artwork img.show-animation {
-    animation-delay: 0.2s;
-}
-
-.footer-logo img.show-animation {
-    animation-delay: 0.4s;
-}
-
-.footer-text h3.show-animation {
-    animation-delay: 0.6s;
-}
-
-.footer-text a.show-animation {
-    animation-delay: 0.8s;
-}
-
-.footer-text p.show-animation {
-    animation-delay: 1s;
-}
-
-.footer-social a:nth-child(1).show-animation {
-    animation-delay: 1.2s;
-}
-
-.footer-social a:nth-child(2).show-animation {
-    animation-delay: 1.4s;
-}
-
-.footer-social a:nth-child(3).show-animation {
-    animation-delay: 1.6s;
-}
-
-.footer-social a:nth-child(4).show-animation {
-    animation-delay: 1.8s;
-}
+        
+        .sticky-note {
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+       .footer-artwork,
+        .footer-text,
+        .footer-social {
+            opacity: 0;
+            will-change: transform, opacity;
+        }
     </style>
     </head>
 
@@ -1839,10 +1561,11 @@
 
     </section>
     <!-- SECTION -->
-    <!-- <section class="insight-section">
+    <section class="insight-section">
 
         <div class="insight-wrapper">
 
+        <!-- ITEM -->
         <div class="insight-item direction-loss">
             <h3>Loss of Direction</h3>
             <p>Successful on paper. Uncertain within.</p>
@@ -1863,6 +1586,7 @@
             <p>Knowing what to do and still not doing it.</p>
         </div>
 
+        <!-- CENTER -->
         <div class="insight-center">
             <h2>The right clarity changes everything</h2>
         </div>
@@ -1884,142 +1608,16 @@
 
         </div>
 
-    </section> -->
-    <section class="insight-section">
-
-        <div class="insight-wrapper">
-
-            <div class="insight-center">
-                <h2>The right clarity changes everything</h2>
-            </div>
-
-        </div>
-
     </section>
-    <!-- <section class="conversation-section">
-
-        <div class="conversation-container">
-
-   
-        <div class="conversation-heading">
-            <h2>
-            Start With One Honest <br>
-            Conversation.
-            </h2>
-        </div>
-
-
-        <div class="services-title">
-            <h3>Services</h3>
-        </div>
-
-        <div class="timeline-row">
-
-            <div class="timeline-line" style="left: 16%; width: 68%;"></div>
-
-            <div class="timeline-grid">
-
-            <div class="service-card">
-                <div class="service-dot"></div>
-                <h4>Free-diagnosis</h4>
-                <p>
-                Not sure where to begin? Start with a conversation.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-dot"></div>
-                <h4>1:1 Coaching</h4>
-                <p>
-                A thinking partner who helps you see what you've been too close to notice.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-dot"></div>
-                <h4>Mentorship Program</h4>
-                <p>
-                Real change, at a pace that actually sticks.
-                </p>
-            </div>
-
-            </div>
-
-        </div>
-
-        <div class="timeline-row">
-
-            <div class="timeline-line" style="width: 37%; left: 31%;"></div>
-
-            <div class="timeline-grid two-items">
-
-            <div class="service-card">
-                <div class="service-dot"></div>
-                <h4>Panel Discussions</h4>
-                <p>
-                A perspective that cuts through the noise, honestly.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-dot"></div>
-                <h4>90-Minute Speaking</h4>
-                <p>
-                Sharp. Focused. Enough to shift how a room thinks.
-                </p>
-            </div>
-
-            </div>
-
-        </div>
-
-  
-        <div class="timeline-row">
-
-            <div class="timeline-line" style="left: 16%; width: 68%;"></div>
-
-            <div class="timeline-grid">
-
-            <div class="service-card">
-                <div class="service-dot"></div>
-                <h4>Workshops</h4>
-                <p>
-                One session that gives your team more clarity than months of back and forth.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-dot"></div>
-                <h4>Corporate & Leadership Training</h4>
-                <p>
-                Practical tools your people will actually use, not just sit through.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-dot"></div>
-                <h4>Keynote Speaking</h4>
-                <p>
-                The talk that stays with the room long after it ends.
-                </p>
-            </div>
-
-            </div>
-
-        </div>
-
-        </div>
-
-    </section> -->
     <section class="conversation-section">
 
-    <div class="conversation-container">
+        <div class="conversation-container">
 
         <!-- MAIN HEADING -->
         <div class="conversation-heading">
             <h2>
-                Start With One Honest <br>
-                Conversation.
+            Start With One Honest
+            Conversation.
             </h2>
         </div>
 
@@ -2028,111 +1626,108 @@
             <h3>Services</h3>
         </div>
 
-        <!-- TIMELINE SLIDER -->
-        <div class="timeline-slider">
-
-            <!-- ================= ROW 1 ================= -->
-            <div class="timeline-row row-1">
+        <!-- ROW 1 -->
+         <div class="timeline-slider">
+            <div class="timeline-row row-1 active">
 
                 <div class="timeline-line" style="left: 16%; width: 68%;"></div>
 
                 <div class="timeline-grid">
 
-                    <div class="service-card">
-                        <div class="service-dot"></div>
-                        <h4>Free-diagnosis</h4>
-                        <p>
-                            Not sure where to begin? Start with a conversation.
-                        </p>
-                    </div>
+                <div class="service-card">
+                    <div class="service-dot"></div>
+                    <h4>Free-diagnosis</h4>
+                    <p>
+                    Not sure where to begin? Start with a conversation.
+                    </p>
+                </div>
 
-                    <div class="service-card">
-                        <div class="service-dot"></div>
-                        <h4>1:1 Coaching</h4>
-                        <p>
-                            A thinking partner who helps you see what you've been too close to notice.
-                        </p>
-                    </div>
+                <div class="service-card">
+                    <div class="service-dot"></div>
+                    <h4>1:1 Coaching</h4>
+                    <p>
+                    A thinking partner who helps you see what you've been too close to notice.
+                    </p>
+                </div>
 
-                    <div class="service-card">
-                        <div class="service-dot"></div>
-                        <h4>Mentorship Program</h4>
-                        <p>
-                            Real change, at a pace that actually sticks.
-                        </p>
-                    </div>
+                <div class="service-card">
+                    <div class="service-dot"></div>
+                    <h4>Mentorship Program</h4>
+                    <p>
+                    Real change, at a pace that actually sticks.
+                    </p>
+                </div>
 
                 </div>
 
             </div>
 
-            <!-- ================= ROW 2 ================= -->
+            <!-- ROW 2 -->
             <div class="timeline-row row-2">
 
                 <div class="timeline-line" style="width: 37%; left: 31%;"></div>
 
                 <div class="timeline-grid two-items">
 
-                    <div class="service-card">
-                        <div class="service-dot"></div>
-                        <h4>Panel Discussions</h4>
-                        <p>
-                            A perspective that cuts through the noise, honestly.
-                        </p>
-                    </div>
+                <div class="service-card">
+                    <div class="service-dot"></div>
+                    <h4>Panel Discussions</h4>
+                    <p>
+                    A perspective that cuts through the noise, honestly.
+                    </p>
+                </div>
 
-                    <div class="service-card">
-                        <div class="service-dot"></div>
-                        <h4>90-Minute Speaking</h4>
-                        <p>
-                            Sharp. Focused. Enough to shift how a room thinks.
-                        </p>
-                    </div>
+                <div class="service-card">
+                    <div class="service-dot"></div>
+                    <h4>90-Minute Speaking</h4>
+                    <p>
+                    Sharp. Focused. Enough to shift how a room thinks.
+                    </p>
+                </div>
 
                 </div>
 
             </div>
 
-            <!-- ================= ROW 3 ================= -->
+            <!-- ROW 3 -->
             <div class="timeline-row row-3">
 
                 <div class="timeline-line" style="left: 16%; width: 68%;"></div>
 
                 <div class="timeline-grid">
 
-                    <div class="service-card">
-                        <div class="service-dot"></div>
-                        <h4>Workshops</h4>
-                        <p>
-                            One session that gives your team more clarity than months of back and forth.
-                        </p>
-                    </div>
+                <div class="service-card">
+                    <div class="service-dot"></div>
+                    <h4>Workshops</h4>
+                    <p>
+                    One session that gives your team more clarity than months of back and forth.
+                    </p>
+                </div>
 
-                    <div class="service-card">
-                        <div class="service-dot"></div>
-                        <h4>Corporate & Leadership Training</h4>
-                        <p>
-                            Practical tools your people will actually use, not just sit through.
-                        </p>
-                    </div>
+                <div class="service-card">
+                    <div class="service-dot"></div>
+                    <h4>Corporate & Leadership Training</h4>
+                    <p>
+                    Practical tools your people will actually use, not just sit through.
+                    </p>
+                </div>
 
-                    <div class="service-card">
-                        <div class="service-dot"></div>
-                        <h4>Keynote Speaking</h4>
-                        <p>
-                            The talk that stays with the room long after it ends.
-                        </p>
-                    </div>
+                <div class="service-card">
+                    <div class="service-dot"></div>
+                    <h4>Keynote Speaking</h4>
+                    <p>
+                    The talk that stays with the room long after it ends.
+                    </p>
+                </div>
 
                 </div>
 
             </div>
+        </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
     <section class="gallery-section">
 
         <div class="gallery-container">
@@ -2215,44 +1810,44 @@
         </div> -->
         <div class="review-marquee">
 
-  <div class="review-track">
+            <div class="review-track">
 
-    <div class="review-box">
-      <p>“A genuinely glowing review”</p>
-    </div>
+                <div class="review-box">
+                    <p>“A genuinely glowing review”</p>
+                </div>
 
-    <div class="review-box">
-      <p>“A terrific piece of praise”</p>
-    </div>
+                <div class="review-box">
+                    <p>“A terrific piece of praise”</p>
+                </div>
 
-    <div class="review-box">
-      <p>“A fantastic bit of feedback”</p>
-    </div>
+                <div class="review-box">
+                    <p>“A fantastic bit of feedback”</p>
+                </div>
 
-    <div class="review-box">
-      <p>“A terrific piece of praise”</p>
-    </div>
+                <div class="review-box">
+                    <p>“A terrific piece of praise”</p>
+                </div>
 
-    <!-- duplicate set for smooth loop -->
-    <div class="review-box">
-      <p>“A genuinely glowing review”</p>
-    </div>
+                <!-- DUPLICATE FOR LOOP -->
+                <div class="review-box">
+                    <p>“A genuinely glowing review”</p>
+                </div>
 
-    <div class="review-box">
-      <p>“A terrific piece of praise”</p>
-    </div>
+                <div class="review-box">
+                    <p>“A terrific piece of praise”</p>
+                </div>
 
-    <div class="review-box">
-      <p>“A fantastic bit of feedback”</p>
-    </div>
+                <div class="review-box">
+                    <p>“A fantastic bit of feedback”</p>
+                </div>
 
-    <div class="review-box">
-      <p>“A terrific piece of praise”</p>
-    </div>
+                <div class="review-box">
+                    <p>“A terrific piece of praise”</p>
+                </div>
 
-  </div>
+            </div>
 
-</div>
+        </div>
 
         </div>
 
@@ -2327,96 +1922,8 @@
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
-<script>
-gsap.registerPlugin(ScrollTrigger);
-
-if (window.innerWidth > 991) {
-
-  gsap.set(".row-2, .row-3", {
-    x: "100%",
-    opacity: 0
-  });
-
-  gsap.fromTo(
-    ".conversation-heading, .services-title",
-    {
-      y: 120,
-      opacity: 0
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1.5,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".conversation-section",
-        start: "top 80%",
-        toggleActions: "play none none reverse"
-      }
-    }
-  );
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".conversation-section",
-      start: "top 100px",
-      end: "+=3500",
-      scrub: 2,
-      pin: true,
-      anticipatePin: 1
-    }
-  });
-
-  tl.to(".row-1", {
-    x: "-100%",
-    opacity: 0,
-    duration: 2
-  })
-  .to(".row-2", {
-    x: "0%",
-    opacity: 1,
-    duration: 2
-  }, "-=2")
-  .to(".row-2", {
-    x: "-100%",
-    opacity: 0,
-    duration: 2
-  })
-  .to(".row-3", {
-    x: "0%",
-    opacity: 1,
-    duration: 2
-  }, "-=2");
-
-}
-</script>
-<script>
-gsap.registerPlugin();
-
-const track = document.querySelector(".review-track");
-
-/* continuous animation */
-const tween = gsap.to(track, {
-  x: "-50%",
-  duration: 20,
-  ease: "none",
-  repeat: -1
-});
-
-/* pause on hover */
-track.addEventListener("mouseenter", () => {
-  tween.pause();
-});
-
-/* resume on leave */
-track.addEventListener("mouseleave", () => {
-  tween.play();
-});
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script>
 
         var swiper = new Swiper(".myGallerySlider", {
@@ -2445,124 +1952,345 @@ track.addEventListener("mouseleave", () => {
         navLinks.classList.toggle('active');
         });
     </script>
+
     <script>
 
-        const clarityElements = document.querySelectorAll(
-            ".clarity-content, .clarity-image"
-        );
+        window.addEventListener("load", () => {
 
-        const observer = new IntersectionObserver((entries) => {
+            const tl = gsap.timeline();
 
-            entries.forEach((entry) => {
+            tl.to(".hero-content h1", {
+                y: 0,
+                opacity: 1,
+                duration: 1.2,
+                ease: "power2.out"
+            })
 
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
-                } else {
-                    entry.target.classList.remove("show");
-                }
+            .to(".hero-content p", {
+                y: 0,
+                opacity: 1,
+                duration: 1.2,
+                ease: "power2.out"
+            }, "-=0.9")
 
-            });
+            .to(".hero-content .hero-btn", {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power2.out"
+            }, "-=0.9");
 
-        }, {
-            threshold: 0.25
         });
 
-        /* OBSERVE ELEMENTS */
-        clarityElements.forEach((el) => {
-            observer.observe(el);
+    </script>
+   <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* RESPONSIVE GSAP */
+    let mm = gsap.matchMedia();
+
+    /* ONLY FOR DESKTOP/TABLET */
+    mm.add("(min-width: 992px)", () => {
+
+        /* INITIAL STATES */
+        gsap.set(".row-2, .row-3", {
+            x: "100%",
+            opacity: 0
         });
+
+        /* MASTER TIMELINE */
+        const serviceTl = gsap.timeline({
+
+            scrollTrigger: {
+                trigger: ".conversation-section",
+
+                start: "top top",
+
+                end: "+=3000",
+
+                scrub: 2,
+
+                pin: true,
+
+                anticipatePin: 1,
+
+                markers: false
+            }
+        });
+
+        /* ROW 1 OUT */
+        serviceTl.to(".row-1", {
+            x: "-100%",
+            opacity: 0,
+            duration: 2,
+            ease: "power3.inOut"
+        })
+
+        /* ROW 2 IN */
+        .to(".row-2", {
+            x: "0%",
+            opacity: 1,
+            duration: 2,
+            ease: "power3.inOut"
+        }, "-=2")
+
+        /* ROW 2 OUT */
+        .to(".row-2", {
+            x: "-100%",
+            opacity: 0,
+            duration: 2,
+            ease: "power3.inOut"
+        })
+
+        /* ROW 3 IN */
+        .to(".row-3", {
+            x: "0%",
+            opacity: 1,
+            duration: 2,
+            ease: "power3.inOut"
+        }, "-=2");
+
+    });
+    </script>
+    <script>
+
+    /* =========================
+    CLARITY SECTION
+    ========================= */
+
+    const clarityTl = gsap.timeline({
+
+        scrollTrigger: {
+            trigger: ".clarity-section",
+
+            start: "top 90%",
+            end: "top 20%",
+
+            scrub: 3.5, // smoother + slower
+
+            markers: false
+        }
+    });
+
+    /* TEXT */
+    clarityTl.fromTo(
+        ".clarity-content",
+        {
+            y: 220,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 4,
+            ease: "power2.out"
+        }
+    )
+
+    /* IMAGE */
+    .fromTo(
+        ".clarity-image",
+        {
+            y: 260,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 4.5,
+            ease: "power2.out"
+        },
+        "-=3.5"
+    );
 
     </script>
     <script>
 
-        /* =========================
-        STICKY NOTES ANIMATION
-        ========================= */
+    /* =========================
+    DISCLAIMER ANIMATION
+    ========================= */
 
-        const stickyNotes = document.querySelectorAll(".sticky-note");
+    const disclaimerTl = gsap.timeline({
 
-        const stickyObserver = new IntersectionObserver((entries) => {
+        scrollTrigger: {
+            trigger: ".disclaimer",
 
-            entries.forEach((entry) => {
+            start: "top 85%",
+            end: "top 30%",
 
-                if (entry.isIntersecting) {
+            scrub: 2.5,
 
-                    entry.target.classList.add("show");
+            markers: false
+        }
+    });
 
-                } else {
+    disclaimerTl.fromTo(
+        ".disclaimer",
+        {
+            y: 120,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 3,
+            ease: "power3.out"
+        }
+    );
 
-                    entry.target.classList.remove("show");
+
+    /* =========================
+    CONTINUOUS REVIEW MARQUEE
+    ========================= */
+
+    gsap.to(".review-track", {
+        xPercent: -50,
+
+        duration: 20,
+
+        ease: "none",
+
+        repeat: -1
+    });
+
+    </script>
+    <script>
+        let stickyMM = gsap.matchMedia();
+
+        /* ONLY DESKTOP/TABLET */
+        stickyMM.add("(min-width: 768px)", () => {
+
+            const stickyTl = gsap.timeline({
+
+                scrollTrigger: {
+                    trigger: ".sticky-section",
+
+                    start: "top 85%",
+                    end: "bottom 70%",
+
+                    scrub: 3.5,
+
+                    markers: false
                 }
-
             });
 
-        }, {
-            threshold: 0.2
-        });
+            /* NOTE 1 */
+            stickyTl.fromTo(
+                ".note-1",
+                {
+                    y: 220,
+                    opacity: 0
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 4.5,
+                    ease: "power3.out"
+                }
+            )
 
-        /* OBSERVE EACH IMAGE */
-        stickyNotes.forEach((note) => {
-            stickyObserver.observe(note);
+            /* NOTE 2 */
+            .fromTo(
+                ".note-2",
+                {
+                    y: 220,
+                    opacity: 0
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 4.5,
+                    ease: "power3.out"
+                },
+                "-=3.5"
+            )
+
+            /* NOTE 3 */
+            .fromTo(
+                ".note-3",
+                {
+                    y: 220,
+                    opacity: 0
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 4.5,
+                    ease: "power3.out"
+                },
+                "-=3.5"
+            );
+
         });
 
     </script>
     <script>
 
 /* =========================
-   BLUR TO CLEAR EFFECT
+   FOOTER ANIMATION
 ========================= */
 
-const insightText = document.querySelector(".insight-center h2");
+const footerFadeTl = gsap.timeline({
 
-window.addEventListener("scroll", () => {
+    scrollTrigger: {
+        trigger: ".custom-footer",
 
-    const rect = insightText.getBoundingClientRect();
+        start: "top 85%",
+        end: "top 20%",
 
-    const screenCenter = window.innerHeight / 2;
+        scrub: 3.5,
 
-    const elementCenter = rect.top + rect.height / 2;
-
-    const distance = Math.abs(screenCenter - elementCenter);
-
-    /* ACTIVE RANGE */
-    if(distance < 120){
-
-        insightText.classList.add("active");
-
-    } else {
-
-        insightText.classList.remove("active");
+        markers: false
     }
-
 });
 
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+/* CHAIR IMAGE */
+footerFadeTl.fromTo(
+    ".footer-artwork",
+    {
+        y: 220,
+        opacity: 0
+    },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 4.5,
+        ease: "power3.out"
+    }
+)
 
-    const elements = document.querySelectorAll(
-        '.footer-artwork img, .footer-logo img, .footer-text h3, .footer-text a, .footer-text p, .footer-social a'
-    );
+/* FOOTER TEXT */
+.fromTo(
+    ".footer-text",
+    {
+        y: 220,
+        opacity: 0
+    },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 4.5,
+        ease: "power3.out"
+    },
+    "-=3.8"
+)
 
-    const observer = new IntersectionObserver((entries, observer) => {
+/* SOCIAL ICONS */
+.fromTo(
+    ".footer-social",
+    {
+        y: 220,
+        opacity: 0
+    },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 4.5,
+        ease: "power3.out"
+    },
+    "-=3.8"
+);
 
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show-animation");
-                observer.unobserve(entry.target); // run once only
-            }
-
-        });
-
-    }, {
-        threshold: 0.2
-    });
-
-    elements.forEach(el => observer.observe(el));
-
-});
 </script>
     </body>
-
 </html>
