@@ -231,13 +231,27 @@ font-family: 'poppinRegular';
   width:100%;
   border:none;
   border-bottom:2px solid #DB9222;
-  background:transparent;
+  background:#ece7de;
   outline:none;
 
   padding:12px 0;
-  font-size:18px;
+  font-size:16px;
   color:#433326;
   font-family:'Inter', sans-serif;
+}
+
+input:-internal-autofill-selected {
+   background:#ece7de !important;
+   color:#433326 !important;
+}
+
+.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill:focus,
+.contact-form textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ece7de inset !important;
+  -webkit-text-fill-color: #433326 !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .contact-form input::placeholder,
@@ -475,7 +489,7 @@ font-family: 'poppinRegular';
       }
     }
 
-    .contact-left h1,
+  .contact-left h1,
 .contact-left p,
 .contact-form .form-group,
 .submit-btn {
@@ -570,39 +584,64 @@ font-family: 'poppinRegular';
       </p>
 
     </div>
+  <form
+  class="contact-form"
+  id="contactForm"
+  action="https://formsubmit.co/mdsazid849@gmail.com"
+  method="POST"
 
-    <!-- RIGHT SIDE -->
-    <form class="contact-form">
+  
+>
+<p
+    id="successMessage"
+    style="display:none; margin-top:15px; font-size: 16px; color: white; background: green; padding: 16px; border-radius: 5px; font-family: 'bonaNovaBold';    margin-bottom: 40px;"
+  >
+    Thank you! Your message has been submitted successfully.
+  </p>
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_subject" value="New Contact Form Submission" />
+  <input type="hidden" name="_template" value="table" />
 
-      <div class="form-group">
-        <input type="text" placeholder="Full Name">
-      </div>
+  <div class="form-group">
+    <input type="text" name="name" id="name" placeholder="Full Name" required>
+  </div>
 
-      <div class="form-group">
-        <input type="email" placeholder="Email Id">
-      </div>
+  <div class="form-group">
+    <input type="email" name="email" id="email" placeholder="Email Id" required>
+  </div>
 
-      <div class="form-group">
-        <input type="text" placeholder="Mobile No.">
-      </div>
+  <div class="form-group">
+    <input
+      type="tel"
+      name="mobile"
+      id="mobile"
+      placeholder="Mobile No."
+      maxlength="10"
+      inputmode="numeric"
+      pattern="[0-9]{10}"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,10)"
+      required
+    >
+  </div>
 
-      <div class="form-group">
-        <textarea placeholder="Your Message"></textarea>
-      </div>
+  <div class="form-group">
+    <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+  </div>
 
-      <div class="btn-wrap">
-        <button type="submit" class="submit-btn">
-          Book a clarity call
-        </button>
-      </div>
+  <div class="btn-wrap">
+    <button type="submit" class="submit-btn" id="submitBtn">
+      Book a clarity call
+    </button>
+  </div>
 
-    </form>
+  
+</form>
 
   </div>
 
 </section>
 
-    <script>
+    <!-- <script>
         
 
         const hamburger = document.getElementById('hamburger');
@@ -611,7 +650,85 @@ font-family: 'poppinRegular';
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
-    </script>
+    </script> -->
+
+ <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
+
+  const form = document.getElementById("contactForm");
+  const successMessage = document.getElementById("successMessage");
+  const submitBtn = document.getElementById("submitBtn");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    successMessage.style.display = "none";
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const mobilePattern = /^[0-9]{10}$/;
+
+    if (name.length < 3) {
+      alert("Please enter a valid full name.");
+      return;
+    }
+
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    if (!mobilePattern.test(mobile)) {
+      alert("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    if (message.length < 10) {
+      alert("Message should be at least 10 characters.");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    try {
+      const formData = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        successMessage.style.display = "block";
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Book a clarity call";
+  });
+</script>
+
+
 </body>
 
 </html>
