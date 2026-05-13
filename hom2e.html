@@ -1,0 +1,2692 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="icon" type="image/png" href="assets/images/logo-navbar.png" />
+    <link rel="stylesheet" href="assets/css/style1.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f6eee3;
+            padding-top: 100px;
+        }
+
+        /* WRAPPER */
+        /* WRAPPER */
+        .navbar-wrapper {
+            width: 100%;
+            padding: 20px 12px;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 9999;
+
+            display: flex;
+            justify-content: center;
+            transition:
+            transform 0.4s ease,
+            opacity 0.4s ease;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            max-width: 1400px;
+
+            background: #db9221;
+            border-radius: 8px;
+
+            padding: 14px 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: relative;
+        }
+
+        .nav-hide{
+            transform: translateY(-120%);
+            opacity: 0;
+        }
+
+        /* Show navbar */
+
+        .nav-show{
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* LEFT LOGO */
+        .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        }
+
+        .logo-box {
+        width: 42px;
+        height: 42px;
+
+        border: 2px solid #fff;
+        border-radius: 6px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+        }
+
+        .logo-img {
+        height: 35px;
+        }
+
+        .brand-name {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        font-family: 'bonaNovaScBold';
+        }
+
+        /* NAV LINKS */
+        .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        }
+
+        .nav-links a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        transition: 0.3s;
+        font-family: 'poppinMedium';
+        }
+
+        .nav-links a:hover {
+        opacity: 0.8;
+        }
+
+        /* BUTTON */
+        .talk-btn {
+        padding: 8px 14px;
+        border-radius: 8px;
+        box-shadow:
+            inset 0 6px 8px -6px rgba(0, 0, 0, 0.24),  /* top */
+            inset 0 -3px 4px -4px rgba(0, 0, 0, 0.22), /* bottom */
+            inset 3px 0 4px -4px rgba(0, 0, 0, 0.22),  /* left */
+            inset -3px 0 4px -4px rgba(0, 0, 0, 0.22); /* right */
+        }
+
+        /* HAMBURGER */
+        .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        color: white;
+        font-size: 22px;
+        }
+
+        .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        border-radius: 10px;
+        }
+
+        /* MOBILE VIEW */
+        @media(max-width:768px) {
+
+         body{
+            padding-top: 90px;
+        }
+
+        .navbar-wrapper{
+            padding: 10px;
+        }
+
+        .navbar {
+            padding: 14px 18px;
+            border-radius: 8px 8px 0px 0px;
+        }
+
+        .brand-name {
+            font-size: 18px;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 100%;
+            left: 0;
+
+            width: 100%;
+
+            background: #d9921d;
+
+            flex-direction: column;
+            align-items: flex-start;
+
+            padding: 0 20px;
+
+            max-height: 0;
+            overflow: hidden;
+
+            transition: 0.4s ease;
+
+            /* border-radius:0 0 8px 8px; */
+            border-radius: 0px 0px 8px 8px;
+
+
+            gap: 0;
+        }
+
+        .nav-links.active {
+            max-height: 400px;
+            padding: 20px;
+        }
+
+        .nav-links a {
+            width: 100%;
+            padding: 12px 10px;
+        }
+        }
+
+        .hero-section {
+        width: 100%;
+        max-width: 1400px;
+
+        margin: 10px auto 0;
+        padding: 0 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 20px;
+        }
+
+        /* LEFT SIDE */
+        .hero-image {
+        width: 55%;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        }
+
+        .hero-image img {
+        width: 100%;
+        max-width: 760px;
+
+        height: auto;
+        display: block;
+        }
+
+        /* RIGHT SIDE */
+        .hero-content {
+        width: 45%;
+
+        max-width: 500px;
+
+        margin-top: 60px;
+        }
+
+        .hero-content h1 {
+        font-size: 40px;
+        line-height: 1;
+
+        color: #433326;
+
+        margin-bottom: 18px;
+
+        font-family: serif;
+        font-weight: 700;
+        font-family: 'bonaNovaBold';
+        }
+
+        .hero-content p {
+        font-size: 16px;
+        line-height: 1.7;
+
+        color: #4c4742;
+
+        margin-bottom: 24px;
+
+        max-width: 460px;
+        font-family: poppinMedium;
+        }
+
+        /* BUTTON */
+        .hero-btn {
+        display: inline-block;
+
+        padding: 10px 18px;
+
+        border: 1px solid #433326;
+        border-radius: 10px;
+
+        text-decoration: none;
+
+        color: #433326;
+
+        font-size: 16px;
+        font-weight: 600;
+
+        transition: 0.3s;
+        font-family: 'bonaNovaBold';
+        }
+
+        .hero-btn:hover {
+        background: #4b382f;
+        color: #fff;
+        }
+
+        /* ========================= */
+        /* LAPTOP */
+        /* ========================= */
+
+        @media(max-width:1200px) {
+
+        .hero-content h1 {
+            font-size: 58px;
+        }
+
+        .hero-image img {
+            max-width: 620px;
+        }
+        }
+
+        /* ========================= */
+        /* TABLET */
+        /* ========================= */
+
+        @media(max-width:992px) {
+
+        .hero-section {
+            flex-direction: column;
+
+            text-align: center;
+
+            padding: 20px 24px 40px;
+
+            min-height: auto;
+        }
+
+        .hero-image {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 520px;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 100%;
+
+            margin-top: 0;
+        }
+
+        .hero-content h1 {
+            font-size: 50px;
+        }
+
+        .hero-content p {
+            margin: auto auto 25px;
+            font-size: 18px;
+        }
+        }
+
+        /* ========================= */
+        /* MOBILE */
+        /* ========================= */
+
+        @media(max-width:576px) {
+
+        .hero-section {
+            padding: 10px 16px 30px;
+            gap: 10px;
+        }
+
+        .hero-image img {
+            max-width: 350px;
+        }
+
+        .hero-content h1 {
+            font-size: 25px;
+            margin-bottom: 14px;
+        }
+
+        .hero-content p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .hero-btn {
+            width: 100%;
+            text-align: center;
+        }
+        }
+
+        .clarity-section {
+        width: 100%;
+        max-width: 1400px;
+
+        margin: 0 auto;
+
+        padding: 80px 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 40px;
+        }
+
+        /* LEFT SIDE */
+        .clarity-content {
+        flex: 1;
+        }
+
+        .clarity-content h2 {
+        font-size: 54px;
+        line-height: 1.25;
+        color: #db9221;
+        font-family: 'bonaNovaScBold';
+        font-weight: 700;
+        text-transform: uppercase;
+        max-width: 770px;
+        }
+
+        /* RIGHT SIDE */
+        .clarity-image {
+        flex: 0 0 420px;
+
+        display: flex;
+        justify-content: center;
+        }
+
+        .clarity-image img {
+        width: 100%;
+        max-width: 440px;
+
+        height: auto;
+        display: block;
+        }
+
+        /* ========================= */
+        /* LAPTOP */
+        /* ========================= */
+
+        @media(max-width:1200px) {
+
+        .clarity-content h2 {
+            font-size: 58px;
+        }
+
+        .clarity-image {
+            flex: 0 0 340px;
+        }
+        }
+
+        /* ========================= */
+        /* TABLET */
+        /* ========================= */
+
+        @media(max-width:992px) {
+
+        .clarity-section {
+            flex-direction: column;
+
+            text-align: center;
+
+            padding: 60px 24px;
+        }
+
+        .clarity-content h2 {
+            font-size: 46px;
+            max-width: 100%;
+        }
+
+        .clarity-image {
+            flex: auto;
+        }
+
+        .clarity-image img {
+            max-width: 300px;
+        }
+        }
+
+        /* ========================= */
+        /* MOBILE */
+        /* ========================= */
+
+        @media(max-width:576px) {
+
+        .clarity-section {
+            padding: 40px 16px;
+            gap: 30px;
+        }
+
+        .clarity-content h2 {
+            font-size: 23px;
+            line-height: 1.4;
+        }
+
+        .clarity-image img {
+            max-width: 100%;
+        }
+        }
+
+        /* SECTION */
+
+        /* SECTION */
+        .sticky-section {
+        position: relative;
+        min-height: 1809px;
+        }
+
+        /* NOTE */
+        .sticky-note {
+        position: absolute;
+        }
+
+        .sticky-note img {
+        width: 100%;
+        display: block;
+        object-fit: contain;
+        }
+
+        /* TOP NOTE */
+        .note-1 {
+        width: 600px;
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        }
+
+        /* LEFT NOTE */
+        .note-2 {
+        width: 600px;
+        top: 700px;
+        left: 8%;
+        }
+
+        /* RIGHT NOTE */
+        .note-3 {
+        width: 600px;
+        top: 1270px;
+        right: 20%;
+        }
+
+        /* ===== LARGE DESKTOP ===== */
+        @media (min-width: 1600px) {
+
+        .note-1,
+        .note-2,
+        .note-3 {
+            width: 480px;
+        }
+
+        .sticky-section {
+            min-height: 1650px;
+        }
+        }
+
+        /* ===== TABLET ===== */
+        @media (max-width: 991px) {
+
+        .sticky-section {
+            min-height: 1200px;
+        }
+
+        .note-1,
+        .note-2,
+        .note-3 {
+            width: 360px;
+        }
+
+        .note-2 {
+            top: 500px;
+            left: 5%;
+        }
+
+        .note-3 {
+            top: 840px;
+            right: 5%;
+        }
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 767px) {
+
+        .sticky-section {
+            min-height: auto;
+            padding: 70px 20px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .sticky-note {
+            position: relative;
+            top: unset !important;
+            left: unset !important;
+            right: unset !important;
+            transform: none !important;
+        }
+
+        .note-1,
+        .note-2,
+        .note-3 {
+            width: 280px;
+        }
+        }
+
+
+        .insight-section {
+        padding: 80px 20px;
+        position: relative;
+        }
+
+        .insight-wrapper {
+        max-width: 1200px;
+        margin: auto;
+        min-height: 500px;
+        position: relative;
+        }
+       
+
+        .insight-center h2 {
+        font-size: 50px;
+        line-height: 1.15;
+        color: #2d4033;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-family: 'bonaNovaScBold';
+        }
+
+        .insight-item {
+        position: absolute;
+        max-width: 240px;
+        text-align: center;
+        }
+
+        .insight-item h3 {
+        font-size: 22px;
+        color: #433326;
+        margin-bottom: 10px;
+        font-weight: 700;
+        font-family: 'poppinSemiBold';
+        }
+
+        .insight-item p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #433326;
+        font-family: 'poppinMedium';
+        }
+
+      
+        .direction-loss {
+        top: 60px;
+        left: 60px;
+        }
+
+        .choice-fatigue {
+        top: -40px;
+        left: 49%;
+        transform: translateX(-50%);
+        }
+
+        .stuck-feeling {
+        top: 60px;
+        right: 60px;
+        }
+
+        .overthinking-box {
+        top: 216px;
+        left: 0;
+        }
+
+        .internal-noise-box {
+        top: 216px;
+        right: 0;
+        }
+
+        .career-confusion-box {
+        bottom: 20px;
+        left: 160px;
+        }
+
+        .leadership-isolation-box {
+        bottom: 20px;
+        right: 120px;
+        }
+
+        @media (max-width:1024px) {
+        .insight-center h2 {
+            font-size: 25px;
+        }
+        }
+
+        @media (max-width:991px) {
+
+        .insight-wrapper {
+            flex-direction: column-reverse;
+            gap: 40px;
+        }
+
+        .insight-item,
+        .insight-center {
+            position: relative;
+            top: auto;
+            left: auto;
+            right: auto;
+            bottom: auto;
+            transform: none;
+            margin: auto;
+        }
+
+        .insight-center {
+            order: 1;
+            margin-bottom: 20px;
+        }
+
+        .insight-item {
+            max-width: 100%;
+        }
+
+        .insight-center h2 {
+            font-size: 35px;
+        }
+        }
+
+        @media (max-width:576px) {
+
+        .insight-section {
+            padding: 60px 20px;
+        }
+
+        .insight-center h2 {
+            font-size: 25px;
+            line-height: 1.3;
+        }
+
+        .insight-item h3 {
+            font-size: 20px;
+        }
+
+        .insight-item p {
+            font-size: 14px;
+        }
+        }
+
+        /* =========================
+   INSIGHT SECTION BASE
+========================= */
+
+/* .insight-section {
+  padding: 80px 20px;
+  position: relative;
+}
+
+.insight-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  min-height: 500px;
+  position: relative;
+}
+
+
+.insight-center {
+  text-align: center;
+}
+
+.insight-center h2 {
+  font-size: 50px;
+  line-height: 1.15;
+  color: #2d4033;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'bonaNovaScBold';
+}
+
+
+.insight-item {
+  position: absolute;
+  max-width: 240px;
+  text-align: center;
+}
+
+.insight-item h3 {
+  font-size: 22px;
+  color: #433326;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-family: 'poppinSemiBold';
+}
+
+.insight-item p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #433326;
+  font-family: 'poppinMedium';
+}
+
+.direction-loss {
+  top: 60px;
+  left: 60px;
+}
+
+.choice-fatigue {
+  top: -40px;
+  left: 49%;
+  transform: translateX(-50%);
+}
+
+.stuck-feeling {
+  top: 60px;
+  right: 60px;
+}
+
+.overthinking-box {
+  top: 216px;
+  left: 0;
+}
+
+.internal-noise-box {
+  top: 216px;
+  right: 0;
+}
+
+.career-confusion-box {
+  bottom: 20px;
+  left: 160px;
+}
+
+.leadership-isolation-box {
+  bottom: 20px;
+  right: 120px;
+}
+
+
+@media (max-width: 991px) {
+
+  .insight-wrapper {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .insight-center {
+    order: 1;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .insight-center h2 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .insight-item {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+
+  .insight-section {
+    padding: 50px 20px;
+  }
+
+  .insight-center h2 {
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+  }
+
+  .insight-item h3 {
+    font-size: 18px;
+  }
+
+  .insight-item p {
+    font-size: 13px;
+  }
+
+} */
+
+      /* =========================================
+        CONVERSATION SECTION
+        ========================================= */
+
+        .conversation-section{
+            padding: 90px 20px 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .conversation-container{
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* =========================================
+        HEADING
+        ========================================= */
+
+        .conversation-heading{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .conversation-heading h2{
+            font-size: 40px;
+            line-height: 1.15;
+            color: #4a372c;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-family: 'bonaNovaBold';
+        }
+
+        /* =========================================
+        SERVICES TITLE
+        ========================================= */
+
+        .services-title{
+            text-align: center;
+            margin-bottom: 50px;
+
+            opacity: 0;
+            transform: translateY(120px);
+        }
+
+        .services-title h3{
+            color: #db9221;
+            font-size: 30px;
+            font-family: 'bonaNovaBold';
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* =========================================
+        TIMELINE SLIDER
+        ========================================= */
+
+        .timeline-slider{
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* =========================================
+        TIMELINE ROW
+        ========================================= */
+
+        .timeline-row{
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            /* height: 100%; */
+
+            opacity: 0;
+
+            transform: translateX(100%);
+
+            will-change: transform, opacity;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        /* FIRST ROW VISIBLE */
+
+        .row-1{
+            opacity: 1;
+            transform: translateX(0%);
+        }
+
+        /* =========================================
+        LINE
+        ========================================= */
+
+        .timeline-line{
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: #8d9a8f;
+            z-index: 1;
+        }
+
+        /* =========================================
+        GRID
+        ========================================= */
+
+        .timeline-grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+
+            position: relative;
+            z-index: 2;
+
+            width: 100%;
+        }
+
+        .timeline-grid.two-items{
+            grid-template-columns: repeat(2, 1fr);
+            width: 70%;
+            margin: auto;
+        }
+
+        /* =========================================
+        CARD
+        ========================================= */
+
+        .service-card{
+            text-align: center;
+            position: relative;
+            padding-top: 30px;
+        }
+
+        /* =========================================
+        DOT
+        ========================================= */
+
+        .service-dot{
+            width: 20px;
+            height: 20px;
+            background: #db9221;
+            border-radius: 50%;
+            margin: 0 auto 18px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .service-card h4{
+            font-size: 22px;
+            color: #413326;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-family: 'poppinSemiBold';
+        }
+
+        .service-card p{
+            font-size: 16px;
+            line-height: 1.6;
+            color: #433326;
+            max-width: 280px;
+            margin: auto;
+            font-family: 'poppinRegular';
+        }
+
+        /* =========================================
+        TABLET
+        ========================================= */
+
+        @media (max-width:991px){
+
+            .conversation-heading{
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .services-title{
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .conversation-heading h2{
+                font-size: 48px;
+            }
+
+            .services-title h3{
+                font-size: 36px;
+            }
+
+            .timeline-slider{
+                height: auto;
+                display: block;
+            }
+
+            .timeline-grid{
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .timeline-grid.two-items{
+                width: 100%;
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-line{
+                display: none;
+            }
+
+            .timeline-row{
+                position: relative !important;
+
+                opacity: 1 !important;
+
+                transform: none !important;
+
+                margin-bottom: 60px;
+
+                height: auto;
+
+                display: block;
+            }
+
+            .service-card{
+                padding-top: 0;
+            }
+        }
+
+        /* =========================================
+        MOBILE
+        ========================================= */
+
+        @media (max-width:576px){
+
+            .conversation-section{
+                padding: 70px 20px;
+            }
+
+            .conversation-heading{
+                margin-bottom: 40px;
+            }
+
+            .conversation-heading h2{
+                font-size: 25px;
+                line-height: 1.3;
+            }
+
+            .services-title{
+                margin-bottom: 40px;
+            }
+
+            .services-title h3{
+                font-size: 22px;
+            }
+
+            .service-card h4{
+                font-size: 22px;
+            }
+
+            .service-card p{
+                font-size: 14px;
+            }
+        }
+
+        .gallery-section {
+        padding: 70px 20px;
+        }
+
+        .gallery-container {
+        max-width: 1300px;
+        margin: auto;
+        }
+
+        /* =========================
+        IMAGE SLIDER
+        ========================== */
+
+        .gallery-slider {
+        position: relative;
+        margin-bottom: 70px;
+        }
+
+        .swiper {
+        width: 100%;
+        height: 500px;
+        border-radius: 6px;
+        overflow: hidden;
+        }
+
+        .swiper-slide {
+        position: relative;
+        }
+
+        .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        }
+
+        /* OVERLAY TITLE */
+
+        .gallery-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        color: #3e2c24;
+        font-size: 56px;
+        font-family: Georgia, serif;
+        font-weight: 700;
+        text-align: center;
+        pointer-events: none;
+        }
+
+        /* ARROWS */
+
+        .swiper-button-next,
+        .swiper-button-prev {
+        color: #d5d5d5;
+        width: 45px;
+        height: 45px;
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+        font-size: 26px;
+        font-weight: bold;
+        }
+
+        /* =========================
+        DISCLAIMER
+        ========================== */
+
+        .disclaimer {
+        text-align: center;
+        margin-bottom: 55px;
+        }
+
+        .disclaimer p {
+        font-size: 16px;
+        color: #2f2f2f;
+        font-style: italic;
+        line-height: 1.7;
+        font-family: 'interMediumItalic';
+        }
+
+        /* =========================
+        REVIEW BOXES
+        ========================== */
+
+        .review-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        }
+
+        .review-box {
+        background: #db9221;
+        border-radius: 8px;
+        padding: 20px;
+        min-height: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        }
+
+        .review-box p {
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.6;
+        font-family: 'interMedium';
+        }
+
+        /* =========================
+        TABLET
+        ========================== */
+
+        @media (max-width:991px) {
+
+        .swiper {
+            height: 400px;
+        }
+
+        .gallery-title {
+            font-size: 44px;
+        }
+
+        .review-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        }
+
+        /* =========================
+        MOBILE
+        ========================== */
+
+        @media (max-width:576px) {
+
+        .gallery-section {
+            padding: 50px 15px;
+        }
+
+        .swiper {
+            height: 260px;
+        }
+
+        .gallery-title {
+            font-size: 32px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 35px;
+            height: 35px;
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 20px;
+        }
+
+        .disclaimer {
+            margin-bottom: 40px;
+        }
+
+        .disclaimer p {
+            font-size: 14px;
+        }
+
+        .review-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .review-box {
+            min-height: auto;
+        }
+
+        .review-box p {
+            font-size: 14px;
+        }
+        }
+
+        .custom-footer {
+        background: #f4eee5;
+        padding: 40px 20px 50px;
+        text-align: center;
+        overflow: hidden;
+        }
+
+        .footer-container {
+        max-width: 1200px;
+        margin: auto;
+        }
+
+        /* =========================
+        TOP IMAGE
+        ========================== */
+
+        .footer-artwork {
+        margin-bottom: 40px;
+        }
+
+        .footer-artwork img {
+        width: 100%;
+        max-width: 700px;
+        display: block;
+        margin: auto;
+        object-fit: contain;
+        }
+
+        /* =========================
+        LOGO
+        ========================== */
+
+        .footer-logo {
+        margin-bottom: 12px;
+        }
+
+        .footer-logo img {
+        width: 70px;
+        object-fit: contain;
+        }
+
+        /* =========================
+        TEXT
+        ========================== */
+
+        .footer-text {
+        margin-bottom: 18px;
+        }
+
+        .footer-text h3 {
+        font-size: 14px;
+        color: #413326;
+        margin-bottom: 12px;
+        font-weight: 500;
+        font-family: 'poppinRegular';
+        }
+
+        .footer-text a {
+        color: #db9221;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        display: inline-block;
+        font-family: 'poppinRegular';
+        }
+
+        .footer-text p {
+        color: #413326;
+        font-size: 14px;
+        font-family: 'poppinRegular';
+        }
+
+        /* =========================
+        SOCIAL ICONS
+        ========================== */
+
+        .footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+        margin-top: 20px;
+        }
+
+        .footer-social a {
+        color: #413326;
+        font-size: 15px;
+        transition: 0.3s;
+        }
+
+        .footer-social a:hover {
+        transform: translateY(-3px);
+        color: #d8921c;
+        }
+
+        /* =========================
+        TABLET
+        ========================== */
+
+        @media (max-width:991px) {
+
+        .footer-artwork img {
+            max-width: 450px;
+        }
+        }
+
+        /* =========================
+        MOBILE
+        ========================== */
+
+        @media (max-width:576px) {
+
+        .custom-footer {
+            padding: 30px 15px 40px;
+        }
+
+        .footer-artwork {
+            margin-bottom: 30px;
+        }
+
+        .footer-artwork img {
+            max-width: 100%;
+        }
+
+        .footer-logo img {
+            width: 60px;
+        }
+
+        .footer-text h3 {
+            font-size: 16px;
+        }
+
+        .footer-text a {
+            font-size: 15px;
+        }
+
+        .footer-text p {
+            font-size: 14px;
+        }
+
+        .footer-social {
+            gap: 14px;
+        }
+
+        .footer-social a {
+            font-size: 14px;
+        }
+        }
+
+        /* =========================
+        INITIAL STATES
+        ========================= */
+
+        .hero-image,
+        .hero-content h1,
+        .hero-content p,
+        .hero-content .hero-btn {
+            opacity: 0;
+            transform: translateY(80px);
+        }
+
+      
+        .hero-image {
+            animation: fadeUp 1.4s ease forwards;
+        }
+
+        .hero-content h1 {
+            animation: fadeUp 1.4s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        .hero-content p {
+            animation: fadeUp 1.4s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .hero-content .hero-btn {
+            animation: fadeUp 1.4s ease forwards;
+            animation-delay: 0.9s;
+        }
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(80px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* =========================
+        INITIAL STATE
+        ========================= */
+
+        .clarity-content,
+        .clarity-image {
+            opacity: 0;
+            transform: translateY(100px);
+
+            transition:
+                opacity 1.4s ease,
+                transform 1.4s ease;
+
+            will-change: transform, opacity;
+        }
+
+        /* =========================
+        ACTIVE STATE
+        ========================= */
+
+        .clarity-content.show,
+        .clarity-image.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+        INITIAL STATE
+        ========================= */
+
+        .sticky-note {
+            opacity: 0;
+
+            transform: translateY(100px);
+
+            transition:
+                opacity 1.5s ease,
+                transform 1.5s ease;
+
+            will-change: transform, opacity;
+        }
+
+        /* =========================
+        SHOW STATE
+        ========================= */
+
+        .sticky-note.show {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+        /* =========================
+        INSIGHT SECTION
+        ========================= */
+
+        .insight-section {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 100px 20px;
+        }
+
+        /* =========================
+        TEXT
+        ========================= */
+
+        .insight-center h2 {
+
+            font-size: 70px;
+
+            text-align: center;
+
+            color: #3e2c24;
+
+            opacity: 0.3;
+
+            filter: blur(12px);
+
+            transform: scale(0.95);
+
+            transition:
+                filter 0.4s linear,
+                opacity 0.4s linear,
+                transform 0.4s linear;
+
+            will-change: filter, opacity, transform;
+                position: relative;
+                width: 100%;
+                top: 185px;
+        }
+
+        /* =========================
+        ACTIVE / CLEAR
+        ========================= */
+
+        .insight-center h2.active {
+
+            opacity: 1;
+
+            filter: blur(0px);
+
+            transform: scale(1);
+        }
+        .insight-wrapper {
+                min-height: 500px;
+            }
+
+        /* =========================
+        MOBILE
+        ========================= */
+
+        @media(max-width:768px){
+
+            .insight-section {
+                min-height: 65vh;
+            }
+            .insight-wrapper {
+                min-height: 0px;
+            }
+
+            .insight-center h2{
+                font-size: 34px;
+                line-height: 1.3;
+                top: 0px;
+            }
+
+        }
+
+        .review-marquee {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.review-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  will-change: transform;
+}
+
+.review-box {
+  background: #db9221;
+  border-radius: 8px;
+  padding: 20px;
+  min-width: 280px;
+  min-height: 130px;
+  display: flex;
+  align-items: center;
+}
+
+.review-box p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'interMedium';
+}
+
+
+        /* Initial Hidden State */
+        .footer-artwork img,
+        /* .footer-logo img,
+        .footer-text h3,
+        .footer-text a,
+        .footer-text p, */
+        .footer-social a {
+            opacity: 0;
+            /* transform: translateY(60px); */
+        }
+
+        .footer-artwork img.show-animation {
+            animation-delay: 0.2s;
+             opacity: 1;
+        }
+
+        /* .footer-logo img.show-animation {
+            animation-delay: 0.4s;
+        }
+
+        .footer-text h3.show-animation {
+            animation-delay: 0.6s;
+        }
+
+        .footer-text a.show-animation {
+            animation-delay: 0.8s;
+        }
+
+        .footer-text p.show-animation {
+            animation-delay: 1s;
+        } */
+         /* ================= TEXT REVEAL ================= */
+
+.footer-text h3,
+.footer-text a,
+.footer-text p,
+.footer-logo img{
+    position: relative;
+
+    opacity: 0;
+
+    overflow: hidden;
+}
+
+/* SHOW */
+.footer-text h3.show-animation,
+.footer-text a.show-animation,
+.footer-text p.show-animation,
+.footer-logo img.show-animation{
+
+    opacity: 1;
+}
+
+/* WHITE COVER */
+.footer-text h3::after,
+.footer-text a::after,
+.footer-text p::after,
+.footer-logo img::after{
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #f6eee3; /* same as footer bg */
+
+    transform: translateX(0);
+}
+
+/* ANIMATION */
+.footer-text h3.show-animation::after,
+.footer-text a.show-animation::after,
+.footer-text p.show-animation::after,
+.footer-logo img.show-animation::after{
+
+    animation: textWipe 1.5s ease forwards;
+}
+
+/* DELAYS */
+
+.footer-logo img.show-animation::after{
+    animation-delay: 0.2s;
+}
+
+.footer-text h3.show-animation::after{
+    animation-delay: 0.5s;
+}
+
+.footer-text a.show-animation::after{
+    animation-delay: 0.8s;
+}
+
+.footer-text p.show-animation::after{
+    animation-delay: 1.1s;
+}
+
+/* KEYFRAMES */
+
+@keyframes textWipe{
+
+    from{
+        transform: translateX(0);
+    }
+
+    to{
+        transform: translateX(101%);
+    }
+}
+
+        .footer-social a:nth-child(1).show-animation {
+            animation-delay: 1.2s;
+            opacity:1;
+        }
+
+        .footer-social a:nth-child(2).show-animation {
+            animation-delay: 1.4s;
+            opacity:1;
+        }
+
+        .footer-social a:nth-child(3).show-animation {
+            animation-delay: 1.6s;
+            opacity:1;
+        }
+
+        .footer-social a:nth-child(4).show-animation {
+            animation-delay: 1.8s;
+            opacity:1;
+        }
+    </style>
+    </head>
+
+    <body>
+    <div class="navbar-wrapper">
+
+        <nav class="navbar">
+
+        <!-- LEFT -->
+        <div class="logo-area">
+            <img class="logo-img" src="assets/images/rachna-logo.png" alt="logo" />
+            <div class="brand-name">Rachna Mohta</div>
+        </div>
+
+        <!-- RIGHT MENU -->
+        <div class="nav-links" id="navLinks">
+            <a href="home1.html">Home</a>
+            <a href="services1.html">Services</a>
+            <a href="about1.html">About me</a>
+            <a href="contact1.html" class="talk-btn">Let's talk</a>
+        </div>
+
+        <!-- HAMBURGER -->
+        <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        </nav>
+
+    </div>
+    <section class="hero-section">
+
+    <!-- LEFT SIDE -->
+    <div class="hero-image">
+        <img src="assets/images/motiwali.png" alt="Lady Image">
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="hero-content">
+
+        <h1>Clarity takes a moment.</h1>
+
+        <p>
+            Explore evidence-informed coaching, leadership support,
+            and transformational programmes, designed for individuals
+            who are ready to think differently about where they are
+            and where they are going.
+        </p>
+
+        <a href="#" class="hero-btn">Book a clarity call</a>
+
+    </div>
+
+</section>
+
+    <section class="clarity-section">
+
+        <!-- LEFT TEXT -->
+        <div class="clarity-content">
+        <h2>
+            I HELP PEOPLE CLARITY <br>
+            FINDS THOSE WHO SEEK IT.
+        </h2>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="clarity-image">
+        <img src="assets/images/chair-table.png" alt="Table Man">
+        </div>
+
+    </section>
+
+    <section class="sticky-section">
+
+        <div class="sticky-note note-1">
+        <img src="assets/images/Group 55.png" alt="">
+        </div>
+
+        <div class="sticky-note note-2">
+        <img src="assets/images/Group 56.png" alt="">
+        </div>
+
+        <div class="sticky-note note-3">
+        <img src="assets/images/Group 58.png" alt="">
+        </div>
+
+    </section>
+    <!-- SECTION -->
+    <!-- <section class="insight-section">
+
+        <div class="insight-wrapper">
+
+        <div class="insight-item direction-loss">
+            <h3>Loss of Direction</h3>
+            <p>Successful on paper. Uncertain within.</p>
+        </div>
+
+        <div class="insight-item choice-fatigue">
+            <h3>Decision Fatigue</h3>
+            <p>Too many choices, too little clarity.</p>
+        </div>
+
+        <div class="insight-item stuck-feeling">
+            <h3>Feeling Stuck</h3>
+            <p>Moving fast but going nowhere new.</p>
+        </div>
+
+        <div class="insight-item overthinking-box">
+            <h3>Overthinking</h3>
+            <p>Knowing what to do and still not doing it.</p>
+        </div>
+
+        <div class="insight-center">
+            <h2>The right clarity changes everything</h2>
+        </div>
+
+        <div class="insight-item internal-noise-box">
+            <h3>Internal Noise</h3>
+            <p>Loud thoughts. Quiet answers.</p>
+        </div>
+
+        <div class="insight-item career-confusion-box">
+            <h3>Career Confusion</h3>
+            <p>The path that made sense then doesn’t feel right now.</p>
+        </div>
+
+        <div class="insight-item leadership-isolation-box">
+            <h3>Leadership Isolation</h3>
+            <p>Carrying it all with no one to think alongside.</p>
+        </div>
+
+        </div>
+
+    </section> -->
+    <section class="insight-section">
+
+        <div class="insight-wrapper">
+
+            <div class="insight-center">
+                <h2>The right clarity changes everything</h2>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- <section class="conversation-section">
+
+        <div class="conversation-container">
+
+   
+        <div class="conversation-heading">
+            <h2>
+            Start With One Honest <br>
+            Conversation.
+            </h2>
+        </div>
+
+
+        <div class="services-title">
+            <h3>Services</h3>
+        </div>
+
+        <div class="timeline-row">
+
+            <div class="timeline-line" style="left: 16%; width: 68%;"></div>
+
+            <div class="timeline-grid">
+
+            <div class="service-card">
+                <div class="service-dot"></div>
+                <h4>Free-diagnosis</h4>
+                <p>
+                Not sure where to begin? Start with a conversation.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-dot"></div>
+                <h4>1:1 Coaching</h4>
+                <p>
+                A thinking partner who helps you see what you've been too close to notice.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-dot"></div>
+                <h4>Mentorship Program</h4>
+                <p>
+                Real change, at a pace that actually sticks.
+                </p>
+            </div>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-row">
+
+            <div class="timeline-line" style="width: 37%; left: 31%;"></div>
+
+            <div class="timeline-grid two-items">
+
+            <div class="service-card">
+                <div class="service-dot"></div>
+                <h4>Panel Discussions</h4>
+                <p>
+                A perspective that cuts through the noise, honestly.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-dot"></div>
+                <h4>90-Minute Speaking</h4>
+                <p>
+                Sharp. Focused. Enough to shift how a room thinks.
+                </p>
+            </div>
+
+            </div>
+
+        </div>
+
+  
+        <div class="timeline-row">
+
+            <div class="timeline-line" style="left: 16%; width: 68%;"></div>
+
+            <div class="timeline-grid">
+
+            <div class="service-card">
+                <div class="service-dot"></div>
+                <h4>Workshops</h4>
+                <p>
+                One session that gives your team more clarity than months of back and forth.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-dot"></div>
+                <h4>Corporate & Leadership Training</h4>
+                <p>
+                Practical tools your people will actually use, not just sit through.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-dot"></div>
+                <h4>Keynote Speaking</h4>
+                <p>
+                The talk that stays with the room long after it ends.
+                </p>
+            </div>
+
+            </div>
+
+        </div>
+
+        </div>
+
+    </section> -->
+    <section class="conversation-section">
+
+    <div class="conversation-container">
+
+        <!-- MAIN HEADING -->
+        <div class="conversation-heading">
+            <h2>
+                Start With One Honest
+                Conversation.
+            </h2>
+        </div>
+
+        <!-- SERVICES -->
+        <div class="services-title">
+            <h3>Services</h3>
+        </div>
+
+        <!-- TIMELINE SLIDER -->
+        <div class="timeline-slider">
+
+            <!-- ================= ROW 1 ================= -->
+            <div class="timeline-row row-1">
+
+                <div class="timeline-line" style="left: 16%; width: 68%;"></div>
+
+                <div class="timeline-grid">
+
+                    <div class="service-card">
+                        <div class="service-dot"></div>
+                        <h4>Free-diagnosis</h4>
+                        <p>
+                            Not sure where to begin? Start with a conversation.
+                        </p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-dot"></div>
+                        <h4>1:1 Coaching</h4>
+                        <p>
+                            A thinking partner who helps you see what you've been too close to notice.
+                        </p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-dot"></div>
+                        <h4>Mentorship Program</h4>
+                        <p>
+                            Real change, at a pace that actually sticks.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ================= ROW 2 ================= -->
+            <div class="timeline-row row-2">
+
+                <div class="timeline-line" style="width: 37%; left: 31%;"></div>
+
+                <div class="timeline-grid two-items">
+
+                    <div class="service-card">
+                        <div class="service-dot"></div>
+                        <h4>Panel Discussions</h4>
+                        <p>
+                            A perspective that cuts through the noise, honestly.
+                        </p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-dot"></div>
+                        <h4>90-Minute Speaking</h4>
+                        <p>
+                            Sharp. Focused. Enough to shift how a room thinks.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ================= ROW 3 ================= -->
+            <div class="timeline-row row-3">
+
+                <div class="timeline-line" style="left: 16%; width: 68%;"></div>
+
+                <div class="timeline-grid">
+
+                    <div class="service-card">
+                        <div class="service-dot"></div>
+                        <h4>Workshops</h4>
+                        <p>
+                            One session that gives your team more clarity than months of back and forth.
+                        </p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-dot"></div>
+                        <h4>Corporate & Leadership Training</h4>
+                        <p>
+                            Practical tools your people will actually use, not just sit through.
+                        </p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-dot"></div>
+                        <h4>Keynote Speaking</h4>
+                        <p>
+                            The talk that stays with the room long after it ends.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    <section class="gallery-section">
+
+        <div class="gallery-container">
+
+        <!-- =========================
+            SLIDER
+        ========================== -->
+
+        <div class="gallery-slider">
+
+            <!-- TITLE -->
+
+
+            <!-- SWIPER -->
+            <div class="swiper myGallerySlider">
+
+            <div class="swiper-wrapper">
+
+                <!-- SLIDE -->
+                <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop"
+                    alt="">
+                </div>
+
+                <!-- SLIDE -->
+                <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop"
+                    alt="">
+                </div>
+
+                <!-- SLIDE -->
+                <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
+                    alt="">
+                </div>
+
+            </div>
+
+            <!-- ARROWS -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            </div>
+
+        </div>
+
+        <!-- =========================
+            DISCLAIMER
+        ========================== -->
+
+        <div class="disclaimer">
+            <p>
+            Disclaimer: All client information has been withheld strictly to protect individual privacy and
+            confidentiality.
+            </p>
+        </div>
+
+        <!-- =========================
+            REVIEWS
+        ========================== -->
+
+        <!-- <div class="review-grid">
+
+            <div class="review-box">
+            <p>“A genuinely glowing review”</p>
+            </div>
+
+            <div class="review-box">
+            <p>“A terrific piece of praise”</p>
+            </div>
+
+            <div class="review-box">
+            <p>“A fantastic bit of feedback”</p>
+            </div>
+
+            <div class="review-box">
+            <p>“A terrific piece of praise”</p>
+            </div>
+
+        </div> -->
+        <div class="review-marquee">
+
+  <div class="review-track">
+
+    <div class="review-box">
+      <p>“A genuinely glowing review”</p>
+    </div>
+
+    <div class="review-box">
+      <p>“A terrific piece of praise”</p>
+    </div>
+
+    <div class="review-box">
+      <p>“A fantastic bit of feedback”</p>
+    </div>
+
+    <div class="review-box">
+      <p>“A terrific piece of praise”</p>
+    </div>
+
+    <!-- duplicate set for smooth loop -->
+    <div class="review-box">
+      <p>“A genuinely glowing review”</p>
+    </div>
+
+    <div class="review-box">
+      <p>“A terrific piece of praise”</p>
+    </div>
+
+    <div class="review-box">
+      <p>“A fantastic bit of feedback”</p>
+    </div>
+
+    <div class="review-box">
+      <p>“A terrific piece of praise”</p>
+    </div>
+
+  </div>
+
+</div>
+
+        </div>
+
+    </section>
+    <footer class="custom-footer">
+
+        <div class="footer-container">
+
+        <!-- =========================
+            CHAIR IMAGE
+        ========================== -->
+
+        <div class="footer-artwork">
+
+            <!-- REPLACE WITH YOUR IMAGE -->
+            <img src="assets/images/seating-chear.png" alt="Chair Table">
+
+        </div>
+
+        <!-- =========================
+            LOGO
+        ========================== -->
+
+        <div class="footer-logo">
+
+            <!-- REPLACE WITH YOUR LOGO -->
+            <img src="assets/images/black-logo.png" alt="Logo">
+
+        </div>
+
+        <!-- =========================
+            TEXT
+        ========================== -->
+
+        <div class="footer-text">
+
+            <h3>Clarity begins here</h3>
+
+            <a href="#">
+            Book a Clarity call
+            </a>
+
+            <p>Lets talk!</p>
+
+        </div>
+
+        <!-- =========================
+            SOCIAL ICONS
+        ========================== -->
+
+        <div class="footer-social">
+
+            <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+            <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="#">
+            <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+            </a>
+
+        </div>
+
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+
+let lastScroll = 0;
+
+const navbar = document.querySelector(".navbar-wrapper");
+
+window.addEventListener("scroll", () => {
+
+    const currentScroll = window.pageYOffset;
+
+    /* Top of page */
+    if(currentScroll <= 50){
+
+        navbar.classList.remove("nav-hide");
+        navbar.classList.add("nav-show");
+
+        return;
+    }
+
+    /* Scroll Down */
+    if(currentScroll > lastScroll){
+
+        navbar.classList.remove("nav-show");
+        navbar.classList.add("nav-hide");
+
+    }
+
+    /* Scroll Up */
+    else{
+
+        navbar.classList.remove("nav-hide");
+        navbar.classList.add("nav-show");
+
+    }
+
+    lastScroll = currentScroll;
+
+});
+
+</script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+if (window.innerWidth > 991) {
+
+  gsap.set(".row-2, .row-3", {
+    x: "100%",
+    opacity: 0
+  });
+
+  gsap.fromTo(
+    ".conversation-heading, .services-title",
+    {
+      y: 120,
+      opacity: 0
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1.5,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".conversation-section",
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      }
+    }
+  );
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".conversation-section",
+      start: "top 100px",
+      end: "+=3500",
+      scrub: 2,
+      pin: true,
+      anticipatePin: 1
+    }
+  });
+
+  tl.to(".row-1", {
+    x: "-100%",
+    opacity: 0,
+    duration: 2
+  })
+  .to(".row-2", {
+    x: "0%",
+    opacity: 1,
+    duration: 2
+  }, "-=2")
+  .to(".row-2", {
+    x: "-100%",
+    opacity: 0,
+    duration: 2
+  })
+  .to(".row-3", {
+    x: "0%",
+    opacity: 1,
+    duration: 2
+  }, "-=2");
+
+}
+</script>
+<script>
+gsap.registerPlugin();
+
+const track = document.querySelector(".review-track");
+
+/* continuous animation */
+const tween = gsap.to(track, {
+  x: "-50%",
+  duration: 20,
+  ease: "none",
+  repeat: -1
+});
+
+/* pause on hover */
+track.addEventListener("mouseenter", () => {
+  tween.pause();
+});
+
+/* resume on leave */
+track.addEventListener("mouseleave", () => {
+  tween.play();
+});
+</script>
+    <script>
+
+        var swiper = new Swiper(".myGallerySlider", {
+
+        loop: true,
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        }
+
+        });
+
+    </script>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        });
+    </script>
+    <script>
+
+        const clarityElements = document.querySelectorAll(
+            ".clarity-content, .clarity-image"
+        );
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                } else {
+                    entry.target.classList.remove("show");
+                }
+
+            });
+
+        }, {
+            threshold: 0.25
+        });
+
+        /* OBSERVE ELEMENTS */
+        clarityElements.forEach((el) => {
+            observer.observe(el);
+        });
+
+    </script>
+    <script>
+
+        /* =========================
+        STICKY NOTES ANIMATION
+        ========================= */
+
+        const stickyNotes = document.querySelectorAll(".sticky-note");
+
+        const stickyObserver = new IntersectionObserver((entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                } else {
+
+                    entry.target.classList.remove("show");
+                }
+
+            });
+
+        }, {
+            threshold: 0.2
+        });
+
+        /* OBSERVE EACH IMAGE */
+        stickyNotes.forEach((note) => {
+            stickyObserver.observe(note);
+        });
+
+    </script>
+    <script>
+
+/* =========================
+   BLUR TO CLEAR EFFECT
+========================= */
+
+const insightText = document.querySelector(".insight-center h2");
+
+window.addEventListener("scroll", () => {
+
+    const rect = insightText.getBoundingClientRect();
+
+    const screenCenter = window.innerHeight / 2;
+
+    const elementCenter = rect.top + rect.height / 2;
+
+    const distance = Math.abs(screenCenter - elementCenter);
+
+    /* ACTIVE RANGE */
+    if(distance < 120){
+
+        insightText.classList.add("active");
+
+    } else {
+
+        insightText.classList.remove("active");
+    }
+
+});
+
+</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const elements = document.querySelectorAll(
+                '.footer-artwork img, .footer-logo img, .footer-text h3, .footer-text a, .footer-text p, .footer-social a'
+            );
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show-animation");
+                    }
+
+                });
+
+            }, {
+                threshold: 0.2
+            });
+
+            elements.forEach(el => observer.observe(el));
+
+        });
+    </script>
+    </body>
+
+</html>

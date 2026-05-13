@@ -1,0 +1,1391 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="icon" type="image/png" href="assets/images/logo-navbar.png" />
+    <link rel="stylesheet" href="assets/css/style1.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f6eee3;
+            padding-top: 100px;
+        }
+
+        /* WRAPPER */
+        /* WRAPPER */
+        .navbar-wrapper {
+            width: 100%;
+            padding: 20px 12px;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 9999;
+
+            display: flex;
+            justify-content: center;
+            transition:
+            transform 0.4s ease,
+            opacity 0.4s ease;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            max-width: 1400px;
+
+            background: #db9221;
+            border-radius: 8px;
+
+            padding: 14px 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: relative;
+        }
+
+        .nav-hide{
+            transform: translateY(-120%);
+            opacity: 0;
+        }
+
+        /* Show navbar */
+
+        .nav-show{
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* LEFT LOGO */
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-box {
+            width: 42px;
+            height: 42px;
+
+            border: 2px solid #fff;
+            border-radius: 6px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .logo-img{
+            height: 35px;
+        }
+
+        .brand-name {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-family: 'bonaNovaScBold';
+        }
+
+        /* NAV LINKS */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s;
+            font-family: 'poppinMedium';
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* BUTTON */
+        .talk-btn {
+          padding: 8px 14px;
+          border-radius: 8px;
+          box-shadow:
+              inset 0 6px 8px -6px rgba(0, 0, 0, 0.24),  /* top */
+              inset 0 -3px 4px -4px rgba(0, 0, 0, 0.22), /* bottom */
+              inset 3px 0 4px -4px rgba(0, 0, 0, 0.22),  /* left */
+              inset -3px 0 4px -4px rgba(0, 0, 0, 0.22); /* right */
+        }
+
+        /* HAMBURGER */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 22px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+        /* MOBILE VIEW */
+        @media(max-width:768px) {
+
+           body{
+            padding-top: 90px;
+          }
+
+          .navbar-wrapper{
+              padding: 10px;
+          }
+
+            .navbar {
+                padding: 14px 18px;
+                border-radius: 8px 8px 0px 0px;
+            }
+
+            .brand-name {
+                font-size: 18px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+
+                width: 100%;
+
+                background: #d9921d;
+
+                flex-direction: column;
+                align-items: flex-start;
+
+                padding: 0 20px;
+
+                max-height: 0;
+                overflow: hidden;
+
+                transition: 0.4s ease;
+
+                /* border-radius:0 0 8px 8px; */
+                border-radius: 0px 0px 8px 8px;
+
+
+                gap: 0;
+            }
+
+            .nav-links.active {
+                max-height: 400px;
+                padding: 20px;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 12px 10px;
+            }
+        }
+
+         .hero {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 8%;
+    }
+
+    .hero-container {
+      width: 100%;
+      max-width: 1300px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    /* LEFT IMAGE */
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* RIGHT CONTENT */
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+       font-family: 'bonaNovaBold';
+      font-size: 50px;
+      line-height: 1.1;
+      color: #245136;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .hero-content p {
+      font-size: 16px;
+      color: #000;
+      line-height: 1.7;
+      max-width: 480px;
+      font-family: 'poppinRegular';
+    }
+
+    /* TABLET */
+    @media (max-width: 992px) {
+      .hero-container {
+        gap: 40px;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2.2rem, 4vw, 3.8rem);
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 50px 24px;
+      }
+
+      .hero-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero-content p {
+        margin: 0 auto;
+      }
+
+      .hero-image img {
+        max-width: 320px;
+      }
+    }
+
+    /* SMALL MOBILE */
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .hero {
+        padding: 40px 18px;
+      }
+    }
+
+      .about-section{
+      max-width:1200px;
+      margin:auto;
+      padding:60px 20px;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:start;
+    }
+
+    /* LEFT SIDE */
+    .left-content{
+      position:relative;
+      padding-top:150px;
+    }
+
+    .main-heading{
+      text-align:center;
+      margin-bottom:25px;
+      margin-top:20px;
+      display: flex;
+    flex-direction: column;
+    align-items: end;
+    }
+
+    .main-heading h1{
+      font-size:40px;
+      line-height:1.1;
+      font-weight:700;
+      margin-bottom:14px;
+      font-family: 'poppinSemiBold';
+      text-align: right;
+      color:#433326
+    }
+
+    .main-heading p{
+      font-size:16px;
+      color:#433326;
+      line-height:1.5;
+      max-width:400px;
+      font-family: 'poppinRegular';
+      text-align: right;
+    }
+
+    /* LARGE IMAGE */
+    .large-image{
+      position:relative;
+      width:100%;
+    }
+
+    .large-image .lady-img{
+      width:550px;
+      height: 600px;
+      border-radius:18px;
+      display:block;
+      object-fit:cover;
+    }
+
+    /* PLANT IMAGE */
+    .plant-img{
+        position: absolute;
+        left: -80px;
+        bottom: -85px;
+        width: 130px;
+        z-index: 5;
+    }
+
+    /* RIGHT SIDE */
+    .right-content{
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+    }
+
+    .small-image img{
+      width:550px;
+      height: 600px;
+      border-radius:18px;
+      border:2px solid #496353;
+      display:block;
+      object-fit:cover;
+    }
+
+    .text-content p{
+      font-size:16px;
+      line-height:1.7;
+      color:#433326;
+      margin-bottom:20px;
+      font-family: 'poppinRegular';
+    }
+
+    .text-content h2{
+      font-size:40px;
+      line-height:1.1;
+      font-weight:700;
+    font-family: 'poppinSemiBold';
+    }
+
+    /* TABLET */
+    @media (max-width:992px){
+
+        .left-content {
+            padding-top: 10px;
+        }
+
+        .main-heading h1 {
+            text-align: left;
+        }
+
+        .main-heading p {
+            text-align: left;
+        }
+
+        .main-heading {
+         
+            align-items: flex-start;
+        }
+
+      .about-grid{
+        grid-template-columns:1fr;
+      }
+
+      .main-heading{
+        text-align:left;
+      }
+
+      .main-heading p{
+        margin:0;
+      }
+
+      .main-heading h1{
+        font-size:42px;
+      }
+
+      .text-content h2{
+        font-size:42px;
+      }
+
+      .plant-img{
+        left:-25px;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width:600px){
+
+      .about-section{
+        padding:40px 16px;
+      }
+
+      .main-heading{
+        margin-top:10px;
+      }
+
+      .main-heading h1{
+        font-size:32px;
+      }
+
+      .main-heading p{
+        font-size:14px;
+      }
+
+      .text-content p{
+        font-size:14px;
+      }
+
+      .text-content h2{
+        font-size:32px;
+      }
+
+      .plant-img{
+        width: 80px;
+        left: -48px;
+        bottom: -55px;
+      }
+    }
+
+    .coaching-section{
+  max-width:1250px;
+  margin:auto;
+  padding:70px 30px;
+}
+
+/* COMMON ROW */
+.content-row{
+  display:flex;
+  grid-template-columns:1.2fr 0.8fr;
+  align-items:end;
+  gap:55px;
+  margin-bottom:90px;
+  justify-content: center;
+}
+
+/* SECOND ROW REVERSE */
+.content-row.reverse{
+  grid-template-columns:0.8fr 1.2fr;
+}
+
+/* IMAGE STYLE */
+.image-box img{
+  width:550px;
+  display:block;
+  border-radius:18px;
+  border:1.5px solid #305a42;
+  object-fit:cover;
+}
+
+/* TEXT AREA */
+.text-box{
+  max-width:420px;
+}
+
+.text-box h2{
+  font-family: 'bonaNovaBold';
+  font-size:40px;
+  line-height:0.95;
+  font-weight:700;
+  margin-bottom:20px;
+  color:#245136;
+}
+
+.text-box p{
+font-family: 'poppinRegular';
+  font-size:16px;
+  line-height:1.7;
+  color:#413326;
+}
+
+/* BUTTON */
+.small-btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:6px 14px;
+  border:1px solid #305a42;
+  border-radius:4px;
+  color:#244b34;
+  text-decoration:none;
+  font-size:13px;
+  transition:0.3s ease;
+}
+
+.small-btn:hover{
+  background:#244b34;
+  color:#fff;
+}
+
+/* SECOND TEXT ALIGN */
+.left-align{
+  text-align:center;
+  margin:auto;
+}
+
+.right-align{
+     text-align:right
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+
+    .large-image .lady-img {
+        width: 100%;
+    }
+    .small-image img {
+         width: 100%;
+    }
+
+  .content-row,
+  .content-row.reverse{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .content-row{
+        display: flex;
+    flex-direction: column;
+  }
+
+  .image-box img {
+    width: 100%;
+  }
+
+  .right-align{
+    text-align: left;
+  }
+
+  .content-row.reverse .image-box{
+    order:1;
+  }
+
+  .content-row.reverse .text-box{
+    order:2;
+  }
+
+  .text-box{
+    max-width:100%;
+  }
+
+  .text-box h2{
+    font-size:35px;
+  }
+
+  .left-align{
+    text-align:left;
+  }
+}
+
+@media(max-width:600px){
+
+  .coaching-section{
+    padding:45px 18px;
+  }
+
+  .content-row{
+    margin-bottom:70px;
+  }
+
+  .text-box h2{
+    font-size:30px;
+    line-height:1;
+  }
+
+  .text-box p{
+    font-size:14px;
+  }
+
+  .small-btn{
+    font-size:12px;
+    padding:5px 12px;
+  }
+}
+
+    
+    .custom-footer{
+      padding:40px 20px 50px;
+      text-align:center;
+      overflow:hidden;
+    }
+
+    .footer-container{
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* =========================
+       TOP IMAGE
+    ========================== */
+
+    .footer-artwork{
+      margin-bottom:40px;
+    }
+
+    .footer-artwork img{
+      width:100%;
+      max-width:700px;
+      display:block;
+      margin:auto;
+      object-fit:contain;
+    }
+
+    /* =========================
+       LOGO
+    ========================== */
+
+    .footer-logo{
+      margin-bottom:12px;
+    }
+
+    .footer-logo img{
+      width:70px;
+      object-fit:contain;
+    }
+
+    /* =========================
+       TEXT
+    ========================== */
+
+    .footer-text{
+      margin-bottom:18px;
+    }
+
+    .footer-text h3{
+      font-size:14px;
+      color:#413326;
+      margin-bottom:12px;
+      font-weight:500;
+      font-family: 'poppinRegular';
+    }
+
+    .footer-text a{
+      color:#db9221;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:600;
+      display:inline-block;
+      font-family: 'poppinRegular';
+    }
+
+    .footer-text p{
+      color:#413326;
+      font-size:14px;
+      font-family: 'poppinRegular';
+    }
+
+    /* =========================
+       SOCIAL ICONS
+    ========================== */
+
+    .footer-social{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:18px;
+      margin-top:20px;
+    }
+
+    .footer-social a{
+      color:#413326;
+      font-size:15px;
+      transition:0.3s;
+    }
+
+    .footer-social a:hover{
+      transform:translateY(-3px);
+      color:#d8921c;
+    }
+
+    /* =========================
+       TABLET
+    ========================== */
+
+    @media (max-width:991px){
+
+      .footer-artwork img{
+        max-width:450px;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width:576px){
+
+      .custom-footer{
+        padding:30px 15px 40px;
+      }
+
+      .footer-artwork{
+        margin-bottom:30px;
+      }
+
+      .footer-artwork img{
+        max-width:100%;
+      }
+
+      .footer-logo img{
+        width:60px;
+      }
+
+      .footer-text h3{
+        font-size:16px;
+      }
+
+      .footer-text a{
+        font-size:15px;
+      }
+
+      .footer-text p{
+        font-size:14px;
+      }
+
+      .footer-social{
+        gap:14px;
+      }
+
+      .footer-social a{
+        font-size:14px;
+      }
+    }
+
+/* HERO LOAD ANIMATION */
+
+.hero-image img,
+.hero-content h1,
+.hero-content p {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Delays */
+.hero-image img {
+    animation-delay: 0.2s;
+}
+
+.hero-content h1 {
+    animation-delay: 0.5s;
+}
+
+.hero-content p {
+    animation-delay: 0.8s;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ================= ABOUT ANIMATION ================= */
+
+/* Initial Hidden State */
+/* ================= ABOUT SCROLL ANIMATION ================= */
+
+/* Initial Hidden State */
+.main-heading h1,
+.main-heading p,
+.large-image .lady-img,
+.plant-img,
+.small-image img,
+.text-content p,
+.text-content h2 {
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+/* Animation Apply */
+.show-animation {
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Smooth Delays */
+.main-heading h1.show-animation {
+    animation-delay: 0.2s;
+}
+
+.main-heading p.show-animation {
+    animation-delay: 0.4s;
+}
+
+.large-image .lady-img.show-animation {
+    animation-delay: 0.6s;
+}
+
+.plant-img.show-animation {
+    animation-delay: 0.8s;
+}
+
+.small-image img.show-animation {
+    animation-delay: 0.3s;
+}
+
+.text-content p.show-animation {
+    animation-delay: 0.5s;
+}
+
+.text-content h2.show-animation {
+    animation-delay: 0.7s;
+}
+
+/* Fade Up Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ================= SMOOTH SCROLL ANIMATION ================= */
+
+/* Initial Hidden State */
+.image-box img,
+.text-box h2,
+.text-box p,
+.small-btn {
+    opacity: 0;
+    transform: translate3d(0, 60px, 0);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+/* Animation Trigger */
+.show-animation {
+    animation: smoothFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Delays */
+
+/* FIRST ROW */
+.content-row:nth-child(1) .image-box img.show-animation {
+    animation-delay: 0.2s;
+}
+
+.content-row:nth-child(1) .text-box h2.show-animation {
+    animation-delay: 0.35s;
+}
+
+.content-row:nth-child(1) .text-box p.show-animation {
+    animation-delay: 0.5s;
+}
+
+/* SECOND ROW */
+.content-row:nth-child(2) .text-box h2.show-animation {
+    animation-delay: 0.2s;
+}
+
+.content-row:nth-child(2) .text-box p.show-animation,
+.content-row:nth-child(2) .small-btn.show-animation {
+    animation-delay: 0.4s;
+}
+
+.content-row:nth-child(2) .image-box img.show-animation {
+    animation-delay: 0.8s;
+}
+
+/* Smooth Animation */
+@keyframes smoothFadeUp {
+
+    from {
+        opacity: 0;
+        transform: translate3d(0, 60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+/* Initial Hidden State */
+.footer-artwork img,
+.footer-logo img,
+.footer-text h3,
+.footer-text a,
+.footer-text p,
+.footer-social a {
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+/* Delays */
+.footer-artwork img.show-animation {
+    animation-delay: 0.2s;
+}
+
+.footer-logo img.show-animation {
+    animation-delay: 0.4s;
+}
+
+.footer-text h3.show-animation {
+    animation-delay: 0.6s;
+}
+
+.footer-text a.show-animation {
+    animation-delay: 0.8s;
+}
+
+.footer-text p.show-animation {
+    animation-delay: 1s;
+}
+
+.footer-social a:nth-child(1).show-animation {
+    animation-delay: 1.2s;
+}
+
+.footer-social a:nth-child(2).show-animation {
+    animation-delay: 1.4s;
+}
+
+.footer-social a:nth-child(3).show-animation {
+    animation-delay: 1.6s;
+}
+
+.footer-social a:nth-child(4).show-animation {
+    animation-delay: 1.8s;
+}
+    </style>
+</head>
+
+<body>
+    <div class="navbar-wrapper">
+
+        <nav class="navbar">
+
+            <!-- LEFT -->
+            <div class="logo-area">
+                <img class="logo-img" src="assets/images/rachna-logo.png" alt="logo" />
+                <div class="brand-name">Rachna Mohta</div>
+            </div>
+
+            <!-- RIGHT MENU -->
+            <div class="nav-links" id="navLinks">
+                 <a href="home1.html">Home</a>
+                <a href="services1.html">Services</a>
+                <a href="about1.html">About me</a>
+                <a href="contact1.html" class="talk-btn">Let's talk</a>
+            </div>
+
+            <!-- HAMBURGER -->
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </nav>
+
+    </div>
+
+     <section class="hero">
+        <div class="hero-container">
+
+        <!-- LEFT -->
+        <div class="hero-image">
+            <!-- Replace with your image -->
+            <img src="assets/images/mohta2.png" alt="Lady Sitting" />
+        </div>
+
+        <!-- RIGHT -->
+        <div class="hero-content">
+            <h1>
+            Acceptance is where your transformation begins.
+            </h1>
+
+            <p>
+            I help you see what you’re missing in your own thinking.
+            </p>
+        </div>
+
+        </div>
+    </section>
+
+    <section class="about-section">
+
+        <div class="about-grid">
+
+        <!-- LEFT SIDE -->
+        <div class="left-content">
+
+            <div class="main-heading">
+            <h1>
+                My work is about clarity,<br>
+                Not motivation.
+            </h1>
+
+            <p>
+                The quality of your decisions depends
+                on the clarity of your thinking.
+            </p>
+            </div>
+
+            <div class="large-image">
+
+            <!-- First Lady Image -->
+            <img src="assets/images/about4.png" alt="Lady" class="lady-img">
+
+            <!-- Plant Image -->
+            <img src="assets/images/gulab.png" alt="Plant" class="plant-img">
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right-content">
+
+            <div class="small-image">
+
+            <!-- Second Lady Image -->
+            <img src="assets/images/about3.png" alt="Lady">
+
+            </div>
+
+            <div class="text-content">
+
+            <p>
+                I’m deeply interested in how people think,
+                behave, and decide. Structured, intentional,
+                and deeply focused on how you think.
+            </p>
+
+            <h2>
+                Helping you to find a <br>way through!
+            </h2>
+
+            </div>
+
+        </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="coaching-section">
+
+      <!-- FIRST ROW -->
+      <div class="content-row">
+
+          <!-- IMAGE -->
+          <div class="image-box">
+          <img src="assets/images/about1.png" alt="Coaching Session">
+          </div>
+
+          <!-- TEXT -->
+          <div class="text-box">
+          <h2>
+              Every session is<br>
+              built around you
+          </h2>
+
+          <p>
+              My approach integrates clinical psychology, NLP,
+              and certified coaching practice, creating a space
+              that is safe enough to be honest in and structured
+              enough to produce something real. The work is
+              always intentional, always tailored, and always
+              oriented toward one thing: clarity that moves you.
+          </p>
+          </div>
+
+      </div>
+
+
+      <!-- SECOND ROW -->
+      <div class="content-row reverse">
+
+          <!-- TEXT -->
+          <div class="text-box right-align">
+
+          <h2>
+              Bringing clarity &<br>
+              depth to every stage
+          </h2>
+
+          <p>
+              Speak from the intersection of psychology, coaching,
+              and real human experience, which means my talks are
+              never just informational. They are intentional. I want
+              every person in the room to leave with something they
+              can actually use — a shift in perspective, a clearer
+              question, a framework that works when the pressure is real.
+          </p>
+
+          <a href="#" class="small-btn">
+              Ted Talks
+          </a>
+
+          </div>
+
+          <!-- IMAGE -->
+          <div class="image-box">
+          <img src="assets/images/about5.png" alt="Speaker">
+          </div>
+
+      </div>
+
+    </section>
+
+
+    
+    <footer class="custom-footer">
+
+    <div class="footer-container">
+
+        <!-- =========================
+            CHAIR IMAGE
+        ========================== -->
+
+        <div class="footer-artwork">
+
+        <!-- REPLACE WITH YOUR IMAGE -->
+        <img src="assets/images/seating-chear.png" alt="Chair Table">
+
+        </div>
+
+        <!-- =========================
+            LOGO
+        ========================== -->
+
+        <div class="footer-logo">
+
+        <!-- REPLACE WITH YOUR LOGO -->
+        <img src="assets/images/black-logo.png" alt="Logo">
+
+        </div>
+
+        <!-- =========================
+            TEXT
+        ========================== -->
+
+        <div class="footer-text">
+
+        <h3>Clarity begins here</h3>
+
+        <a href="#">
+            Book a Clarity call
+        </a>
+
+        <p>Lets talk!</p>
+
+        </div>
+
+        <!-- =========================
+            SOCIAL ICONS
+        ========================== -->
+
+        <div class="footer-social">
+
+        <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        </div>
+
+    </div>
+
+    </footer>
+    <script>
+
+let lastScroll = 0;
+
+const navbar = document.querySelector(".navbar-wrapper");
+
+window.addEventListener("scroll", () => {
+
+    const currentScroll = window.pageYOffset;
+
+    /* Top of page */
+    if(currentScroll <= 50){
+
+        navbar.classList.remove("nav-hide");
+        navbar.classList.add("nav-show");
+
+        return;
+    }
+
+    /* Scroll Down */
+    if(currentScroll > lastScroll){
+
+        navbar.classList.remove("nav-show");
+        navbar.classList.add("nav-hide");
+
+    }
+
+    /* Scroll Up */
+    else{
+
+        navbar.classList.remove("nav-hide");
+        navbar.classList.add("nav-show");
+
+    }
+
+    lastScroll = currentScroll;
+
+});
+
+</script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const elements = document.querySelectorAll(
+        '.main-heading h1, .main-heading p, \
+        .large-image .lady-img, .plant-img, \
+        .small-image img, .text-content p, .text-content h2'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show-animation");
+            }
+
+        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+});
+</script>
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const elements = document.querySelectorAll(
+        '.image-box img, .text-box h2, .text-box p, .small-btn'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show-animation");
+                observer.unobserve(entry.target);
+            }
+
+        });
+
+    }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const elements = document.querySelectorAll(
+        '.footer-artwork img, .footer-logo img, .footer-text h3, .footer-text a, .footer-text p, .footer-social a'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show-animation");
+            }
+
+        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+});
+</script>
+</body>
+
+</html>

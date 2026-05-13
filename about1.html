@@ -7,8 +7,10 @@
     <title>About Us</title>
     <link rel="icon" type="image/png" href="assets/images/logo-navbar.png" />
     <link rel="stylesheet" href="assets/css/style1.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         * {
             margin: 0;
@@ -36,6 +38,9 @@
 
             display: flex;
             justify-content: center;
+            transition:
+                transform 0.4s ease,
+                opacity 0.4s ease;
         }
 
         /* NAVBAR */
@@ -53,6 +58,18 @@
             justify-content: space-between;
 
             position: relative;
+        }
+
+        .nav-hide {
+            transform: translateY(-120%);
+            opacity: 0;
+        }
+
+        /* Show navbar */
+
+        .nav-show {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         /* LEFT LOGO */
@@ -78,7 +95,7 @@
             font-size: 18px;
         }
 
-        .logo-img{
+        .logo-img {
             height: 35px;
         }
 
@@ -112,13 +129,17 @@
 
         /* BUTTON */
         .talk-btn {
-            border: 1px solid rgba(255, 255, 255, 0.4);
             padding: 8px 14px;
             border-radius: 8px;
             box-shadow:
-                    inset 0 8px 8px -6px rgba(0,0,0,0.35),   /* top */
-                    inset 6px 0 6px -6px rgba(0,0,0,0.30),   /* left */
-                    inset -6px 0 6px -6px rgba(0,0,0,0.30); /* right */
+                inset 0 6px 8px -6px rgba(0, 0, 0, 0.24),
+                /* top */
+                inset 0 -3px 4px -4px rgba(0, 0, 0, 0.22),
+                /* bottom */
+                inset 3px 0 4px -4px rgba(0, 0, 0, 0.22),
+                /* left */
+                inset -3px 0 4px -4px rgba(0, 0, 0, 0.22);
+            /* right */
         }
 
         /* HAMBURGER */
@@ -141,13 +162,13 @@
         /* MOBILE VIEW */
         @media(max-width:768px) {
 
-           body{
-            padding-top: 90px;
-          }
+            body {
+                padding-top: 90px;
+            }
 
-          .navbar-wrapper{
-              padding: 10px;
-          }
+            .navbar-wrapper {
+                padding: 10px;
+            }
 
             .navbar {
                 padding: 14px 18px;
@@ -199,802 +220,917 @@
             }
         }
 
-         .hero {
-      min-height: 100vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 8%;
-    }
+        .hero {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 8%;
+        }
 
-    .hero-container {
-      width: 100%;
-      max-width: 1300px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 60px;
-    }
+        .hero-container {
+            width: 100%;
+            max-width: 1300px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
 
-    /* LEFT IMAGE */
-    .hero-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+        /* LEFT IMAGE */
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .hero-image img {
-      width: 100%;
-      max-width: 480px;
-      height: auto;
-      object-fit: contain;
-    }
+        .hero-image img {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            object-fit: contain;
+        }
 
-    /* RIGHT CONTENT */
-    .hero-content {
-      flex: 1;
-      max-width: 600px;
-    }
+        /* RIGHT CONTENT */
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
 
-    .hero-content h1 {
-       font-family: 'bonaNovaBold';
-      font-size: 50px;
-      line-height: 1.1;
-      color: #245136;
-      margin-bottom: 18px;
-      font-weight: 700;
-    }
+        .hero-content h1 {
+            font-family: 'bonaNovaBold';
+            font-size: 50px;
+            line-height: 1.1;
+            color: #245136;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
 
-    .hero-content p {
-      font-size: 16px;
-      color: #000;
-      line-height: 1.7;
-      max-width: 480px;
-      font-family: 'poppinRegular';
-    }
+        .hero-content p {
+            font-size: 16px;
+            color: #000;
+            line-height: 1.7;
+            max-width: 480px;
+            font-family: 'poppinRegular';
+        }
 
-    /* TABLET */
-    @media (max-width: 992px) {
-      .hero-container {
-        gap: 40px;
-      }
+        /* TABLET */
+        @media (max-width: 992px) {
+            .hero-container {
+                gap: 40px;
+            }
 
-      .hero-content h1 {
-        font-size: clamp(2.2rem, 4vw, 3.8rem);
-      }
-    }
+            .hero-content h1 {
+                font-size: clamp(2.2rem, 4vw, 3.8rem);
+            }
+        }
 
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .hero {
-        padding: 50px 24px;
-      }
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 50px 24px;
+            }
 
-      .hero-container {
-        flex-direction: column;
-        text-align: center;
-      }
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
 
-      .hero-content {
-        max-width: 100%;
-      }
+            .hero-content {
+                max-width: 100%;
+            }
 
-      .hero-content p {
-        margin: 0 auto;
-      }
+            .hero-content p {
+                margin: 0 auto;
+            }
 
-      .hero-image img {
-        max-width: 320px;
-      }
-    }
+            .hero-image img {
+                max-width: 320px;
+            }
+        }
 
-    /* SMALL MOBILE */
-    @media (max-width: 480px) {
-      .hero-content h1 {
-        font-size: 2rem;
-      }
+        /* SMALL MOBILE */
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
 
-      .hero-content p {
-        font-size: 1rem;
-      }
+            .hero-content p {
+                font-size: 1rem;
+            }
 
-      .hero {
-        padding: 40px 18px;
-      }
-    }
+            .hero {
+                padding: 40px 18px;
+            }
+        }
 
-      .about-section{
-      max-width:1200px;
-      margin:auto;
-      padding:60px 20px;
-    }
+        .about-section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+        }
 
-    .about-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
-      align-items:start;
-    }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
 
-    /* LEFT SIDE */
-    .left-content{
-      position:relative;
-      padding-top:150px;
-    }
-
-    .main-heading{
-      text-align:center;
-      margin-bottom:25px;
-      margin-top:20px;
-      display: flex;
-    flex-direction: column;
-    align-items: end;
-    }
-
-    .main-heading h1{
-      font-size:40px;
-      line-height:1.1;
-      font-weight:700;
-      margin-bottom:14px;
-      font-family: 'poppinSemiBold';
-      text-align: right;
-      color:#433326
-    }
-
-    .main-heading p{
-      font-size:16px;
-      color:#433326;
-      line-height:1.5;
-      max-width:400px;
-      font-family: 'poppinRegular';
-      text-align: right;
-    }
-
-    /* LARGE IMAGE */
-    .large-image{
-      position:relative;
-      width:100%;
-    }
-
-    .large-image .lady-img{
-      width:550px;
-      height: 600px;
-      border-radius:18px;
-      display:block;
-      object-fit:cover;
-    }
-
-    /* PLANT IMAGE */
-    .plant-img{
-        position: absolute;
-        left: -80px;
-        bottom: -85px;
-        width: 130px;
-        z-index: 5;
-    }
-
-    /* RIGHT SIDE */
-    .right-content{
-      display:flex;
-      flex-direction:column;
-      gap:25px;
-    }
-
-    .small-image img{
-      width:550px;
-      height: 600px;
-      border-radius:18px;
-      border:2px solid #496353;
-      display:block;
-      object-fit:cover;
-    }
-
-    .text-content p{
-      font-size:16px;
-      line-height:1.7;
-      color:#433326;
-      margin-bottom:20px;
-      font-family: 'poppinRegular';
-    }
-
-    .text-content h2{
-      font-size:40px;
-      line-height:1.1;
-      font-weight:700;
-    font-family: 'poppinSemiBold';
-    }
-
-    /* TABLET */
-    @media (max-width:992px){
-
+        /* LEFT SIDE */
         .left-content {
-            padding-top: 10px;
-        }
-
-        .main-heading h1 {
-            text-align: left;
-        }
-
-        .main-heading p {
-            text-align: left;
+            position: relative;
+            padding-top: 150px;
         }
 
         .main-heading {
-         
-            align-items: flex-start;
+            text-align: center;
+            margin-bottom: 25px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
         }
 
-      .about-grid{
-        grid-template-columns:1fr;
-      }
+        .main-heading h1 {
+            font-size: 40px;
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 14px;
+            font-family: 'poppinSemiBold';
+            text-align: right;
+            color: #433326
+        }
 
-      .main-heading{
-        text-align:left;
-      }
+        .main-heading p {
+            font-size: 16px;
+            color: #433326;
+            line-height: 1.5;
+            max-width: 400px;
+            font-family: 'poppinRegular';
+            text-align: right;
+        }
 
-      .main-heading p{
-        margin:0;
-      }
+        /* LARGE IMAGE */
+        .large-image {
+            position: relative;
+            width: 100%;
+        }
 
-      .main-heading h1{
-        font-size:42px;
-      }
+        .large-image .lady-img {
+            width: 550px;
+            height: 600px;
+            border-radius: 18px;
+            display: block;
+            object-fit: cover;
+        }
 
-      .text-content h2{
-        font-size:42px;
-      }
+        /* PLANT IMAGE */
+        .plant-img {
+            position: absolute;
+            left: -80px;
+            bottom: -85px;
+            width: 130px;
+            z-index: 5;
+        }
 
-      .plant-img{
-        left:-25px;
-      }
-    }
+        /* RIGHT SIDE */
+        .right-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
 
-    /* MOBILE */
-    @media (max-width:600px){
+        .small-image img {
+            width: 550px;
+            height: 600px;
+            border-radius: 18px;
+            border: 2px solid #496353;
+            display: block;
+            object-fit: cover;
+        }
 
-      .about-section{
-        padding:40px 16px;
-      }
+        .text-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #433326;
+            margin-bottom: 20px;
+            font-family: 'poppinRegular';
+        }
 
-      .main-heading{
-        margin-top:10px;
-      }
+        .text-content h2 {
+            font-size: 40px;
+            line-height: 1.1;
+            font-weight: 700;
+            font-family: 'poppinSemiBold';
+        }
 
-      .main-heading h1{
-        font-size:32px;
-      }
+        /* TABLET */
+        @media (max-width:992px) {
 
-      .main-heading p{
-        font-size:14px;
-      }
+            .left-content {
+                padding-top: 10px;
+            }
 
-      .text-content p{
-        font-size:14px;
-      }
+            .main-heading h1 {
+                text-align: left;
+            }
 
-      .text-content h2{
-        font-size:32px;
-      }
+            .main-heading p {
+                text-align: left;
+            }
 
-      .plant-img{
-        width: 80px;
-        left: -48px;
-        bottom: -55px;
-      }
-    }
+            .main-heading {
 
-    .coaching-section{
-  max-width:1250px;
-  margin:auto;
-  padding:70px 30px;
-}
+                align-items: flex-start;
+            }
 
-/* COMMON ROW */
-.content-row{
-  display:flex;
-  grid-template-columns:1.2fr 0.8fr;
-  align-items:end;
-  gap:55px;
-  margin-bottom:90px;
-  justify-content: center;
-}
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
 
-/* SECOND ROW REVERSE */
-.content-row.reverse{
-  grid-template-columns:0.8fr 1.2fr;
-}
+            .main-heading {
+                text-align: left;
+            }
 
-/* IMAGE STYLE */
-.image-box img{
-  width:550px;
-  display:block;
-  border-radius:18px;
-  border:1.5px solid #305a42;
-  object-fit:cover;
-}
+            .main-heading p {
+                margin: 0;
+            }
 
-/* TEXT AREA */
-.text-box{
-  max-width:420px;
-}
+            .main-heading h1 {
+                font-size: 42px;
+            }
 
-.text-box h2{
-  font-family: 'bonaNovaBold';
-  font-size:40px;
-  line-height:0.95;
-  font-weight:700;
-  margin-bottom:20px;
-  color:#245136;
-}
+            .text-content h2 {
+                font-size: 42px;
+            }
 
-.text-box p{
-font-family: 'poppinRegular';
-  font-size:16px;
-  line-height:1.7;
-  color:#413326;
-}
+            .plant-img {
+                left: -25px;
+            }
+        }
 
-/* BUTTON */
-.small-btn{
-  display:inline-block;
-  margin-top:18px;
-  padding:6px 14px;
-  border:1px solid #305a42;
-  border-radius:4px;
-  color:#244b34;
-  text-decoration:none;
-  font-size:13px;
-  transition:0.3s ease;
-}
+        /* MOBILE */
+        @media (max-width:600px) {
 
-.small-btn:hover{
-  background:#244b34;
-  color:#fff;
-}
+            .about-section {
+                padding: 40px 16px;
+            }
 
-/* SECOND TEXT ALIGN */
-.left-align{
-  text-align:center;
-  margin:auto;
-}
+            .main-heading {
+                margin-top: 10px;
+            }
 
-.right-align{
-     text-align:right
-}
+            .main-heading h1 {
+                font-size: 32px;
+            }
 
-/* RESPONSIVE */
-@media(max-width:992px){
+            .main-heading p {
+                font-size: 14px;
+            }
 
-    .large-image .lady-img {
-        width: 100%;
-    }
-    .small-image img {
-         width: 100%;
-    }
+            .text-content p {
+                font-size: 14px;
+            }
 
-  .content-row,
-  .content-row.reverse{
-    grid-template-columns:1fr;
-    gap:35px;
-  }
+            .text-content h2 {
+                font-size: 32px;
+            }
 
-  .content-row{
-        display: flex;
-    flex-direction: column;
-  }
+            .plant-img {
+                width: 80px;
+                left: -48px;
+                bottom: -55px;
+            }
+        }
 
-  .image-box img {
-    width: 100%;
-  }
+        .coaching-section {
+            max-width: 1250px;
+            margin: auto;
+            padding: 70px 30px;
+        }
 
-  .right-align{
-    text-align: left;
-  }
+        /* COMMON ROW */
+        .content-row {
+            display: flex;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: end;
+            gap: 55px;
+            margin-bottom: 90px;
+            justify-content: center;
+        }
 
-  .content-row.reverse .image-box{
-    order:1;
-  }
+        /* SECOND ROW REVERSE */
+        .content-row.reverse {
+            grid-template-columns: 0.8fr 1.2fr;
+        }
 
-  .content-row.reverse .text-box{
-    order:2;
-  }
+        /* IMAGE STYLE */
+        .image-box img {
+            width: 550px;
+            display: block;
+            border-radius: 18px;
+            object-fit: cover;
+        }
 
-  .text-box{
-    max-width:100%;
-  }
+        /* TEXT AREA */
+        .text-box {
+            max-width: 420px;
+        }
 
-  .text-box h2{
-    font-size:35px;
-  }
+        .text-box h2 {
+            font-family: 'bonaNovaBold';
+            font-size: 40px;
+            line-height: 0.95;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #245136;
+        }
 
-  .left-align{
-    text-align:left;
-  }
-}
+        .text-box p {
+            font-family: 'poppinRegular';
+            font-size: 16px;
+            line-height: 1.7;
+            color: #413326;
+        }
 
-@media(max-width:600px){
+        /* BUTTON */
+        .small-btn {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 6px 14px;
+            border: 1px solid #305a42;
+            border-radius: 4px;
+            color: #244b34;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.3s ease;
+        }
 
-  .coaching-section{
-    padding:45px 18px;
-  }
+        .small-btn:hover {
+            background: #244b34;
+            color: #fff;
+        }
 
-  .content-row{
-    margin-bottom:70px;
-  }
+        /* SECOND TEXT ALIGN */
+        .left-align {
+            text-align: center;
+            margin: auto;
+        }
 
-  .text-box h2{
-    font-size:30px;
-    line-height:1;
-  }
+        .right-align {
+            text-align: right
+        }
 
-  .text-box p{
-    font-size:14px;
-  }
+        /* RESPONSIVE */
+        @media(max-width:992px) {
 
-  .small-btn{
-    font-size:12px;
-    padding:5px 12px;
-  }
-}
+            .large-image .lady-img {
+                width: 100%;
+            }
 
-    
-    .custom-footer{
-      padding:40px 20px 50px;
-      text-align:center;
-      overflow:hidden;
-    }
+            .small-image img {
+                width: 100%;
+            }
 
-    .footer-container{
-      max-width:1200px;
-      margin:auto;
-    }
+            .content-row,
+            .content-row.reverse {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
 
-    /* =========================
+            .content-row {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .image-box img {
+                width: 100%;
+            }
+
+            .right-align {
+                text-align: left;
+            }
+
+            .content-row.reverse .image-box {
+                order: 1;
+            }
+
+            .content-row.reverse .text-box {
+                order: 2;
+            }
+
+            .text-box {
+                max-width: 100%;
+            }
+
+            .text-box h2 {
+                font-size: 35px;
+            }
+
+            .left-align {
+                text-align: left;
+            }
+        }
+
+        @media(max-width:600px) {
+
+            .coaching-section {
+                padding: 45px 18px;
+            }
+
+            .content-row {
+                margin-bottom: 70px;
+            }
+
+            .text-box h2 {
+                font-size: 30px;
+                line-height: 1;
+            }
+
+            .text-box p {
+                font-size: 14px;
+            }
+
+            .small-btn {
+                font-size: 12px;
+                padding: 5px 12px;
+            }
+        }
+
+
+        .custom-footer {
+            padding: 40px 20px 50px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* =========================
        TOP IMAGE
     ========================== */
 
-    .footer-artwork{
-      margin-bottom:40px;
-    }
+        .footer-artwork {
+            margin-bottom: 40px;
+        }
 
-    .footer-artwork img{
-      width:100%;
-      max-width:600px;
-      display:block;
-      margin:auto;
-      object-fit:contain;
-    }
+        .footer-artwork img {
+            width: 100%;
+            max-width: 700px;
+            display: block;
+            margin: auto;
+            object-fit: contain;
+        }
 
-    /* =========================
+        /* =========================
        LOGO
     ========================== */
 
-    .footer-logo{
-      margin-bottom:12px;
-    }
+        .footer-logo {
+            margin-bottom: 12px;
+        }
 
-    .footer-logo img{
-      width:70px;
-      object-fit:contain;
-    }
+        .footer-logo img {
+            width: 70px;
+            object-fit: contain;
+        }
 
-    /* =========================
+        /* =========================
        TEXT
     ========================== */
 
-    .footer-text{
-      margin-bottom:18px;
-    }
+        .footer-text {
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
 
-    .footer-text h3{
-      font-size:14px;
-      color:#413326;
-      margin-bottom:12px;
-      font-weight:500;
-      font-family: 'poppinRegular';
-    }
+        .footer-text h3 {
+            font-size: 14px;
+            color: #413326;
+            margin-bottom: 12px;
+            font-weight: 500;
+            font-family: 'poppinRegular';
+        }
 
-    .footer-text a{
-      color:#db9221;
-      text-decoration:none;
-      font-size:14px;
-      font-weight:600;
-      display:inline-block;
-      font-family: 'poppinRegular';
-    }
+        .footer-text a {
+            color: #db9221;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            font-family: 'poppinRegular';
+        }
 
-    .footer-text p{
-      color:#413326;
-      font-size:14px;
-      font-family: 'poppinRegular';
-    }
+        .footer-text p {
+            color: #413326;
+            font-size: 14px;
+            font-family: 'poppinRegular';
+        }
 
-    /* =========================
+        /* =========================
        SOCIAL ICONS
     ========================== */
 
-    .footer-social{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:18px;
-      margin-top:20px;
-    }
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin-top: 20px;
+        }
 
-    .footer-social a{
-      color:#413326;
-      font-size:15px;
-      transition:0.3s;
-    }
+        .footer-social a {
+            color: #413326;
+            font-size: 15px;
+            transition: 0.3s;
+        }
 
-    .footer-social a:hover{
-      transform:translateY(-3px);
-      color:#d8921c;
-    }
+        .footer-social a:hover {
+            transform: translateY(-3px);
+            color: #d8921c;
+        }
 
-    /* =========================
+        /* =========================
        TABLET
     ========================== */
 
-    @media (max-width:991px){
+        @media (max-width:991px) {
 
-      .footer-artwork img{
-        max-width:450px;
-      }
-    }
+            .footer-artwork img {
+                max-width: 450px;
+            }
+        }
 
-    /* =========================
+        /* =========================
        MOBILE
     ========================== */
 
-    @media (max-width:576px){
+        @media (max-width:576px) {
 
-      .custom-footer{
-        padding:30px 15px 40px;
-      }
+            .custom-footer {
+                padding: 30px 15px 40px;
+            }
 
-      .footer-artwork{
-        margin-bottom:30px;
-      }
+            .footer-artwork {
+                margin-bottom: 30px;
+            }
 
-      .footer-artwork img{
-        max-width:100%;
-      }
+            .footer-artwork img {
+                max-width: 100%;
+            }
 
-      .footer-logo img{
-        width:60px;
-      }
+            .footer-logo img {
+                width: 60px;
+            }
 
-      .footer-text h3{
-        font-size:16px;
-      }
+            .footer-text h3 {
+                font-size: 16px;
+            }
 
-      .footer-text a{
-        font-size:15px;
-      }
+            .footer-text a {
+                font-size: 15px;
+            }
 
-      .footer-text p{
-        font-size:14px;
-      }
+            .footer-text p {
+                font-size: 14px;
+            }
 
-      .footer-social{
-        gap:14px;
-      }
+            .footer-social {
+                gap: 14px;
+            }
 
-      .footer-social a{
-        font-size:14px;
-      }
-    }
+            .footer-social a {
+                font-size: 14px;
+            }
+        }
 
-/* HERO LOAD ANIMATION */
 
-.hero-image img,
-.hero-content h1,
-.hero-content p {
-    opacity: 0;
-    transform: translateY(60px);
-    animation: fadeUp 1s ease forwards;
-}
 
-/* Delays */
-.hero-image img {
-    animation-delay: 0.2s;
-}
 
-.hero-content h1 {
-    animation-delay: 0.5s;
-}
+        /* =========================
+        INITIAL STATE
+        ========================= */
 
-.hero-content p {
-    animation-delay: 0.8s;
-}
+        /* =========================
+        LOAD ANIMATION
+        ========================= */
 
-/* Animation */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(60px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/* ================= ABOUT ANIMATION ================= */
+        .hero.loaded .hero-image{
+            animation: fadeUp 1.4s ease forwards;
+            animation-delay: 0.2s;
+        }
 
-/* Initial Hidden State */
-/* ================= ABOUT SCROLL ANIMATION ================= */
+        .hero.loaded .hero-content h1{
+            animation: fadeUp 1.4s ease forwards;
+            animation-delay: 0.5s;
+        }
 
-/* Initial Hidden State */
-.main-heading h1,
-.main-heading p,
-.large-image .lady-img,
-.plant-img,
-.small-image img,
-.text-content p,
-.text-content h2 {
-    opacity: 0;
-    transform: translateY(60px);
-}
+        .hero.loaded .hero-content p{
+           animation: fadeUp 1.4s ease forwards;
+            animation-delay: 0.9s;
+        }
 
-/* Animation Apply */
-.show-animation {
-    animation: fadeUp 1s ease forwards;
-}
+        .hero-image,
+        .hero-content h1,
+        .hero-content p{
+            opacity: 0;
+        }
 
-/* Smooth Delays */
-.main-heading h1.show-animation {
-    animation-delay: 0.2s;
-}
+        /* Animation */
+        @keyframes fadeUp{
+            from{
+                opacity: 0;
+                transform: translate3d(0,40px,0);
+            }
 
-.main-heading p.show-animation {
-    animation-delay: 0.4s;
-}
+            to{
+                opacity: 1;
+                transform: translate3d(0,0,0);
+            }
+        }
 
-.large-image .lady-img.show-animation {
-    animation-delay: 0.6s;
-}
+        .main-heading h1,
+        .main-heading p,
+        .large-image,
+        .small-image img,
+        .text-content p,
+        .text-content h2 {
+            opacity: 0;
+            transform: translateY(60px);
+        }
 
-.plant-img.show-animation {
-    animation-delay: 0.8s;
-}
+        /* Animation Apply */
+        .show-animation {
+            animation: fadeMain 1s ease forwards;
+        }
 
-.small-image img.show-animation {
-    animation-delay: 0.3s;
-}
+        /* Smooth Delays */
+        .main-heading h1.show-animation {
+            animation-delay: 0.2s;
+        }
 
-.text-content p.show-animation {
-    animation-delay: 0.5s;
-}
+        .main-heading p.show-animation {
+            animation-delay: 0.4s;
+        }
 
-.text-content h2.show-animation {
-    animation-delay: 0.7s;
-}
+        .large-image.show-animation {
+            animation-delay: 0.6s;
+        }
 
-/* Fade Up Animation */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(60px);
-    }
+        .small-image img.show-animation {
+            animation-delay: 0.3s;
+        }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/* ================= SMOOTH SCROLL ANIMATION ================= */
+        .text-content p.show-animation {
+            animation-delay: 0.5s;
+        }
 
-/* Initial Hidden State */
-.image-box img,
-.text-box h2,
-.text-box p,
-.small-btn {
-    opacity: 0;
-    transform: translate3d(0, 60px, 0);
-    will-change: transform, opacity;
-    backface-visibility: hidden;
-}
+        .text-content h2.show-animation {
+            animation-delay: 0.7s;
+        }
 
-/* Animation Trigger */
-.show-animation {
-    animation: smoothFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
+        /* Fade Up Animation */
+        @keyframes fadeMain {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
 
-/* Delays */
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* FIRST ROW */
-.content-row:nth-child(1) .image-box img.show-animation {
-    animation-delay: 0.2s;
-}
+        /* INITIAL STATE */
 
-.content-row:nth-child(1) .text-box h2.show-animation {
-    animation-delay: 0.35s;
-}
+        .image-box img,
+        .text-box h2,
+        .text-box-content{
+            opacity: 0;
+            transform: translate3d(0, 60px, 0);
 
-.content-row:nth-child(1) .text-box p.show-animation {
-    animation-delay: 0.5s;
-}
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
 
-/* SECOND ROW */
-.content-row:nth-child(2) .text-box h2.show-animation {
-    animation-delay: 0.2s;
-}
+        /* BUTTON */
 
-.content-row:nth-child(2) .text-box p.show-animation {
-    animation-delay: 0.4s;
-}
+        .small-btn{
+            display: inline-block;
+            margin-top: 18px;
+        }
 
-.content-row:nth-child(2) .small-btn.show-animation {
-    animation-delay: 0.6s;
-}
+        /* ANIMATION */
 
-.content-row:nth-child(2) .image-box img.show-animation {
-    animation-delay: 0.8s;
-}
+        .show-animation{
+            animation: smoothFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
 
-/* Smooth Animation */
-@keyframes smoothFadeUp {
+        /* =========================
+        FIRST ROW
+        ========================= */
 
-    from {
-        opacity: 0;
-        transform: translate3d(0, 60px, 0);
-    }
+        .content-row:nth-child(1) .image-box img.show-animation{
+            animation-delay: 0.2s;
+        }
 
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
-/* Initial Hidden State */
-.footer-artwork img,
-.footer-logo img,
-.footer-text h3,
-.footer-text a,
-.footer-text p,
-.footer-social a {
-    opacity: 0;
-    transform: translateY(60px);
-}
+        .content-row:nth-child(1) .text-box h2.show-animation{
+            animation-delay: 0.35s;
+        }
 
-/* Delays */
-.footer-artwork img.show-animation {
-    animation-delay: 0.2s;
-}
+        .content-row:nth-child(1) .text-box-content.show-animation{
+            animation-delay: 0.5s;
+        }
 
-.footer-logo img.show-animation {
-    animation-delay: 0.4s;
-}
+        /* =========================
+        SECOND ROW
+        ========================= */
 
-.footer-text h3.show-animation {
-    animation-delay: 0.6s;
-}
+        .content-row:nth-child(2) .text-box h2.show-animation{
+            animation-delay: 0.2s;
+        }
 
-.footer-text a.show-animation {
-    animation-delay: 0.8s;
-}
+        .content-row:nth-child(2) .text-box-content.show-animation{
+            animation-delay: 0.4s;
+        }
 
-.footer-text p.show-animation {
-    animation-delay: 1s;
-}
+        .content-row:nth-child(2) .image-box img.show-animation{
+            animation-delay: 0.8s;
+        }
 
-.footer-social a:nth-child(1).show-animation {
-    animation-delay: 1.2s;
-}
+        /* =========================
+        KEYFRAMES
+        ========================= */
 
-.footer-social a:nth-child(2).show-animation {
-    animation-delay: 1.4s;
-}
+        @keyframes smoothFadeUp{
 
-.footer-social a:nth-child(3).show-animation {
-    animation-delay: 1.6s;
-}
+            from{
+                opacity: 0;
+                transform: translate3d(0, 60px, 0);
+            }
 
-.footer-social a:nth-child(4).show-animation {
-    animation-delay: 1.8s;
-}
+            to{
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .custom-footer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* =========================
+        CHAIR ANIMATION (FIRST STAGE)
+        ========================= */
+
+        .footer-artwork {
+            opacity: 0;
+            transform: translateY(70px);
+            transition: opacity 1.4s cubic-bezier(0.22,1,0.36,1),
+                        transform 1.4s cubic-bezier(0.22,1,0.36,1);
+            will-change: transform, opacity;
+        }
+
+        .custom-footer.show-artwork .footer-artwork {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+        LOGO + TEXT + SOCIAL (SECOND STAGE)
+        ========================= */
+
+        .footer-logo,
+        .footer-text,
+        .footer-social {
+            opacity: 0;
+            transform: translateY(70px);
+            transition: opacity 1.4s cubic-bezier(0.22,1,0.36,1),
+                        transform 1.4s cubic-bezier(0.22,1,0.36,1);
+            will-change: transform, opacity;
+        }
+
+        .custom-footer.show-content .footer-logo,
+        .custom-footer.show-content .footer-text,
+        .custom-footer.show-content .footer-social {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+        STAGGER DELAYS
+        ========================= */
+
+        .custom-footer.show-content .footer-logo {
+            transition-delay: 0.15s;
+        }
+
+        .custom-footer.show-content .footer-text {
+            transition-delay: 0.3s;
+        }
+
+        .custom-footer.show-content .footer-social {
+            transition-delay: 0.45s;
+        }
+
+        /* =========================
+        TEXT WIPE EFFECT (FIXED SAFE VERSION)
+        ========================= */
+
+        /* Only apply wipe to safe container-level elements */
+        .footer-logo,
+        .footer-text h3,
+        .footer-text a,
+        .footer-text p {
+            position: relative;
+            overflow: hidden;
+            display: block;
+        }
+
+        /* overlay */
+        .footer-logo::after,
+        .footer-text h3::after,
+        .footer-text a::after,
+        .footer-text p::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f4eee5;
+            transform: translateX(0);
+            pointer-events: none;
+        }
+
+        /* trigger wipe */
+        .custom-footer.show-content .footer-logo::after {
+            animation: textReveal 1.2s ease forwards;
+        }
+
+        .custom-footer.show-content .footer-text h3::after {
+            animation: textReveal 1.2s ease forwards;
+        }
+
+        .custom-footer.show-content .footer-text a::after {
+            animation-delay: 0.25s;
+            animation: textReveal 1.2s ease forwards;
+        }
+
+        .custom-footer.show-content .footer-text p::after {
+            animation-delay: 0.5s;
+            animation: textReveal 1.2s ease forwards;
+        }
+
+        /* =========================
+        KEYFRAMES
+        ========================= */
+
+        @keyframes textReveal {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(101%);
+            }
+        }
+
+        /* =========================
+        MOBILE SAFETY FIX (VERY IMPORTANT)
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .footer-logo,
+            .footer-text,
+            .footer-social {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            .custom-footer.show-content .footer-logo,
+            .custom-footer.show-content .footer-text,
+            .custom-footer.show-content .footer-social {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+
+            .footer-social a,
+            .footer-social i {
+                opacity: 1 !important;
+            }
+        }
     </style>
 </head>
 
@@ -1011,7 +1147,7 @@ font-family: 'poppinRegular';
 
             <!-- RIGHT MENU -->
             <div class="nav-links" id="navLinks">
-                 <a href="home1.html">Home</a>
+                <a href="home1.html">Home</a>
                 <a href="services1.html">Services</a>
                 <a href="about1.html">About me</a>
                 <a href="contact1.html" class="talk-btn">Let's talk</a>
@@ -1026,25 +1162,25 @@ font-family: 'poppinRegular';
 
     </div>
 
-     <section class="hero">
+    <section class="hero">
         <div class="hero-container">
 
-        <!-- LEFT -->
-        <div class="hero-image">
-            <!-- Replace with your image -->
-            <img src="assets/images/mohta2.png" alt="Lady Sitting" />
-        </div>
+            <!-- LEFT -->
+            <div class="hero-image">
+                <!-- Replace with your image -->
+                <img src="assets/images/mohta2.png" alt="Lady Sitting" />
+            </div>
 
-        <!-- RIGHT -->
-        <div class="hero-content">
-            <h1>
-            Acceptance is where your transformation begins.
-            </h1>
+            <!-- RIGHT -->
+            <div class="hero-content">
+                <h1>
+                    Acceptance is where your transformation begins.
+                </h1>
 
-            <p>
-            I help you see what you’re missing in your own thinking.
-            </p>
-        </div>
+                <p>
+                    I help you see what you’re missing in your own thinking.
+                </p>
+            </div>
 
         </div>
     </section>
@@ -1053,58 +1189,58 @@ font-family: 'poppinRegular';
 
         <div class="about-grid">
 
-        <!-- LEFT SIDE -->
-        <div class="left-content">
+            <!-- LEFT SIDE -->
+            <div class="left-content">
 
-            <div class="main-heading">
-            <h1>
-                My work is about clarity,<br>
-                Not motivation.
-            </h1>
+                <div class="main-heading">
+                    <h1>
+                        My work is about clarity,<br>
+                        Not motivation.
+                    </h1>
 
-            <p>
-                The quality of your decisions depends
-                on the clarity of your thinking.
-            </p>
-            </div>
+                    <p>
+                        The quality of your decisions depends
+                        on the clarity of your thinking.
+                    </p>
+                </div>
 
-            <div class="large-image">
+                <div class="large-image">
 
-            <!-- First Lady Image -->
-            <img src="assets/images/about4.png" alt="Lady" class="lady-img">
+                    <!-- First Lady Image -->
+                    <img src="assets/images/about4.png" alt="Lady" class="lady-img">
 
-            <!-- Plant Image -->
-            <img src="assets/images/gulab.png" alt="Plant" class="plant-img">
+                    <!-- Plant Image -->
+                    <img src="assets/images/gulab.png" alt="Plant" class="plant-img">
 
-            </div>
-
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div class="right-content">
-
-            <div class="small-image">
-
-            <!-- Second Lady Image -->
-            <img src="assets/images/about3.png" alt="Lady">
+                </div>
 
             </div>
 
-            <div class="text-content">
+            <!-- RIGHT SIDE -->
+            <div class="right-content">
 
-            <p>
-                I’m deeply interested in how people think,
-                behave, and decide. Structured, intentional,
-                and deeply focused on how you think.
-            </p>
+                <div class="small-image">
 
-            <h2>
-                Helping you to find a <br>way through!
-            </h2>
+                    <!-- Second Lady Image -->
+                    <img src="assets/images/about3.png" alt="Lady">
+
+                </div>
+
+                <div class="text-content">
+
+                    <p>
+                        I’m deeply interested in how people think,
+                        behave, and decide. Structured, intentional,
+                        and deeply focused on how you think.
+                    </p>
+
+                    <h2>
+                        Helping you to find a <br>way through!
+                    </h2>
+
+                </div>
 
             </div>
-
-        </div>
 
         </div>
 
@@ -1113,140 +1249,189 @@ font-family: 'poppinRegular';
 
     <section class="coaching-section">
 
-      <!-- FIRST ROW -->
-      <div class="content-row">
+        <!-- FIRST ROW -->
+        <div class="content-row">
 
-          <!-- IMAGE -->
-          <div class="image-box">
-          <img src="assets/images/about1.png" alt="Coaching Session">
-          </div>
+            <!-- IMAGE -->
+            <div class="image-box">
+                <img src="assets/images/about1.png" alt="Coaching Session">
+            </div>
 
-          <!-- TEXT -->
-          <div class="text-box">
-          <h2>
-              Every session is<br>
-              built around you
-          </h2>
+            <!-- TEXT -->
+            <div class="text-box">
 
-          <p>
-              My approach integrates clinical psychology, NLP,
-              and certified coaching practice, creating a space
-              that is safe enough to be honest in and structured
-              enough to produce something real. The work is
-              always intentional, always tailored, and always
-              oriented toward one thing: clarity that moves you.
-          </p>
-          </div>
+                <h2>
+                    Every session is<br>
+                    built around you
+                </h2>
 
-      </div>
+                <div class="text-box-content">
 
+                    <p>
+                        My approach integrates clinical psychology, NLP,
+                        and certified coaching practice, creating a space
+                        that is safe enough to be honest in and structured
+                        enough to produce something real. The work is
+                        always intentional, always tailored, and always
+                        oriented toward one thing: clarity that moves you.
+                    </p>
 
-      <!-- SECOND ROW -->
-      <div class="content-row reverse">
+                </div>
 
-          <!-- TEXT -->
-          <div class="text-box right-align">
+            </div>
 
-          <h2>
-              Bringing clarity &<br>
-              depth to every stage
-          </h2>
+        </div>
 
-          <p>
-              Speak from the intersection of psychology, coaching,
-              and real human experience, which means my talks are
-              never just informational. They are intentional. I want
-              every person in the room to leave with something they
-              can actually use — a shift in perspective, a clearer
-              question, a framework that works when the pressure is real.
-          </p>
+        <!-- SECOND ROW -->
+        <div class="content-row reverse">
 
-          <a href="#" class="small-btn">
-              ted talks
-          </a>
+            <!-- TEXT -->
+            <div class="text-box right-align">
 
-          </div>
+                <h2>
+                    Bringing clarity &<br>
+                    depth to every stage
+                </h2>
 
-          <!-- IMAGE -->
-          <div class="image-box">
-          <img src="assets/images/about5.png" alt="Speaker">
-          </div>
+                <div class="text-box-content">
 
-      </div>
+                    <p>
+                        Speak from the intersection of psychology, coaching,
+                        and real human experience, which means my talks are
+                        never just informational. They are intentional. I want
+                        every person in the room to leave with something they
+                        can actually use — a shift in perspective, a clearer
+                        question, a framework that works when the pressure is real.
+                    </p>
+
+                    <a href="https://youtu.be/qh-Wt_7RSwo?si=iOaqDACthblKrs63" class="small-btn" target="_blank" rel="noopener">
+                        Ted Talks
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- IMAGE -->
+            <div class="image-box">
+                <img src="assets/images/about5.png" alt="Speaker">
+            </div>
+
+        </div>
 
     </section>
 
 
-    
+
     <footer class="custom-footer">
 
-    <div class="footer-container">
+        <div class="footer-container">
 
-        <!-- =========================
+            <!-- =========================
             CHAIR IMAGE
         ========================== -->
 
-        <div class="footer-artwork">
+            <div class="footer-artwork">
 
-        <!-- REPLACE WITH YOUR IMAGE -->
-        <img src="assets/images/seating-chear.png" alt="Chair Table">
+                <!-- REPLACE WITH YOUR IMAGE -->
+                <img src="assets/images/seating-chear.png" alt="Chair Table">
 
-        </div>
+            </div>
 
-        <!-- =========================
+            <!-- =========================
             LOGO
         ========================== -->
 
-        <div class="footer-logo">
+            <div class="footer-logo">
 
-        <!-- REPLACE WITH YOUR LOGO -->
-        <img src="assets/images/black-logo.png" alt="Logo">
+                <!-- REPLACE WITH YOUR LOGO -->
+                <img src="assets/images/black-logo.png" alt="Logo">
 
-        </div>
+            </div>
 
-        <!-- =========================
+            <!-- =========================
             TEXT
         ========================== -->
 
-        <div class="footer-text">
+            <div class="footer-text">
 
-        <h3>Clarity begins here</h3>
+                <h3>Clarity begins here</h3>
 
-        <a href="#">
-            Book a Clarity call
-        </a>
+                <a href="#">
+                    Book a Clarity call
+                </a>
 
-        <p>Lets talk!</p>
+                <p>Lets talk!</p>
 
-        </div>
+            </div>
 
-        <!-- =========================
+            <!-- =========================
             SOCIAL ICONS
         ========================== -->
 
-        <div class="footer-social">
+            <div class="footer-social">
 
-        <a href="#">
-            <i class="fa-brands fa-facebook-f"></i>
-        </a>
+                <a href="https://share.google/KRk5z4WvmF4AfYito" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
 
-        <a href="#">
-            <i class="fa-brands fa-linkedin-in"></i>
-        </a>
+                <a href="https://www.linkedin.com/in/rachnamimani?utm_source=share_via&utm_content=profile&utm_medium=member_android"  target="_blank" rel="noopener">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
 
-        <a href="#">
-            <i class="fa-brands fa-youtube"></i>
-        </a>
+                <a href="https://youtu.be/qh-Wt_7RSwo?si=iOaqDACthblKrs63"  target="_blank" rel="noopener">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
 
-        <a href="#">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
+                <a href="https://www.instagram.com/reel/DXvvMW6MoD1/?igsh=bW1mM3Eyamh4bGhu" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
-
     </footer>
+    <script>
+
+        let lastScroll = 0;
+
+        const navbar = document.querySelector(".navbar-wrapper");
+
+        window.addEventListener("scroll", () => {
+
+            const currentScroll = window.pageYOffset;
+
+            /* Top of page */
+            if (currentScroll <= 50) {
+
+                navbar.classList.remove("nav-hide");
+                navbar.classList.add("nav-show");
+
+                return;
+            }
+
+            /* Scroll Down */
+            if (currentScroll > lastScroll) {
+
+                navbar.classList.remove("nav-show");
+                navbar.classList.add("nav-hide");
+
+            }
+
+            /* Scroll Up */
+            else {
+
+                navbar.classList.remove("nav-hide");
+                navbar.classList.add("nav-show");
+
+            }
+
+            lastScroll = currentScroll;
+
+        });
+
+    </script>
     <script>
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
@@ -1255,85 +1440,109 @@ font-family: 'poppinRegular';
             navLinks.classList.toggle('active');
         });
     </script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+    <script>
+         window.addEventListener("load", () => {
+            document.querySelector(".hero")
+                .classList.add("loaded");
+        });
 
-    const elements = document.querySelectorAll(
-        '.main-heading h1, .main-heading p, \
-        .large-image .lady-img, .plant-img, \
-        .small-image img, .text-content p, .text-content h2'
-    );
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
 
-    const observer = new IntersectionObserver((entries) => {
+            const elements = document.querySelectorAll(
+               '.main-heading h1, .main-heading p, \
+                .large-image, \
+                .small-image img, .text-content p, .text-content h2'
+            );
 
-        entries.forEach(entry => {
+            const observer = new IntersectionObserver((entries) => {
 
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show-animation");
-            }
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show-animation");
+                    }
+
+                });
+
+            }, {
+                threshold: 0.2
+            });
+
+            elements.forEach(el => observer.observe(el));
+
+        });
+    </script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const elements = document.querySelectorAll(
+                '.image-box img, .text-box h2, .text-box-content'
+            );
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if(entry.isIntersecting){
+
+                        entry.target.classList.add("show-animation");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            }, {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
+            });
+
+            elements.forEach(el => observer.observe(el));
 
         });
 
-    }, {
-        threshold: 0.2
-    });
+    </script>
+    <script>
+        const footer = document.querySelector(".custom-footer");
 
-    elements.forEach(el => observer.observe(el));
+        if (footer) {
 
-});
-</script>
- <script>
-document.addEventListener("DOMContentLoaded", () => {
+        let artworkDone = false;
+        let contentDone = false;
 
-    const elements = document.querySelectorAll(
-        '.image-box img, .text-box h2, .text-box p, .small-btn'
-    );
+        function checkFooter() {
 
-    const observer = new IntersectionObserver((entries) => {
+            const rect = footer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
 
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show-animation");
-                observer.unobserve(entry.target);
+            /* =========================
+            1. CHAIR (early entry)
+            ========================= */
+            if (!artworkDone && rect.top < windowHeight * 0.85) {
+            footer.classList.add("show-artwork");
+            artworkDone = true;
             }
 
-        });
-
-    }, {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px"
-    });
-
-    elements.forEach(el => observer.observe(el));
-
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-    const elements = document.querySelectorAll(
-        '.footer-artwork img, .footer-logo img, .footer-text h3, .footer-text a, .footer-text p, .footer-social a'
-    );
-
-    const observer = new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show-animation");
+            /* =========================
+            2. CONTENT (ONLY WHEN NEAR FOOTER END)
+            FIX: bottom-based trigger
+            ========================= */
+            if (!contentDone && rect.bottom < windowHeight + 100) {
+            footer.classList.add("show-content");
+            contentDone = true;
             }
+        }
 
-        });
+        window.addEventListener("scroll", checkFooter, { passive: true });
+        window.addEventListener("resize", checkFooter);
 
-    }, {
-        threshold: 0.2
-    });
-
-    elements.forEach(el => observer.observe(el));
-
-});
-</script>
+        checkFooter();
+        }
+    </script>
 </body>
 
 </html>
