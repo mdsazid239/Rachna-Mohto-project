@@ -1,570 +1,584 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us</title>
-    <link rel="icon" type="image/png" href="assets/images/logo-navbar.png" />
-    <link rel="stylesheet" href="assets/css/style1.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-      }
 
-      body {
-        background: #ece7de;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="icon" type="image/png" href="assets/images/logo-navbar.png" />
+  <link rel="stylesheet" href="assets/css/style1.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-      /* WRAPPER */
-      .navbar-wrapper {
-        width: 100%;
-        padding: 20px 12px;
-      }
+    body {
+      background: #ece7de;
+    }
 
-      /* NAVBAR */
+    /* WRAPPER */
+    .navbar-wrapper {
+      width: 100%;
+      padding: 20px 12px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      width: 100%;
+      max-width: 1400px;
+      margin: auto;
+
+      background: #db9221;
+      border-radius: 8px;
+
+      padding: 14px 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      position: relative;
+    }
+
+    /* LEFT LOGO */
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-box {
+      width: 42px;
+      height: 42px;
+
+      border: 2px solid #fff;
+      border-radius: 6px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .logo-img {
+      height: 35px;
+    }
+
+    .brand-name {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      font-family: 'bonaNovaScBold';
+    }
+
+    /* NAV LINKS */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      transition: 0.3s;
+      font-family: 'poppinMedium';
+    }
+
+    .nav-links a:hover {
+      opacity: 0.8;
+    }
+
+    /* BUTTON */
+    .talk-btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+       box-shadow:
+                inset 0 6px 8px -6px rgba(0, 0, 0, 0.24),
+                /* top */
+                inset 0 -3px 4px -4px rgba(0, 0, 0, 0.22),
+                /* bottom */
+                inset 3px 0 4px -4px rgba(0, 0, 0, 0.22),
+                /* left */
+                inset -3px 0 4px -4px rgba(0, 0, 0, 0.22);
+            /* right */
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      color: white;
+      font-size: 22px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      border-radius: 10px;
+    }
+
+    /* MOBILE VIEW */
+    @media(max-width:768px) {
+
       .navbar {
-        width: 100%;
-        max-width: 1400px;
-        margin: auto;
-
-        background: #db9221;
-        border-radius: 8px;
-
-        padding: 14px 24px;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        position: relative;
-      }
-
-      /* LEFT LOGO */
-      .logo-area {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-
-      .logo-box {
-        width: 42px;
-        height: 42px;
-
-        border: 2px solid #fff;
-        border-radius: 6px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        color: #fff;
-        font-weight: bold;
-        font-size: 18px;
-      }
-
-      .logo-img {
-        height: 35px;
+        padding: 14px 18px;
+        border-radius: 8px 8px 0px 0px;
       }
 
       .brand-name {
-        color: #fff;
-        font-size: 20px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        font-family: "bonaNovaScBold";
+        font-size: 18px;
       }
 
-      /* NAV LINKS */
-      .nav-links {
+      .hamburger {
         display: flex;
-        align-items: center;
-        gap: 35px;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: #d9921d;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 0 20px;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: 0.4s ease;
+
+        /* border-radius:0 0 8px 8px; */
+        border-radius: 0px 0px 8px 8px;
+
+
+        gap: 0;
+      }
+
+      .nav-links.active {
+        max-height: 400px;
+        padding: 20px;
       }
 
       .nav-links a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 16px;
-        font-weight: 500;
-        transition: 0.3s;
-        font-family: "poppinMedium";
-      }
-
-      .nav-links a:hover {
-        opacity: 0.8;
-      }
-
-      /* BUTTON */
-      .talk-btn {
-        padding: 8px 14px;
-        border-radius: 8px;
-        box-shadow:
-          inset 0 6px 8px -6px rgba(0, 0, 0, 0.24),
-          /* top */ inset 0 -3px 4px -4px rgba(0, 0, 0, 0.22),
-          /* bottom */ inset 3px 0 4px -4px rgba(0, 0, 0, 0.22),
-          /* left */ inset -3px 0 4px -4px rgba(0, 0, 0, 0.22);
-        /* right */
-      }
-
-      /* HAMBURGER */
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        color: white;
-        font-size: 22px;
-      }
-
-      .hamburger span {
-        width: 25px;
-        height: 3px;
-        background: #fff;
-        border-radius: 10px;
-      }
-
-      /* MOBILE VIEW */
-      @media (max-width: 768px) {
-        .navbar {
-          padding: 14px 18px;
-          border-radius: 8px 8px 0px 0px;
-        }
-
-        .brand-name {
-          font-size: 18px;
-        }
-
-        .hamburger {
-          display: flex;
-        }
-
-        .nav-links {
-          position: absolute;
-          top: 100%;
-          left: 0;
-
-          width: 100%;
-
-          background: #d9921d;
-
-          flex-direction: column;
-          align-items: flex-start;
-
-          padding: 0 20px;
-
-          max-height: 0;
-          overflow: hidden;
-
-          transition: 0.4s ease;
-
-          /* border-radius:0 0 8px 8px; */
-          border-radius: 0px 0px 8px 8px;
-
-          gap: 0;
-        }
-
-        .nav-links.active {
-          max-height: 400px;
-          padding: 20px;
-        }
-
-        .nav-links a {
-          width: 100%;
-          padding: 12px 10px;
-        }
-      }
-
-      .contact-section {
         width: 100%;
-        padding: 80px 40px;
+        padding: 12px 10px;
       }
+    }
 
-      /* CONTAINER */
+    .contact-section {
+      width: 100%;
+      padding: 80px 40px;
+    }
+
+    /* CONTAINER */
+    .contact-container {
+      max-width: 1200px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* LEFT SIDE */
+    .contact-left h1 {
+      font-size: 80px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #433326;
+      font-family: 'poppinSemiBold';
+    }
+
+    .contact-left p {
+      font-family: 'poppinRegular';
+      max-width: 320px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #433326;
+    }
+
+    /* RIGHT SIDE */
+    .contact-form {
+      width: 100%;
+    }
+
+    /* FORM GROUP */
+    .form-group {
+      margin-bottom: 34px;
+    }
+
+    /* INPUTS */
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #DB9222;
+      background: transparent;
+      outline: none;
+
+      padding: 12px 0;
+      font-size: 18px;
+      color: #433326;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #433326;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-form textarea {
+      resize: none;
+      min-height: 110px;
+    }
+
+    /* BUTTON */
+    .btn-wrap {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .submit-btn {
+      padding: 12px 24px;
+      border: 1.5px solid #DB9222;
+      border-radius: 10px;
+      background: transparent;
+      color: #DB9222;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-family: 'bonaNovaBold';
+    }
+
+    .submit-btn:hover {
+      background: #DB9222;
+      color: #fff;
+    }
+
+    /* TABLET */
+    @media(max-width:992px) {
+
       .contact-container {
-        max-width: 1200px;
-        margin: auto;
-
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 80px;
-        align-items: start;
+        grid-template-columns: 1fr;
+        gap: 50px;
       }
 
-      /* LEFT SIDE */
       .contact-left h1 {
-        font-size: 80px;
-        line-height: 1.1;
-        margin-bottom: 10px;
-        font-weight: 700;
-        color: #433326;
-        font-family: "poppinSemiBold";
+        font-size: 70px;
       }
 
       .contact-left p {
-        font-family: "poppinRegular";
-        max-width: 320px;
-        font-size: 18px;
-        line-height: 1.7;
-        color: #433326;
+        max-width: 100%;
+      }
+    }
+
+    /* MOBILE */
+    @media(max-width:600px) {
+
+      .contact-section {
+        padding: 50px 20px;
       }
 
-      /* RIGHT SIDE */
-      .contact-form {
-        width: 100%;
+      .contact-left h1 {
+        font-size: 52px;
       }
 
-      /* FORM GROUP */
-      .form-group {
-        margin-bottom: 34px;
+      .contact-left p {
+        font-size: 15px;
+        line-height: 1.6;
       }
 
-      /* INPUTS */
       .contact-form input,
       .contact-form textarea {
-        width: 100%;
-        border: none;
-        border-bottom: 2px solid #db9222;
-        background: transparent;
-        outline: none;
-
-        padding: 12px 0;
-        font-size: 18px;
-        color: #433326;
-        font-family: "Inter", sans-serif;
+        font-size: 17px;
       }
 
-      .contact-form input::placeholder,
-      .contact-form textarea::placeholder {
-        color: #433326;
-        letter-spacing: 0.5px;
-      }
-
-      .contact-form textarea {
-        resize: none;
-        min-height: 110px;
-      }
-
-      /* BUTTON */
       .btn-wrap {
-        display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
       }
 
       .submit-btn {
-        padding: 12px 24px;
-        border: 1.5px solid #db9222;
-        border-radius: 10px;
-        background: transparent;
-        color: #db9222;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.3s ease;
-        font-family: "bonaNovaBold";
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
       }
+    }
 
-      .submit-btn:hover {
-        background: #db9222;
-        color: #fff;
-      }
 
-      /* TABLET */
-      @media (max-width: 992px) {
-        .contact-container {
-          grid-template-columns: 1fr;
-          gap: 50px;
-        }
 
-        .contact-left h1 {
-          font-size: 70px;
-        }
 
-        .contact-left p {
-          max-width: 100%;
-        }
-      }
+    .custom-footer {
+      padding: 40px 20px 50px;
+      text-align: center;
+      overflow: hidden;
+    }
 
-      /* MOBILE */
-      @media (max-width: 600px) {
-        .contact-section {
-          padding: 50px 20px;
-        }
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        .contact-left h1 {
-          font-size: 52px;
-        }
-
-        .contact-left p {
-          font-size: 15px;
-          line-height: 1.6;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-          font-size: 17px;
-        }
-
-        .btn-wrap {
-          justify-content: flex-start;
-        }
-
-        .submit-btn {
-          width: 100%;
-          padding: 14px;
-          font-size: 15px;
-        }
-      }
-
-      .custom-footer {
-        padding: 40px 20px 50px;
-        text-align: center;
-        overflow: hidden;
-      }
-
-      .footer-container {
-        max-width: 1200px;
-        margin: auto;
-      }
-
-      /* =========================
+    /* =========================
        TOP IMAGE
     ========================== */
 
-      .footer-artwork {
-        margin-bottom: 40px;
-      }
+    .footer-artwork {
+      margin-bottom: 40px;
+    }
 
-      .footer-artwork img {
-        width: 100%;
-        max-width: 600px;
-        display: block;
-        margin: auto;
-        object-fit: contain;
-      }
+    .footer-artwork img {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: auto;
+      object-fit: contain;
+    }
 
-      /* =========================
+    /* =========================
        LOGO
     ========================== */
 
-      .footer-logo {
-        margin-bottom: 12px;
-      }
+    .footer-logo {
+      margin-bottom: 12px;
+    }
 
-      .footer-logo img {
-        width: 70px;
-        object-fit: contain;
-      }
+    .footer-logo img {
+      width: 70px;
+      object-fit: contain;
+    }
 
-      /* =========================
+    /* =========================
        TEXT
     ========================== */
 
-      .footer-text {
-        margin-bottom: 18px;
-      }
+    .footer-text {
+      margin-bottom: 18px;
+    }
 
-      .footer-text h3 {
-        font-size: 14px;
-        color: #413326;
-        margin-bottom: 12px;
-        font-weight: 500;
-        font-family: "poppinRegular";
-      }
+    .footer-text h3 {
+      font-size: 14px;
+      color: #413326;
+      margin-bottom: 12px;
+      font-weight: 500;
+      font-family: 'poppinRegular';
+    }
 
-      .footer-text a {
-        color: #db9221;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 600;
-        display: inline-block;
-        font-family: "poppinRegular";
-      }
+    .footer-text a {
+      color: #db9221;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      font-family: 'poppinRegular';
+    }
 
-      .footer-text p {
-        color: #413326;
-        font-size: 14px;
-        font-family: "poppinRegular";
-      }
+    .footer-text p {
+      color: #413326;
+      font-size: 14px;
+      font-family: 'poppinRegular';
+    }
 
-      /* =========================
+    /* =========================
        SOCIAL ICONS
     ========================== */
 
-      .footer-social {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 18px;
-        margin-top: 20px;
-      }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      margin-top: 20px;
+    }
 
-      .footer-social a {
-        color: #413326;
-        font-size: 15px;
-        transition: 0.3s;
-      }
+    .footer-social a {
+      color: #413326;
+      font-size: 15px;
+      transition: 0.3s;
+    }
 
-      .footer-social a:hover {
-        transform: translateY(-3px);
-        color: #d8921c;
-      }
+    .footer-social a:hover {
+      transform: translateY(-3px);
+      color: #d8921c;
+    }
 
-      /* =========================
+    /* =========================
        TABLET
     ========================== */
 
-      @media (max-width: 991px) {
-        .footer-artwork img {
-          max-width: 450px;
-        }
-      }
+    @media (max-width:991px) {
 
-      /* =========================
+      .footer-artwork img {
+        max-width: 450px;
+      }
+    }
+
+    /* =========================
        MOBILE
     ========================== */
 
-      @media (max-width: 576px) {
-        .custom-footer {
-          padding: 30px 15px 40px;
-        }
+    @media (max-width:576px) {
 
-        .footer-artwork {
-          margin-bottom: 30px;
-        }
-
-        .footer-artwork img {
-          max-width: 100%;
-        }
-
-        .footer-logo img {
-          width: 60px;
-        }
-
-        .footer-text h3 {
-          font-size: 16px;
-        }
-
-        .footer-text a {
-          font-size: 15px;
-        }
-
-        .footer-text p {
-          font-size: 14px;
-        }
-
-        .footer-social {
-          gap: 14px;
-        }
-
-        .footer-social a {
-          font-size: 14px;
-        }
+      .custom-footer {
+        padding: 30px 15px 40px;
       }
 
-      .contact-left h1,
-      .contact-left p,
-      .contact-form .form-group,
-      .submit-btn {
-        opacity: 0;
-        transform: translateY(60px);
-        animation: fadeUp 0.9s ease forwards;
+      .footer-artwork {
+        margin-bottom: 30px;
       }
 
-      /* Stagger delays */
-      .contact-left h1 {
-        animation-delay: 0.1s;
+      .footer-artwork img {
+        max-width: 100%;
       }
 
-      .contact-left p {
-        animation-delay: 0.25s;
+      .footer-logo img {
+        width: 60px;
       }
 
-      .contact-form .form-group:nth-child(1) {
-        animation-delay: 0.4s;
+      .footer-text h3 {
+        font-size: 16px;
       }
 
-      .contact-form .form-group:nth-child(2) {
-        animation-delay: 0.55s;
+      .footer-text a {
+        font-size: 15px;
       }
 
-      .contact-form .form-group:nth-child(3) {
-        animation-delay: 0.7s;
+      .footer-text p {
+        font-size: 14px;
       }
 
-      .contact-form .form-group:nth-child(4) {
-        animation-delay: 0.85s;
+      .footer-social {
+        gap: 14px;
       }
 
-      .submit-btn {
-        animation-delay: 1.1s;
+      .footer-social a {
+        font-size: 14px;
       }
+    }
 
-      /* Animation keyframes */
-      @keyframes fadeUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+    .contact-left h1,
+    .contact-left p,
+    .contact-form .form-group,
+    .submit-btn {
+      opacity: 0;
+      transform: translateY(60px);
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    /* Stagger delays */
+    .contact-left h1 {
+      animation-delay: 0.1s;
+    }
+
+    .contact-left p {
+      animation-delay: 0.25s;
+    }
+
+    .contact-form .form-group:nth-child(1) {
+      animation-delay: 0.4s;
+    }
+
+    .contact-form .form-group:nth-child(2) {
+      animation-delay: 0.55s;
+    }
+
+    .contact-form .form-group:nth-child(3) {
+      animation-delay: 0.7s;
+    }
+
+    .contact-form .form-group:nth-child(4) {
+      animation-delay: 0.85s;
+    }
+
+    .submit-btn {
+      animation-delay: 1.1s;
+    }
+
+    /* Animation keyframes */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-    </style>
-  </head>
+    }
+  </style>
+</head>
 
-  <body>
-    <div class="navbar-wrapper">
-      <nav class="navbar">
-        <!-- LEFT -->
-        <div class="logo-area">
-          <img
-            class="logo-img"
-            src="assets/images/rachna-logo.png"
-            alt="logo"
-          />
-          <div class="brand-name">Rachna Mohta</div>
-        </div>
+<body>
+  <div class="navbar-wrapper">
 
-        <!-- RIGHT MENU -->
-        <div class="nav-links" id="navLinks">
-          <a href="home1.html">Home</a>
-          <a href="services1.html">Services</a>
-          <a href="about1.html">About me</a>
-          <a href="contact1.html" class="talk-btn">Let's talk</a>
-        </div>
+    <nav class="navbar">
 
-        <!-- HAMBURGER -->
-        <div class="hamburger" id="hamburger">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-      </nav>
-    </div>
+      <!-- LEFT -->
+      <div class="logo-area">
+        <img class="logo-img" src="assets/images/rachna-logo.png" alt="logo" />
+        <div class="brand-name">Rachna Mohta</div>
+      </div>
 
-    <section class="contact-section">
-      <div class="contact-container">
-        <!-- LEFT SIDE -->
-        <div class="contact-left">
-          <h1>
-            Lets Get<br />
-            Started
-          </h1>
+      <!-- RIGHT MENU -->
+      <div class="nav-links" id="navLinks">
+        <a href="home1.html">Home</a>
+        <a href="services1.html">Services</a>
+        <a href="about1.html">About me</a>
+        <a href="contact1.html" class="talk-btn">Let's talk</a>
+      </div>
 
-          <p>
-            The quality of your decisions depends on the clarity of your
-            thinking. Start your transformation with me.
-          </p>
-        </div>
+      <!-- HAMBURGER -->
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+    </nav>
+
+  </div>
+
+  <section class="contact-section">
+
+    <div class="contact-container">
+
+      <!-- LEFT SIDE -->
+      <div class="contact-left">
+
+        <h1>
+          Lets Get<br>
+          Started
+        </h1>
+
+        <p>
+          The quality of your decisions depends on
+          the clarity of your thinking. Start your
+          transformation with me.
+        </p>
+
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <form class="contact-form">
 
         <div class="form-group">
           <input type="text" placeholder="Full Name">
@@ -588,154 +602,22 @@
           </button>
         </div>
 
-      </form> -->
-        <form
-          class="contact-form"
-          id="contactForm"
-          action="https://formsubmit.co/rachnamimani2005@gmail.com"
-          method="POST"
-        >
-          <input type="hidden" name="_captcha" value="false" />
-          <input
-            type="hidden"
-            name="_subject"
-            value="New Contact Form Submission"
-          />
-          <input type="hidden" name="_template" value="table" />
+      </form>
 
-          <div class="form-group">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Full Name"
-              required
-            />
-          </div>
+    </div>
 
-          <div class="form-group">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email Id"
-              required
-            />
-          </div>
+  </section>
 
-          <div class="form-group">
-            <input
-              type="text"
-              name="mobile"
-              id="mobile"
-              placeholder="Mobile No."
-              required
-            />
-          </div>
+  <script>
 
-          <div class="form-group">
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Your Message"
-              required
-            ></textarea>
-          </div>
 
-          <div class="btn-wrap">
-            <button type="submit" class="submit-btn" id="submitBtn">
-              Book a clarity call
-            </button>
-          </div>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
-          <p
-            id="successMessage"
-            style="
-              display: none;
-              margin-top: 15px;
-              color: #433326;
-              font-size: 16px;
-            "
-          >
-            Thank you! Your message has been sent successfully.
-          </p>
-        </form>
-      </div>
-    </section>
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const navLinks = document.getElementById("navLinks");
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
 
-      if (hamburger) {
-        hamburger.addEventListener("click", () => {
-          navLinks.classList.toggle("active");
-        });
-      }
-
-      const form = document.getElementById("contactForm");
-      const successMessage = document.getElementById("successMessage");
-      const submitBtn = document.getElementById("submitBtn");
-
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
-
-        successMessage.style.display = "none";
-
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const mobile = document.getElementById("mobile").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const mobilePattern = /^[0-9]{10}$/;
-
-        if (name.length < 3) {
-          alert("Please enter a valid full name.");
-          return;
-        }
-
-        if (!emailPattern.test(email)) {
-          alert("Please enter a valid email address.");
-          return;
-        }
-
-        if (!mobilePattern.test(mobile)) {
-          alert("Please enter a valid 10-digit mobile number.");
-          return;
-        }
-
-        if (message.length < 10) {
-          alert("Message should be at least 10 characters.");
-          return;
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
-
-        try {
-          const formData = new FormData(form);
-
-          const response = await fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: {
-              Accept: "application/json",
-            },
-          });
-
-          if (response.ok) {
-            form.reset();
-            successMessage.style.display = "block";
-          } else {
-            alert("Something went wrong. Please try again.");
-          }
-        } catch (error) {
-          alert("Something went wrong. Please try again.");
-        }
-
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Book a clarity call";
-      });
-    </script>
-  </body>
 </html>
